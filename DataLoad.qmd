@@ -1,0 +1,266 @@
+---
+title: "Data"
+format: html
+editor: visual
+self-contained: TRUE
+---
+
+# Meta Document
+
+I'm combining these into one for the simplicity of one document.
+
+I chose to look at vitamin and nutrient intake. I did this for a couple of reasons, mainly because I've been really into health and biology my entire life and as of recently I've lost an additional 35lb and I wanted to see what correlated with positive health and things like that. Secondly it allowed me to combine my biochemistry project which ended up not really applying to this outside of research but I did get to apply a lot of knowledge I learned in that class to a topic which I am interested in.
+
+I wasn't exactly sure when I started this what audience I wanted to go at. There is a lot of information and details that would've been hard to explain to a more general audience so I chose to sort of focus on a some what more educated audience. With that said It also is information that would be useful for everyone. I tried writing an article like I may see from the CDC on their website but with a little more information about the biochemical interactions since that was the main purpose in my assignment. I included a link below but the data came from the CDC and specifically I used the last 5 years of data for the NHANES Survey. I had to do a lot to clean and make it usable. the day 1 base DF has 166 dimensions and the day 2 has 85+. I coded it to look into any path and read all the files within the folder including any folders within that folder, this allowed me to more easily merge and combine the data rather then type it all out. It also was fun to figure out. I chose to leave demographics alone for now just because one of the files had different headings and considering how much work it was to just do the 10 other files it was just best to leave it. That choice did end up making things complicated as there was very few proper discrete variables (like I had 1 maybe 2).
+
+Having only Year to work with for a discrete variable meant I was stuck plotting over time, which I was fine with or it meant I needed to go and data wrangle the demographic data tied to each participant and get it assigned properly in the DF so it was usable. I didn't do that mainly for time purposes and I will end up going back. For the plots, I tried a lot. You will see with how many packages I loaded mainly just trying different changes, most of which didn't turn out with anything good. Plotting 85000 data points would make things not clear and it kinda of just made things look like a density plot but more creative. This is why I only have column charts.
+
+The plots I chose to include in my actual paper take the 538 generic theme from ggthemes and apply it. I personally think it looks the best and it is clear without any distractions. The removal of axis titles makes the chart cleaner and I kept them off with the idea I would be adding captions and they would support the text so context would be present. I did tweak aspect ratio, fill color, and bar width for each chart and set expand to 0,0. I also added a black line at the base of each plot, this in my opinion define the starting axis and put a little more structure. I did want to change the limits on the Y axis but when I would attempt to change them the data would not display on the chart.
+
+The choice to expand the width of the bars came after I initially plotted the chart knowing what I was supposed to see which was a gradual increase (See the "Brown" bar chart below). I was not able to tell what the chart was attempting say and the bars all kind of looked similar. Once expanding so they were more side by side it was easier to determine what was being shown. In this data it mainly was small changes and while I wasn't able to run an anova they do lead and can direct conclusions based on trends seen. Color was more selected random for me since I didn't have a really good way to display extra variables. I chose the colors honestly because I liked them, but they all were different enough they don't look like similar plots. There is a dot plot below with awful coloring and I never changed it because I chose not to use it. It originally had a green to red gradient that looked like a color blind test.
+
+# Behind The Scenes - My Pain
+
+Data can be downloaded from here https://www.cdc.gov/nchs/nhanes/index.htm
+
+## Libraries
+
+```{r}
+library(haven)
+library(tidyverse)
+library(mosaic)
+library(moments)
+library(corrplot)
+library(tidyr)
+library(dplyr)
+library(labelled)
+#library(rayshader)
+#library(plotly)
+#library(reshape2)
+#library(scales)
+#library(ggthemes)
+```
+
+## Data Importing
+
+```{r}
+startTime <- Sys.time()
+path <- "/Users/jonathan/Library/CloudStorage/OneDrive-UniversityofSt.Thomas/school/Chemistry/Bio Chem/Vitamin Project/Data/Project/"
+files <- as.list(list.files(path = path, recursive = TRUE, full.names = FALSE))
+Wholedata <- lapply(lapply(list.files(path = path, recursive = TRUE, full.names = TRUE), read_xpt),as.data.frame)
+Dem <- Wholedata[seq(4,25,5)]
+Day1Raw <- lapply(Wholedata[seq(1,25,5)], as.data.frame)
+Day2Raw <- lapply(Wholedata[seq(2,25,5)], as.data.frame)
+BMRaw <- lapply(Wholedata[seq(3,25,5)], as.data.frame)
+IncomeRaw <- lapply(Wholedata[seq(2,25,5)], as.data.frame)
+cat("Current Elapsed Time:", Sys.time() - startTime, "Seconds" ,"\nData Read From Folders")
+```
+
+## Data Cleaning
+
+This was really annoying. it didn't like the column names even when they were the same, and then it wasn't assigning stuff to proper places. BUT it works now and its cool
+
+```{r}
+Dem$Year <- 2012
+DemMerge <- Dem[[1]]
+for (i in 2:5){
+  yearHold <- seq(2012, 2020,2)
+  Dem[[i]]$Year <- yearHold[i]
+  DemMerge <- merge(x = DemMerge,y = Dem[[i]], all.x = T, all.y = T )
+}
+
+
+
+```
+
+```{r}
+startTime <- Sys.time()
+data_cleanishD1 <- data.frame()
+
+yearHold <- seq(2012, 2020,2)
+for (i in 1:length(Day1Raw)){
+  if(length(Day1Raw[[i]])> 166){
+    tempdata <- Day1Raw[[i]][,c(1,18:101)]
+    tempdata$Year <- yearHold[i]
+    } #15:29 Different Diet Data
+  else{
+    tempdata <- (Day1Raw[[i]][,c(1,16:99)])
+    tempdata$Year <- yearHold[i]
+    }
+   #Testing, i'm going to lose it if this fixes it
+  if (i > 1){
+    colnames(tempdata) <- coltemp
+    }
+  print("Working")
+  data_cleanishD1 <- rbind(data_cleanishD1, tempdata)
+  coltemp <- colnames(data_cleanishD1)
+}
+
+  #It did.... now for part 2
+data_cleanishD2 <- data.frame()
+
+yearHold <- seq(2012, 2020,2)
+for (i in 1:length(Day2Raw)){
+  if(length(Day2Raw[[i]])> 83){
+    tempdata <- Day2Raw[[i]][,c(1,13,16:84)]
+    tempdata$Year <- yearHold[i]
+    }
+  else{
+  tempdata <- (Day2Raw[[i]][,c(1,13:82)])
+  tempdata$Year <- yearHold[i]
+  }
+  if (i > 1){
+    colnames(tempdata) <- coltemp
+  }
+  print("Working")
+  data_cleanishD2 <- rbind(data_cleanishD2, tempdata)
+  coltemp <- colnames(data_cleanishD2)
+}
+cat("Current Elapsed Time:", Sys.time() - startTime, "Seconds","\nFinished Step 1: Data Pulled From Files, Years assigned by release year")
+
+data_cleanCombined <- data_cleanishD1[,c(1,16:86)]
+coltemp <- colnames(data_cleanCombined)
+colnames(data_cleanishD2) <- coltemp
+data_cleanComLong <- rbind(data_cleanCombined, data_cleanishD2)
+
+data_cleanCom <- data_cleanComLong %>%
+  group_by(SEQN) %>%
+  summarise_all(mean,na.rm=TRUE)
+
+data_cleanComFull <- cbind(data_cleanishD2, data_cleanishD1[,2:15])
+cat("Current Elapsed Time:", Sys.time() - startTime, "Seconds","\nFinished Step 2: Data Frames Created")
+
+attr(data_cleanishD1$Year, "label") <- "Year"
+attr(data_cleanishD2$Year, "label") <- "Year"
+attr(data_cleanComLong$Year, "label") <- "Year"
+attr(data_cleanCom$Year, "label") <- "Year"
+attr(data_cleanComFull$Year, "label") <- "Year"
+lD1= lapply(data_cleanishD1, attr, "label")
+lab= lapply(data_cleanComLong, attr, "label")
+lFull = lapply(c(data_cleanishD2, data_cleanishD1[,2:15]), attr, "label")
+
+colnames(data_cleanishD1) <- lD1
+colnames(data_cleanishD2) <- lab
+colnames(data_cleanComLong) <- lab
+colnames(data_cleanCom) <- lab
+colnames(data_cleanComFull) <- lFull
+cat("Current Elapsed Time:", Sys.time() - startTime, "Seconds", "\nFinished Step 3: Assigning Labels as Column Names")
+
+#D1Cor <- cor(x = data_cleanishD1[,1:72], y = data_cleanishD2, use = "pairwise.complete.obs")
+#D2Cor <- cor(x = data_cleanishD2, use = "pairwise.complete.obs")
+#cat("Current Elapsed Time:", Sys.time() - startTime, "Minutes", "\nFinished Step 4: Creating Correlation Matrices By Day")
+
+ComCorL <- cor(x = data_cleanComLong, use = "pairwise.complete.obs")
+#ComCorFull <- cor(x = data_cleanComFull, use = "pairwise.complete.obs")
+#ComCovFull <- cov(x = data_cleanComLong, use = "pairwise.complete.obs")
+cat("Current Elapsed Time:", Sys.time() - startTime, "Minutes", "\nFinished Step 4: Creating Full Correlation and Covariance Matrices")
+
+```
+
+## Correlation Matrix Cleaning
+
+I started with correlation plots since I do plan to continue this and do PCA or such and reduce dimensions of the data.
+
+```{r}
+corrplot(ComCorL, method = "color", tl.cex = .6)
+```
+
+```{r}
+corrplot(ComCorL, method = "color", tl.cex = .6, order = "hclust", diag = FALSE, addrect = 6, rect.lwd = 1.5)
+```
+
+```{r}
+#ComCorFullHold <- is.na(ComCorFull)
+#ComCorFull[ComCorFullHold] <- 0
+#corrplot(ComCorFull, method = "color", tl.cex = .6, order = "hclust", addrect = 6, rect.lwd = 1.5)
+
+#Does not work, possible binary variables end up blank. 
+```
+
+#From here I worked to remove variables which were irrelevant or showed the same thing. For example ID and year both go up and would be nearly perfectly correlated. Also removed a lot of fats as they are not needed, I kept Omega-3 DHA and ALA
+
+```{r}
+#ComCorLhold <- is.na(ComCorL)
+#ComCorL[ComCorLhold] <- 0
+#Vars <- c(3:13,15:50,65,67:71)
+#corrplot((ComCorL[Vars,Vars]), method = "color", tl.cex = .6, order = "hclust", diag = FALSE, addrect = 8, rect.lwd = 1.5)
+```
+
+```{r}
+corrplot((ComCorL[c(3:12,2,72),c(3:71)]), method = "color", tl.cex = .6, addrect = 4, rect.lwd = 1.5, is.corr = FALSE, tl.srt = 35)
+```
+
+These plots really didn't provide a lot of useful information to me like I hoped they would
+
+## Data Cleaning PT2
+
+```{r}
+data_cleanComLong <- data_cleanComLong %>%
+  mutate(FatPercent = ((data_cleanComLong$`Total fat (gm)`* 9)/data_cleanComLong$`Energy (kcal)`)*100) %>%
+  mutate(FatCalories = (data_cleanComLong$`Total fat (gm)`* 9)) %>%
+  mutate(ProPercent = ((data_cleanComLong$`Protein (gm)`* 4)/data_cleanComLong$`Energy (kcal)`)*100) %>%
+  mutate(SFatPercent = ((data_cleanComLong$`Total saturated fatty acids (gm)`* 9)/data_cleanComLong$`Energy (kcal)`)*100) %>%
+  mutate(SFatCalories = (data_cleanComLong$`Total saturated fatty acids (gm)`* 9)) %>%
+  mutate(ExcessSatFat = ((data_cleanComLong$`Total saturated fatty acids (gm)`* 9)- data_cleanComLong$`Energy (kcal)`)/9)
+
+data_cleanCom <- data_cleanComLong %>%
+  group_by(Year) %>%
+  summarise_all(mean,na.rm=TRUE)
+
+DataComScale <- as.data.frame(scale(data_cleanCom[3:74]))
+DataComScale <- cbind(data_cleanCom[,1],DataComScale)
+
+```
+
+This was the start of my actual looking more at the data.
+
+## Plotting Creation
+
+played around with this for a while, the colors never really produced a gradient I liked that was beneficial. The colors are not pretty, but it is still better then green -\> orange -\> red. that looked really bad
+
+```{r}
+ggplot(data = data_cleanComLong, aes(y = `Energy (kcal)`, x = as.factor(`Year`), color = FatPercent)) + geom_jitter(width = .49, size = .8) + theme(aspect.ratio = 2/3,legend.position = "right", axis.title.x = element_blank(),axis.title.y = element_text(family = "Helvetica", size = 15), panel.grid.major = element_blank(), panel.grid.minor.y = element_blank(), panel.grid.minor.x = element_line(color = "black", size = 2), axis.text = element_text(family = "Helvetica", size = 12), axis.ticks.x = element_blank(), panel.background = element_rect(color = "black", size = 1.5, fill = "grey")) + scale_y_continuous(limit = c(0,5100),expand = c(0,0)) + scale_color_gradientn(colors = c("red","#E66B00", "navy", "white", "navy", "#E66B00", "red") ,values = c(0,.15, .25, .28, .35, .4,.45,1), limits = c(0,100), breaks = c(15,28,40), labels = c("Not Enough", "Recomended Amount", "Too High")) + ylab("Calories Eaten")
+```
+
+#E90090 - Pink #00BA38 - Green #3c3b5e30 - Old glory blue
+
+```{r}
+DataGather <- DataComScale %>% gather(key = "variable", value = "value", -Year)
+ggtest <- ggplot(data = DataGather, aes(y = value*10, x = Year,group = variable ,color = variable)) + geom_line() + theme(legend.position = "none")
+ggplotly(ggtest)     
+```
+
+gather worked for what I wanted it to do however because of how many variables I had the plot did not turn out and I need to reduce dimensions
+
+Theme creation: Very simple tweaks
+
+```{r}
+theme <- theme(axis.line.x = element_line(color = "black", size = 1), axis.text = element_text(size = 40) , aspect.ratio = 1/3)
+theme2 <- theme(axis.line.x = element_line(color = "black", size = 1), axis.text = element_text(size = 40) , aspect.ratio = 3/3)
+```
+
+```{r}
+ggplot(data_cleanCom, aes(x = as.factor(Year))) + geom_col(aes(y = `Energy (kcal)`), fill = "slateblue", width = .98) +theme_fivethirtyeight() + theme + scale_y_continuous(expand = c(0,0))
+```
+
+```{r}
+ggplot(data_cleanCom, aes(x = as.factor(Year))) + geom_col(aes(y = FatPercent/100), fill = "brown", width = .98) + theme_fivethirtyeight() + scale_y_continuous(labels = percent, expand = c(0,0), limits = c(0, .41)) + theme2
+```
+
+```{r}
+ggplot(data_cleanCom, aes(x = as.factor(Year))) + geom_col(aes(y = SFatCalories), fill = "turquoise4", width = .98) + theme_fivethirtyeight() + theme + scale_y_continuous(expand = c(0,0))
+```
+
+The following charts did not turn out. I think it came down to data format and I didn't trust the output they produced ultimately.
+
+```{r}
+ggplot(data_cleanComLong, aes(x = as.factor(Year))) + geom_col(aes(y = SFatPercent/100), fill = "darkgrey") + theme_fivethirtyeight() + scale_y_continuous(limits = c(0,.4), label = percent)
+```
+
+```{r}
+ggplot(data_cleanComLong, aes(x = as.factor(Year))) + geom_col(aes(y = FatCalories)) + theme_fivethirtyeight() + scale_y_continuous()
+```
+
+```{r}
+ggplot(data_cleanCom, aes(x = as.factor(Year))) + geom_col(aes(y = SFatPercent/100), fill = "darkgreen") + theme_fivethirtyeight() + scale_y_continuous(limits = c(0,.12), label = percent)
+```
