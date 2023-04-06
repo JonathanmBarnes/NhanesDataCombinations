@@ -1,0 +1,21 @@
+---
+title: "MainDoc"
+format: html
+editor: visual
+self-contained: true
+---
+
+```{r}
+source('Packages.R') 
+source('DataImport.R')
+source('NutritionCleaning.R')
+source('DataMerging.R')
+```
+
+```{r}
+FullCorr <- cor(AllMerge, use = "pairwise.complete.obs")
+```
+
+```{r}
+corrplot((FullCorr[c(1:19),c(2:105)]), method = "color", tl.cex = .6, addrect = 4, rect.lwd = 1.5, is.corr = FALSE, tl.srt = 35)
+```

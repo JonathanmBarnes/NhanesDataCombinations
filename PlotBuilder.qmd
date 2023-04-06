@@ -5,34 +5,53 @@ editor: visual
 self-contained: true
 ---
 
-
-```{r}
-source('Setup.R')
-source('DataImport.R')
-source('NutritionCleaning.R')
-```
-
-```{r}
-CorrectDatDF <- data_cleanComFull
+```{r, eval=FALSE}
+CorrectDatDF <- BMMerge
 CorrectDatDF$Year <- as.factor(CorrectDatDF$Year)
-print(ggplot(data = CorrectDatDF) + geom_density(aes(x = CorrectDatDF[,2], fill = Year, color = Year, after_stat(scaled)),alpha = 0.2, adjust = 3.5))
+print(ggplot(data = CorrectDatDF) + geom_density(aes(x = CorrectDatDF[,3], fill = Year, color = Year, after_stat(scaled)),alpha = 0.2, adjust = 2))
 ```
 
+```{r}
+source('Packages.R')
+source('DataImport.R')
+source("NutritionCleaning.R")
+source('DataMerging.R')
+```
 
 ```{r}
-CorrectDatDF <- data_cleanComFull
+DFList <- list(IncomeMerge, DemMerge, BMMerge, D1Merge, D2Merge)
+for (j in 1:5){
+CorrectDatDF <- as.data.frame(DFList[[j]])
 CorrectDatDF$Year <- as.factor(CorrectDatDF$Year)
 for(i in 2:length(CorrectDatDF)) {
+print(colnames(CorrectDatDF[,i]))
+print(attr(CorrectDatDF[,i],"label"))
+print(summary(CorrectDatDF[,i]))
+try(print(summary(aov(CorrectDatDF[,i]~CorrectDatDF$Year))))
+try(print(ggplot(data = CorrectDatDF) + geom_violin(aes(y = CorrectDatDF[,i], x = Year, fill = Year, color = Year),alpha = 0.2, adjust = 1.2, na.rm = T)), silent = T)
+try(print(ggplot(data = CorrectDatDF) + geom_density(aes(x = CorrectDatDF[,i], fill = Year, color = Year, after_stat(scaled)),alpha = 0.2, adjust = 2)))
+}}
+```
 
-print(colnames(CorrectDatDF[i]))
-print(ggplot(data = CorrectDatDF) + geom_density(aes(x = CorrectDatDF[,i], fill = Year, color = Year, after_stat(scaled)),alpha = 0.2, adjust = 3.5))
-#mean <- mean(CorrectDatDF[,i], na.rm = T)
-#sum_of_squares <- sum((CorrectDatDF[,i] - mean)^2, na.rm = T)
-#print(paste("Mean     : ", mean, sep = ""))
-#print(paste("Sum'O'^2 : ", sum_of_squares, sep = ""))
-#print(paste("Stdev    : ", sd(CorrectDatDF[,i], na.rm = T), sep = ""))
-#print(paste("Kurtosis : ", kurtosis(CorrectDatDF[,i], na.rm = T), sep = ""))
-#print(paste("Skewness : ", skewness(CorrectDatDF[,i], na.rm = T), sep = ""))
-#cat("\n")
+
+
+```{r}
+DFList <- list(IncomeMerge, DemMerge, data_cleanComFMerge)
+AllMerge <- BMMerge
+for (i in length(DFList)){
+AllMerge <- merge(AllMerge, DFList[i], by = "SEQN")
 }
 ```
+
+```{r}
+CorrectDatDF <- AllMerge
+for(i in 2:length(CorrectDatDF)) {
+print(colnames(CorrectDatDF[,i]))
+#print(attr(CorrectDatDF[,i],"label"))
+print(summary(CorrectDatDF[,i]))
+try(print(summary(t.test(CorrectDatDF[,i]~CorrectDatDF$BMXBMI))))
+try(print(ggplot(data = CorrectDatDF) + geom_violin(aes(y = CorrectDatDF[,i], x = BMXBMI, fill = BMXBMI, color = BMXBMI),alpha = 0.2, adjust = 1.2, na.rm = T)), silent = T)
+try(print(ggplot(data = CorrectDatDF) + geom_density(aes(x = CorrectDatDF[,i], fill = BMXBMI, color = BMXBMI, after_stat(scaled)),alpha = 0.2, adjust = 2)))
+}
+```
+

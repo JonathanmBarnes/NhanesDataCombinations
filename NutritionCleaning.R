@@ -50,6 +50,7 @@ data_cleanCom <- data_cleanComLong %>%
   summarise_all(mean,na.rm=TRUE)
 
 data_cleanComFull <- cbind(data_cleanishD2, data_cleanishD1[,2:15])
+data_cleanComFMerge <- data_cleanComFull
 cat("Current Elapsed Time:", Sys.time() - startTime, "Seconds","\nFinished Step 2: Data Frames Created")
 
 attr(data_cleanishD1$Year, "label") <- "Year"
@@ -72,7 +73,7 @@ cat("Current Elapsed Time:", Sys.time() - startTime, "Seconds", "\nFinished Step
 #D2Cor <- cor(x = data_cleanishD2, use = "pairwise.complete.obs")
 #cat("Current Elapsed Time:", Sys.time() - startTime, "Minutes", "\nFinished Step 4: Creating Correlation Matrices By Day")
 
-ComCorL <- cor(x = data_cleanComLong, use = "pairwise.complete.obs")
+#ComCorL <- cor(x = data_cleanComLong, use = "pairwise.complete.obs")
 #ComCorFull <- cor(x = data_cleanComFull, use = "pairwise.complete.obs")
 #ComCovFull <- cov(x = data_cleanComLong, use = "pairwise.complete.obs")
 cat("Current Elapsed Time:", Sys.time() - startTime, "Minutes", "\nFinished Step 4: Creating Full Correlation and Covariance Matrices")
@@ -91,3 +92,4 @@ data_cleanCom <- data_cleanComLong %>%
 
 DataComScale <- as.data.frame(scale(data_cleanCom[3:74]))
 DataComScale <- cbind(data_cleanCom[,1],DataComScale)
+cat("Current Elapsed Time:", Sys.time() - startTime, "Minutes", "\nFinished Step 5/5: Finished Cleaning")

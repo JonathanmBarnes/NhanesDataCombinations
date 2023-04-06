@@ -61,13 +61,57 @@ cat("Current Elapsed Time:", Sys.time() - startTime, "Seconds" ,"\nData Read Fro
 This was really annoying. it didn't like the column names even when they were the same, and then it wasn't assigning stuff to proper places. BUT it works now and its cool
 
 ```{r}
-Dem$Year <- 2012
-DemMerge <- Dem[[1]]
-for (i in 2:5){
-  yearHold <- seq(2012, 2020,2)
-  Dem[[i]]$Year <- yearHold[i]
-  DemMerge <- merge(x = DemMerge,y = Dem[[i]], all.x = T, all.y = T )
+source("DataImport.R")
+```
+
+```{r}
+Dem[[1]] <- Dem[[1]][,-10]
+```
+
+```{r}
+Dem[[1]] <- Dem[[1]][,-c(43:47)]
+```
+
+```{r}
+df1 <- Dem[[1]]
+df2 <- Dem[[2]]
+# Check which column names of df1 do not exist in df2
+missing_cols <- setdiff(names(df1), names(df2))
+missing_cols2 <- setdiff(names(df2), names(df1))
+if (length(missing_cols) == 0 & length(missing_cols2) == 0) {
+  cat("All columns in Dem 1 exist in the other Dem")
+} else {
+  missing_indices <- match(missing_cols, names(df1))
+  missing_indices2 <- match(missing_cols2, names(df2))
+  cat("The following columns in df1 do not exist in df2: ")
+  cat(paste(missing_cols, " (index: ", missing_indices, ")", collapse = ", "))
+  cat("The following columns in df2 do not exist in df1: ")
+  cat(paste(missing_cols2, " (index: ", missing_indices2, ")", collapse = ", "))
 }
+
+```
+
+```{r}
+DFMerge <- function(df_list){
+  df_combined <- df_list[[length(df_list)]]
+  for (i in 1:(length(df_list)-1)) {
+    common_names <- intersect(colnames(df_combined), colnames(df_list[[i]]))
+    df_combined_sub <- df_combined[, common_names]
+    df_i_sub <- df_list[[i]][, common_names]
+    df_combined <- rbind(df_combined_sub, df_i_sub)} 
+  return(df_combined)
+  }
+```
+
+```{r}
+testing <- DFMerge(BMRaw)
+```
+
+```{r}
+for (i in 2:4){
+  for (j in c(1,3,4)){
+  print(colnames(Dem[[1]]) == colnames(Dem[[i]]))
+  }}
 
 
 
