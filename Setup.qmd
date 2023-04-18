@@ -19,3 +19,23 @@ FullCorr <- cor(AllMerge, use = "pairwise.complete.obs")
 ```{r}
 corrplot((FullCorr[c(1:19),c(2:105)]), method = "color", tl.cex = .6, addrect = 4, rect.lwd = 1.5, is.corr = FALSE, tl.srt = 35)
 ```
+
+```{r}
+plot(AllMerge$BMXBMI ~ AllMerge$BMXWAIST)
+```
+
+```{r}
+plot(AllMerge$DR1TKCAL ~ AllMerge$BMXWAIST)
+```
+
+```{r}
+plot(AllMerge$DR1TKCAL ~ AllMerge$BMXWAIST)
+```
+
+```{r}
+plot(AllMerge$DR1TKCAL ~ AllMerge$DR1TNUMF)
+```
+
+```{r}
+ggplot(data = AllMerge, aes(BMXHT, RFM)) + geom_point(aes(color = as.factor(Un15YN)))
+```

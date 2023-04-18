@@ -76,7 +76,7 @@ cat("Current Elapsed Time:", Sys.time() - startTime, "Seconds", "\nFinished Step
 #ComCorL <- cor(x = data_cleanComLong, use = "pairwise.complete.obs")
 #ComCorFull <- cor(x = data_cleanComFull, use = "pairwise.complete.obs")
 #ComCovFull <- cov(x = data_cleanComLong, use = "pairwise.complete.obs")
-cat("Current Elapsed Time:", Sys.time() - startTime, "Minutes", "\nFinished Step 4: Creating Full Correlation and Covariance Matrices")
+#cat("Current Elapsed Time:", Sys.time() - startTime, "Minutes", "\nFinished Step 4: Creating Full Correlation and Covariance Matrices")
 
 data_cleanComLong <- data_cleanComLong %>%
   mutate(FatPercent = ((data_cleanComLong$`Total fat (gm)`* 9)/data_cleanComLong$`Energy (kcal)`)*100) %>%
@@ -90,6 +90,9 @@ data_cleanCom <- data_cleanComLong %>%
   group_by(Year) %>%
   summarise_all(mean,na.rm=TRUE)
 
-DataComScale <- as.data.frame(scale(data_cleanCom[3:74]))
-DataComScale <- cbind(data_cleanCom[,1],DataComScale)
+cat("Current Elapsed Time:", Sys.time() - startTime, "Minutes", "\nFinished Step 4: Created extra variables")
+
+#DataComScale <- as.data.frame(scale(data_cleanCom[3:74]))
+#DataComScale <- cbind(data_cleanCom[,1],DataComScale)
+rm(data_cleanishD1, data_cleanishD2, files, tempdata, Wholedata, lab, lD1, lFull)
 cat("Current Elapsed Time:", Sys.time() - startTime, "Minutes", "\nFinished Step 5/5: Finished Cleaning")
