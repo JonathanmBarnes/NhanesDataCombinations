@@ -3,6 +3,6 @@
 .RData
 .Ruserdata
 .DS_Store
-.html
-.Rmd
-.Rproj
+DataLoad.html
+PlotBuilder.Rmd
+VitaminProject.Rproj
