@@ -11,31 +11,15 @@ for (i in 1:ncol(IncomeMerge)) {
 }
 DFList <- list(IncomeMerge, DemMerge, data_cleanComFMerge)
 AllMerge <- BMMerge[1:(length(BMMerge)-1)]
+AllLab <- lapply(BMMerge[1:(length(BMMerge)-1)], attr, "label")
 for (i in 1:length(DFList)){
   DemCount <- lengths(DFList[i]) - 1
-  AllMerge <- merge(AllMerge, DFList[[i]][,1:DemCount], by = "SEQN")
+  AllLab <- c(AllLab, lapply(DFList[[i]][,2:DemCount], attr, "label"))
+  AllMerge <- merge(AllMerge, DFList[[i]][,1:DemCount], by = "SEQN", sort = F)
 }
-rm(BMRaw, Dem, Day1Raw, Day2Raw, IncomeRaw, DFList, lab, DemCount, startTime, yearHold, coltemp, data_cleanComLong)
+for (i in 1:ncol(AllMerge)) {
+  attr(AllMerge[,i], "label") <- AllLab[[i]]
+}
 
-AllMerge <- AllMerge %>%
-  mutate(RFM = (64 - (20 * AllMerge$BMXHT/AllMerge$BMXWAIST) + (12 * (AllMerge$RIAGENDR-1)))) %>%
-  mutate(Un18YN = ifelse(AllMerge$RIDAGEYR >= 18, "Yes", "No")) %>%
-  mutate(Un15YN = ifelse(AllMerge$RIDAGEYR >= 15, "Yes", "No"))
-
-AllMergeYear <- AllMerge %>%
-  group_by(Year) %>%
-  summarise_all(mean,na.rm=TRUE)
-
-AllMergeSex <- AllMerge %>%
-  group_by(RIAGENDR) %>%
-  summarise_all(mean,na.rm=TRUE)
-
-AllMergeRace <- AllMerge %>%
-  group_by(RIDRETH3) %>%
-  summarise_all(mean,na.rm=TRUE)
-
-AllMergeRace <- AllMerge %>%
-  group_by(DMDEDUC2) %>%
-  summarise_all(mean,na.rm=TRUE)
-
-
+rm(BMRaw, Dem, Day1Raw, Day2Raw, IncomeRaw, DFList, lab, DemCount, startTime, yearHold, coltemp, data_cleanComLong, i, path,
+   data_cleanCom, data_cleanCombined, data_cleanComFull)

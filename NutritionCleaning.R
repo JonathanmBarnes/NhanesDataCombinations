@@ -90,9 +90,9 @@ data_cleanCom <- data_cleanComLong %>%
   group_by(Year) %>%
   summarise_all(mean,na.rm=TRUE)
 
-cat("Current Elapsed Time:", Sys.time() - startTime, "Minutes", "\nFinished Step 4: Created extra variables")
+cat("Current Elapsed Time:", Sys.time() - startTime, "Seconds", "\nFinished Step 4: Created extra variables")
 
 #DataComScale <- as.data.frame(scale(data_cleanCom[3:74]))
 #DataComScale <- cbind(data_cleanCom[,1],DataComScale)
 rm(data_cleanishD1, data_cleanishD2, files, tempdata, Wholedata, lab, lD1, lFull)
-cat("Current Elapsed Time:", Sys.time() - startTime, "Minutes", "\nFinished Step 5/5: Finished Cleaning")
+cat("Current Elapsed Time:", Sys.time() - startTime, "Seconds", "\nFinished Step 5/5: Finished Cleaning")
