@@ -10,15 +10,28 @@ source('Packages.R')
 source('DataImport.R')
 source('NutritionCleaning.R')
 source('DataMerging.R')
-source('DataCleaning.R')
+source('CreatingVariables.R')
+source('CreatingGroupedDFs.R')
 ```
 
-```{r}
-FullCorr <- cor(AllMerge, use = "pairwise.complete.obs")
+```{r, eval = F}
+source('CreatingVariables.R')
+```
+
+```{r, eval = F}
+source('CreatingGroupedDFs.R')
+```
+
+```{r, eval = F}
+source('Corrplot.R')
 ```
 
 ```{r}
 corrplot((FullCorr[c(1:19),c(2:105)]), method = "color", tl.cex = .6, addrect = 4, rect.lwd = 1.5, is.corr = FALSE, tl.srt = 35)
+```
+
+```{r}
+corrplot(FullMergeCorr, method = "color", tl.cex = .5)
 ```
 
 ```{r}

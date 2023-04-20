@@ -22,4 +22,4 @@ for (i in 1:ncol(AllMerge)) {
 }
 
 rm(BMRaw, Dem, Day1Raw, Day2Raw, IncomeRaw, DFList, lab, DemCount, startTime, yearHold, coltemp, data_cleanComLong, i, path,
-   data_cleanCom, data_cleanCombined, data_cleanComFull)
+   data_cleanCom, data_cleanCombined, data_cleanComFull, BMMerge, DemMerge, IncomeMerge, D1Merge, D2Merge, data_cleanComFMerge)
