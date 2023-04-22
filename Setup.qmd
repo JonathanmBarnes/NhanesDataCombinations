@@ -53,3 +53,11 @@ plot(AllMerge$DR1TKCAL ~ AllMerge$DR1TNUMF)
 ```{r}
 ggplot(data = AllMerge, aes(BMXHT, RFM)) + geom_point(aes(color = as.factor(Un15YN)))
 ```
+
+```{r}
+histogram(AllMerge$BMIObeseNum)
+```
+
+```{r}
+histogram(AllMerge$RFMObese)
+```

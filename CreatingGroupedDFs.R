@@ -39,3 +39,9 @@ AllMergeAge <- AllMerge %>%
   add_tally() %>%
   summarise_all(mean,na.rm=TRUE)
 AllMergeAge <- labelled::set_variable_labels(AllMergeAge, .labels = AllLab)
+
+AllMergeObese <- AllMerge %>%
+  group_by(RFMObese,RIAGENDR ,Year) %>%
+  add_tally() %>%
+  summarise_all(mean,na.rm=TRUE)
+AllMergeObese <- labelled::set_variable_labels(AllMergeObese, .labels = AllLab)
