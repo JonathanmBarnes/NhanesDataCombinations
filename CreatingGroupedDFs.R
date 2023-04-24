@@ -52,5 +52,5 @@ AllMergeObeseByAgeGroup <- AllMerge %>%
   add_tally() %>%
   summarise_all(mean,na.rm=TRUE)
 AllMergeObeseByAgeGroup <- labelled::set_variable_labels(AllMergeObeseByAgeGroup, .labels = AllLab)
-AllMergeObeseByAgeGroup <- AllMergeObeseByAgeGroup[c(sapply(seq(0, 48, by = 3), function(x) seq(from = x + 1, to = x + 2), simplify = TRUE)),]
+AllMergeObeseByAgeGroup <- AllMergeObeseByAgeGroup[c(sapply(seq(0, 52, by = 3), function(x) seq(from = x + 1, to = x + 2), simplify = TRUE)),]
 #AllMergeObeseByAgeGroup <- AllMergeObeseByAgeGroup[c(sapply(seq(0, 235, by = 15), function(x) seq(from = x + 1, to = x + 10), simplify = TRUE)),]

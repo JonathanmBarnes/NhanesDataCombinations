@@ -31,7 +31,8 @@ corrplot((FullCorr[c(1:19),c(2:105)]), method = "color", tl.cex = .6, addrect = 
 ```
 
 ```{r}
-corrplot(FullMergeCorr, method = "color", tl.cex = .5)
+NotNeeded <- c(128:139, 19:28, 43:54, 126)
+corrplot(FullMergeCorr[-NotNeeded,-NotNeeded],method = "color", tl.cex = .55)
 ```
 
 ```{r}

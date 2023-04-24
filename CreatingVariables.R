@@ -14,8 +14,8 @@ AllMerge <- AllMerge %>%
   mutate(BMIObese = cut(AllMerge$BMXBMI, breaks = c(-Inf, 18.5, 24.9, 29.9, 39.9, Inf),labels = c(0,1,2,3,4))) %>%
   mutate(Un18YN = ifelse(AllMerge$RIDAGEYR >= 18, 0, 1)) %>%
   mutate(Un15YN = ifelse(AllMerge$RIDAGEYR >= 15, 0, 1)) %>%
-  mutate(age_groupNum = cut(AllMerge$RIDAGEYR, breaks = 16, labels = seq(1:16))) %>%
-  mutate(age_group = cut(AllMerge$RIDAGEYR, breaks = 16))
+  mutate(age_groupNum = cut(AllMerge$RIDAGEYR, breaks = 18, labels = seq(1:18))) %>%
+  mutate(age_group = cut(AllMerge$RIDAGEYR, breaks = 18))
 
 CreatedLabels <- list("Percent of calories that are fat", "Total fat calories",
                       "Percent of calories that are protein", "Percent of calories that are carbohydrates",
@@ -23,6 +23,14 @@ CreatedLabels <- list("Percent of calories that are fat", "Total fat calories",
                       "RFM Metric","RFM Obese", "BMR", "BMR - Kcal","Height to Waist Ratio", "BMI Obese metric",
                       "Under 18", "Under 15", "Age Group Numeric")
 
+AllMerge <- AllMerge[rowSums(is.na(AllMerge)) < ncol(AllMerge) * 0.8, ]
+#AllMerge <- apply(AllMerge, 2, function(x) {ifelse(is.na(x), mean(x, na.rm = TRUE), x)})
+AllMerge <- as.data.frame(AllMerge)
 
 AllLabFull <- append(AllLab, CreatedLabels)
+
+for (i in 1:length(AllLabFull)) {
+  attr(AllMerge[,i], "label") <- AllLabFull[[i]]
+}
+
 rm(CreatedLabels)
