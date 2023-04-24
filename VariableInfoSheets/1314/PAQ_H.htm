@@ -1,0 +1,4881 @@
+﻿<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "" ""><HTML lang="en" lang="en" xml:lang="en" xmlns="http://www.w3c.org/1999/xhtml"><HEAD><META 
+content="IE=11.0000" http-equiv="X-UA-Compatible">
+     
+<META http-equiv="content-type" content="text/html; charset=utf-8">     
+<TITLE>PAQ_H</TITLE>     
+<META name="title" content="NHANES 2013-2014: Physical Activity Data Documentation, Codebook, and Frequencies"> 
+    
+<STYLE type="text/css">
+					.nhanes-doc { font: 75% Verdana, Arial, Helvetica, sans-serif; }
+
+					.nhanes-doc h1 {
+					color: #0c5205;
+					font-family: "Trebuchet MS", Arial, sans-serif;
+					font-size: 2em;
+					font-weight: normal;
+					margin-bottom: 10px;
+					margin-top: 0;
+					}
+
+					.nhanes-doc h2 {
+					color: #0c5205;
+					font-family: "Trebuchet MS", Arial, sans-serif;
+					font-size: 1.6em;
+					font-weight: normal;
+					}
+
+					.nhanes-doc h3 {
+					color: #000;
+					font-family: "Trebuchet MS", Arial, sans-serif;
+					font-size: 1.5em;
+					font-weight: normal;
+					}
+
+					.nhanes-doc h3.vartitle {
+					background-color: #c1d5b0;
+					padding: 6px 12px;
+					}
+
+					.nhanes-doc h4 {
+					color: #000;
+					font-family: "Trebuchet MS", Arial, sans-serif;
+					font-size: 1.3em;
+					font-weight: bold;
+					}
+
+					.nhanes-doc h5 {
+					color: #000;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					font-size: 1em;
+					font-weight: bold;
+					}
+
+					.nhanes-doc h5.specialnote {
+					color: #000;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					font-size: 1.2em;
+					font-style: italic;
+					font-weight: bold;
+					}
+
+					.nhanes-doc a {
+					color: #039;
+					text-decoration: none;
+					}
+
+					.nhanes-doc p {
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					font-size: 1em;
+					line-height: 1.33em;
+					margin: 0 3em 1em;
+					padding: 0;
+					text-align: left;
+					}
+
+					.nhanes-doc ul {
+					list-style-type: disc;
+					margin: 0 3em 1em;
+					padding: 0;
+					}
+
+					.nhanes-doc ol {
+					list-style-type: decimal;
+					margin: 0;
+					overflow: hidden;
+					padding: 0;
+					padding-left: 2em;
+					}
+
+					.nhanes-doc li {
+					margin-left: 1.5em;
+					margin-top: 0.7em;
+					}
+
+					.nhanes-doc table {
+					border: #000 1px solid;
+					border-collapse: collapse;
+					margin: 0 auto 1em;
+					max-width: 600px;
+					padding: 2px;
+					page-break-inside: avoid;
+					table-layout: auto;
+					}
+
+					.nhanes-doc th {
+					background: #f4f4e1;
+					border: #000 1px solid;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					padding: 5px;
+					text-align: center;
+					vertical-align: top;
+					}
+
+					.nhanes-doc th.rowheader {
+					background: #f4f4e1;
+					border: #000 1px solid;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					padding: 5px;
+					text-align: center;
+					vertical-align: top;
+					}
+
+					.nhanes-doc td {
+					border: #000 1px solid;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					padding: 5px;
+					text-align: left;
+					vertical-align: top;
+					}
+
+					.nhanes-doc td.values2 {
+					text-align: RIGHT;
+					vertical-align: top;
+					}
+
+					.nhanes-doc table caption {
+					font-weight: bold;
+					padding-bottom: 0.5em;
+					}
+
+					.nhanes-doc div#wrapper { width: 650px; }
+
+					.nhanes-doc div#toc {
+					border: solid 1px #CCC;
+					float: left;
+					height: 95%;
+					left: 750px;
+					overflow: hidden;
+					position: fixed;
+					top: 10px;
+					width: 400px;
+					z-index: 10;
+					}
+
+					.nhanes-doc div#toc h3 {
+					background-color: #f4f4e1;
+					border-bottom: solid 1px #ccc;
+					letter-spacing: 8px;
+					margin: 0;
+					padding: 8px;
+					text-align: center;
+					text-transform: uppercase;
+					}
+
+					.nhanes-doc div#toc-scroll {
+					height: calc(100% - 1.5em);
+					overflow: scroll;
+					width: 100%;
+					}
+
+					.nhanes-doc div#toc li {
+					margin-left: -0.5em;
+					margin-right: -0.5em;
+					}
+
+					.nhanes-doc div#PageHeader {
+					border-bottom: thin solid #999;
+					margin-bottom: 12px;
+					width: 650px;
+					}
+
+					.nhanes-doc div#Sections { width: 650px; }
+
+					.nhanes-doc div#Codebook { width: 650px; }
+
+					.nhanes-doc div#Codebook dl {
+					margin: 2em 0 10px 40px;
+					padding: 0;
+					width: 600px;
+					display: table;
+					}
+
+					.nhanes-doc div#Codebook dt {
+					float: left;
+					font-weight: bold;
+					margin: 0;
+					padding: 0.5em;
+					width: 150px;
+					display: table-cell;
+					}
+
+					.nhanes-doc div#Codebook dd {
+					float: left;
+					margin: 0;
+					padding: 0.5em;
+					width: 420px;
+					display: table-cell;
+					}
+
+					.nhanes-doc div#References {
+					page-break-after: always;
+					width: 650px;
+					}
+
+					.nhanes-doc div#Appendix {
+					page-break-after: always;
+					width: 650px;
+					}
+
+					.nhanes-doc table.values {
+					border: 2px;
+					left: 20px;
+					margin-bottom: 20px;
+					page-break-inside: avoid;
+					position: relative;
+					width: 600px;
+					}
+
+					.nhanes-doc span.file-size { color: gray; }
+
+					.nhanes-doc .pagebreak {
+					background-color: transparent;
+					display: block;
+					page-break-after: always;
+					page-break-inside: avoid;
+					}
+				</STYLE>
+     
+<STYLE type="text/css" media="print">
+					.nhanes-doc div#toc { display: none; }
+				</STYLE>
+   </HEAD>   
+<BODY class="nhanes-doc">
+<DIV id="toc">
+<H3>Table of Contents</H3>
+<DIV id="toc-scroll">
+<UL>
+  <LI><A href="#Component_Description">Component Description</A>           </LI>
+  <LI><A href="#Eligible_Sample">Eligible Sample</A>           </LI>
+  <LI><A href="#Interview_Setting_and_Mode_of_Administration">Interview Setting 
+  and Mode of Administration</A>           </LI>
+  <LI><A href="#Data_Processing_and_Editing">Data Processing and Editing</A>     
+        </LI>
+  <LI><A href="#Analytic_Notes">Analytic Notes</A>           </LI>
+  <LI><A href="#Codebook">Codebook</A>             
+  <UL id="CodebookLinks">
+    <LI><A href="#SEQN">SEQN - Respondent sequence number</A>               
+</LI>
+    <LI><A href="#PAQ605">PAQ605 - Vigorous work activity</A>               
+</LI>
+    <LI><A href="#PAQ610">PAQ610 - Number of days vigorous work</A>              
+     </LI>
+    <LI><A href="#PAD615">PAD615 - Minutes vigorous-intensity work</A>           
+        </LI>
+    <LI><A href="#PAQ620">PAQ620 - Moderate work activity</A>               
+</LI>
+    <LI><A href="#PAQ625">PAQ625 - Number of days moderate work</A>              
+     </LI>
+    <LI><A href="#PAD630">PAD630 - Minutes moderate-intensity work</A>           
+        </LI>
+    <LI><A href="#PAQ635">PAQ635 - Walk or bicycle</A>               </LI>
+    <LI><A href="#PAQ640">PAQ640 - Number of days walk or bicycle</A>            
+       </LI>
+    <LI><A href="#PAD645">PAD645 - Minutes walk/bicycle for transportation</A>   
+                </LI>
+    <LI><A href="#PAQ650">PAQ650 - Vigorous recreational activities</A>          
+         </LI>
+    <LI><A href="#PAQ655">PAQ655 - Days vigorous recreational activities</A>     
+              </LI>
+    <LI><A href="#PAD660">PAD660 - Minutes vigorous recreational activities</A>  
+                 </LI>
+    <LI><A href="#PAQ665">PAQ665 - Moderate recreational activities</A>          
+         </LI>
+    <LI><A href="#PAQ670">PAQ670 - Days moderate recreational activities</A>     
+              </LI>
+    <LI><A href="#PAD675">PAD675 - Minutes moderate recreational activities</A>  
+                 </LI>
+    <LI><A href="#PAD680">PAD680 - Minutes sedentary activity</A>               
+    </LI>
+    <LI><A href="#PAQ706">PAQ706 - Days physically active at least 60 min.</A>   
+                </LI>
+    <LI><A href="#PAQ710">PAQ710 - Hours watch TV or videos past 30 days</A>     
+              </LI>
+    <LI><A href="#PAQ715">PAQ715 - Hours use computer past 30 days</A>           
+        </LI>
+    <LI><A href="#PAQ722">PAQ722 - Any physical activities past 7 days</A>       
+            </LI>
+    <LI><A href="#PAQ724a">PAQ724a - Physical activity aerobics</A>              
+     </LI>
+    <LI><A href="#PAQ724b">PAQ724b - Physical activity baseball</A>              
+     </LI>
+    <LI><A href="#PAQ724c">PAQ724c - Physical activity basketball</A>            
+       </LI>
+    <LI><A href="#PAQ724d">PAQ724d - Physical activity bike riding</A>           
+        </LI>
+    <LI><A href="#PAQ724e">PAQ724e - Physical activity cheerleading</A>          
+         </LI>
+    <LI><A href="#PAQ724f">PAQ724f - Physical activity dance</A>               
+    </LI>
+    <LI><A href="#PAQ724g">PAQ724g - Physical activity field hockey</A>          
+         </LI>
+    <LI><A href="#PAQ724h">PAQ724h - Physical activity football</A>              
+     </LI>
+    <LI><A href="#PAQ724i">PAQ724i - Physical activity golf</A>               
+    </LI>
+    <LI><A href="#PAQ724j">PAQ724j - Physical activity gymnastics</A>            
+       </LI>
+    <LI><A href="#PAQ724k">PAQ724k - Physical activity hiking</A>               
+    </LI>
+    <LI><A href="#PAQ724l">PAQ724l - Physical activity ice hockey</A>            
+       </LI>
+    <LI><A href="#PAQ724m">PAQ724m - Physical activity ice skating</A>           
+        </LI>
+    <LI><A href="#PAQ724n">PAQ724n - Physical activity jumping rope</A>          
+         </LI>
+    <LI><A href="#PAQ724o">PAQ724o - Physical activity lacrosse</A>              
+     </LI>
+    <LI><A href="#PAQ724p">PAQ724p - Physical activity martial arts</A>          
+         </LI>
+    <LI><A href="#PAQ724q">PAQ724q - Physical activity playing games</A>         
+          </LI>
+    <LI><A href="#PAQ724r">PAQ724r - Physical activity roller blading</A>        
+           </LI>
+    <LI><A href="#PAQ724s">PAQ724s - Physical activity running</A>               
+    </LI>
+    <LI><A href="#PAQ724t">PAQ724t - Physical activity scooter riding</A>        
+           </LI>
+    <LI><A href="#PAQ724u">PAQ724u - Physical activity skateboarding</A>         
+          </LI>
+    <LI><A href="#PAQ724v">PAQ724v - Physical activity soccer</A>               
+    </LI>
+    <LI><A href="#PAQ724w">PAQ724w - Physical activity swimming</A>              
+     </LI>
+    <LI><A href="#PAQ724x">PAQ724x - Physical activity tennis</A>               
+    </LI>
+    <LI><A href="#PAQ724y">PAQ724y - Physical activity track &amp; field</A>     
+              </LI>
+    <LI><A href="#PAQ724z">PAQ724z - Physical activity volleyball</A>            
+       </LI>
+    <LI><A href="#PAQ724aa">PAQ724aa - Physical activity walking</A>             
+      </LI>
+    <LI><A href="#PAQ724ab">PAQ724ab - Physical activity wrestling</A>           
+        </LI>
+    <LI><A href="#PAQ724ac">PAQ724ac - Physical activity frisbee</A>             
+      </LI>
+    <LI><A href="#PAQ724ad">PAQ724ad - Physical activity backyard games</A>      
+             </LI>
+    <LI><A href="#PAQ724ae">PAQ724ae - Physical activity trampoline</A>          
+         </LI>
+    <LI><A href="#PAQ724af">PAQ724af - Physical activity horseback riding</A>    
+               </LI>
+    <LI><A href="#PAQ724cm">PAQ724cm - Physical activity other</A>               
+    </LI>
+    <LI><A href="#PAQ731">PAQ731 - Days played active video games</A>            
+       </LI>
+    <LI><A href="#PAD733">PAD733 - Minutes play active video games</A>           
+        </LI>
+    <LI><A href="#PAQ677">PAQ677 - Past wk # days cardiovascular exercise</A>    
+               </LI>
+    <LI><A href="#PAQ678">PAQ678 - Past wk # days strengthened muscles</A>       
+            </LI>
+    <LI><A href="#PAQ740">PAQ740 - Use school facilities at lunch</A>            
+       </LI>
+    <LI><A href="#PAQ742">PAQ742 - Use school facilities for physical activ</A>  
+                 </LI>
+    <LI><A href="#PAQ744">PAQ744 - Have PE during school days?</A>               
+    </LI>
+    <LI><A href="#PAQ746">PAQ746 - How often do you have PE or gym?</A>          
+         </LI>
+    <LI><A href="#PAQ748">PAQ748 - How long is the PE or gym class?</A>          
+         </LI>
+    <LI><A href="#PAQ755">PAQ755 - Participate in school sports?</A>             
+      </LI>
+    <LI><A href="#PAQ759a">PAQ759a - Participate in baseball</A>               
+    </LI>
+    <LI><A href="#PAQ759b">PAQ759b - Participate in basketball</A>               
+    </LI>
+    <LI><A href="#PAQ759c">PAQ759c - Participate in bocce ball</A>               
+    </LI>
+    <LI><A href="#PAQ759d">PAQ759d - Participate in cheerleading</A>             
+      </LI>
+    <LI><A href="#PAQ759e">PAQ759e - Participate in football</A>               
+    </LI>
+    <LI><A href="#PAQ759f">PAQ759f - Participate in golf</A>               </LI>
+    <LI><A href="#PAQ759g">PAQ759g - Participate in gymnastics</A>               
+    </LI>
+    <LI><A href="#PAQ759h">PAQ759h - Participate in hockey</A>               
+    </LI>
+    <LI><A href="#PAQ759i">PAQ759i - Participate in lacrosse</A>               
+    </LI>
+    <LI><A href="#PAQ759j">PAQ759j - Participate in soccer</A>               
+    </LI>
+    <LI><A href="#PAQ759k">PAQ759k - Participate in swimming/diving</A>          
+         </LI>
+    <LI><A href="#PAQ759l">PAQ759l - Participate in tennis</A>               
+    </LI>
+    <LI><A href="#PAQ759m">PAQ759m - Participate in track and field</A>          
+         </LI>
+    <LI><A href="#PAQ759n">PAQ759n - Participate in volleyball</A>               
+    </LI>
+    <LI><A href="#PAQ759o">PAQ759o - Participate in wrestling</A>               
+    </LI>
+    <LI><A href="#PAQ759p">PAQ759p - Participate in other specify</A>            
+       </LI>
+    <LI><A href="#PAQ759q">PAQ759q - Participate in dance</A>               
+</LI>
+    <LI><A href="#PAQ759r">PAQ759r - Participate in frisbee</A>               
+    </LI>
+    <LI><A href="#PAQ759s">PAQ759s - Participate in running</A>               
+    </LI>
+    <LI><A href="#PAQ759t">PAQ759t - Participate in trampoline</A>               
+    </LI>
+    <LI><A href="#PAQ759u">PAQ759u - Participate in martial arts</A>             
+      </LI>
+    <LI><A href="#PAQ759v">PAQ759v - Participate in walking</A>               
+    </LI>
+    <LI><A href="#PAQ762">PAQ762 - Do you have recess during school?</A>         
+          </LI>
+    <LI><A href="#PAQ764">PAQ764 - How often do you have recess?</A>             
+      </LI>
+    <LI><A href="#PAQ766">PAQ766 - How long is the recess period?</A>            
+       </LI>
+    <LI><A href="#PAQ679">PAQ679 - How much exercise for good health</A>         
+          </LI>
+    <LI><A href="#PAQ750">PAQ750 - Enjoy participating in PE or recess</A>       
+            </LI>
+    <LI><A href="#PAQ770">PAQ770 - Receive physical fitness award past yr</A>    
+               </LI>
+    <LI><A href="#PAQ772a">PAQ772a - Fitness award Fitnessgram</A>               
+    </LI>
+    <LI><A href="#PAQ772b">PAQ772b - Fitness award President's Challenge</A>     
+              </LI>
+    <LI><A href="#PAQ772c">PAQ772c - Fitness award other specify</A>             
+      </LI>
+    <LI><A href="#PAAQUEX">PAAQUEX - Questionnaire source flag for weighting</A> 
+                  </LI></UL></LI>
+  <LI><A href="#Appendix_1.__Suggested_MET_Scores">Appendix 1.  Suggested MET 
+  Scores</A>           </LI></UL></DIV></DIV>
+<DIV id="wrapper">
+<DIV id="PageHeader">
+<H1>National Health and Nutrition Examination Survey</H1>
+<H2>2013-2014 Data Documentation, Codebook, and Frequencies</H2>
+<H3>Physical Activity (PAQ_H)</H3>
+<H4> Data File: PAQ_H.xpt</H4>
+<H5 class="left">First Published: October 2015</H5>
+<H5 class="right">Last Revised: March 2017</H5></DIV>
+<DIV id="Sections">
+<H2 id="Component_Description">Component Description</H2>
+<P>The physical activity questionnaire (variable name prefix PAQ) is based on 
+the Global Physical Activity Questionnaire (GPAQ) and includes questions related 
+to daily activities, leisure time activities, and sedentary activities. 
+Additional information about the GPAQ can be obtained at the World Health 
+Organization website.</P>
+<H2 id="Eligible_Sample">Eligible Sample</H2>
+<P>All survey participants aged 2 and over were eligible. Proxy respondents 
+answered the questions for 2-11 year olds.</P>
+<H2 id="Interview_Setting_and_Mode_of_Administration">Interview Setting and Mode 
+of Administration</H2>
+<P>For respondents aged 2 to 11 and 16 and over, the questions were asked before 
+the physical examination, in the home, using the Computer-Assisted Personal 
+Interview (CAPI) system.</P>
+<P>For respondents aged 12 to 15, these questions were asked at the mobile 
+examination center, by trained interviewers, using the Computer-Assisted 
+Personal Interview (CAPI) system as part of the Mobile Examination Center (MEC) 
+interview. The questions asked varied by age group. The target group in the 
+codebook indicates which age groups were asked which questions.</P>
+<H2 id="Data_Processing_and_Editing">Data Processing and Editing</H2>
+<P>Limited editing was done on the data. Respondents who reported an average of 
+24 hours or more per day of activity had their time variables (PAD615, PAD630, 
+PAD645, PAD660, PAD675, PAD680) set to missing. Users should carefully inspect 
+the data for other values they may consider too high. </P>
+<H2 id="Analytic_Notes">Analytic Notes</H2>
+<P>Since the PAQ questions for respondents 2 to 11 and 16 and over were asked in 
+the household interview, the interview sample weights should be used in their 
+analysis. However, if the data is joined with data from the MEC, the MEC sample 
+weights should be used. Analysis of the PAQ questions for 12 to 15 year olds 
+should use the MEC sample weights as the questions were asked in the MEC.</P>
+<P>Suggested metabolic equivalent (MET) scores for the activities listed in this 
+file are included in Appendix 1.</P>
+<P>Please refer to the <A href="https://wwwn.cdc.gov/nchs/nhanes/analyticguidelines.aspx" 
+target="_blank">NHANES Analytic Guidelines</A> and the on-line&nbsp;<A href="https://www.cdc.gov/nchs/tutorials/" 
+target="_blank">NHANES Tutorial</A> for further details on the use of sample 
+weights and other analytic issues. </P></DIV>
+<DIV id="Codebook">
+<H2>Codebook and Frequencies</H2>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="SEQN">SEQN - Respondent sequence number</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">SEQN</DD>
+  <DT>SAS Label: </DT>
+  <DD>Respondent sequence number</DD>
+  <DT>English Text: </DT>
+  <DD class="info">Respondent sequence number.</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 2 YEARS -			150 YEARS</DD></DL></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ605">PAQ605 - Vigorous work activity</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ605</DD>
+  <DT>SAS Label: </DT>
+  <DD>Vigorous work activity</DD>
+  <DT>English Text: </DT>
+  <DD class="info">Next I am going to ask you about the time {you spend/SP 
+  spends} doing different types of physical activity in a typical week. Think 
+  first about the time {you spend/he spends/she spends} doing work.  Think of 
+  work as the things that {you have/he has/she has} to do such as paid or unpaid 
+  work,  household chores, and yard work.  Does {your/SP's} work involve 
+  vigorous-intensity activity that causes large increases in breathing or heart 
+  rate like carrying or lifting heavy loads, digging or construction work for at 
+  least 10 minutes continuously?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Yes</TD>
+    <TD align="right" class="values">1172</TD>
+    <TD align="right" class="values">1172</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">No</TD>
+    <TD align="right" class="values">5975</TD>
+    <TD align="right" class="values">7147</TD>
+    <TD class="values">PAQ620</TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">7148</TD>
+    <TD class="values">PAQ620</TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">7148</TD>
+    <TD class="values">PAQ620</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">2336</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ610">PAQ610 - Number of days vigorous work</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ610</DD>
+  <DT>SAS Label: </DT>
+  <DD>Number of days vigorous work</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In a typical week, on how many days {do you/does SP} do 
+  vigorous-intensity activities as part of {your/his/her} work?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">PROBE IF NEEDED: Vigorous-intensity activity causes large 
+  increases in breathing or heart rate and is done for at least 10 minutes 
+  continuously. INTERVIEWER: REMEMBER, WE ARE ONLY ASKING ABOUT WORK AND CHORES 
+  IN THIS QUESTION. (SP interview version) HARD EDIT: 1-7 (MEC interview 
+  version) HARD EDIT: LESS THAN 1 DAY OR MORE THAN 7 DAYS. ERROR MESSAGE: THE 
+  NUMBER OF DAYS SHOULD BE BETWEEN 1 AND 7. ENTER NUMBER OF DAYS</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1 to 7</TD>
+    <TD class="values">Range of Values</TD>
+    <TD align="right" class="values">1171</TD>
+    <TD align="right" class="values">1171</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">1171</TD>
+    <TD class="values">PAQ620</TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">1172</TD>
+    <TD class="values">PAQ620</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8312</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAD615">PAD615 - Minutes vigorous-intensity work</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAD615</DD>
+  <DT>SAS Label: </DT>
+  <DD>Minutes vigorous-intensity work</DD>
+  <DT>English Text: </DT>
+  <DD class="info">How much time {do you/does SP} spend doing vigorous-intensity 
+  activities at work on a typical day?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">PROBE IF NEEDED: Think about a typical day when {you do/he 
+  does/she does} vigorous-intensity activities during {your/his/her} work. PROBE 
+  IF NEEDED: Vigorous-intensity activity causes large increases in breathing or 
+  heart rate and is done for at least 10 minutes continuously. INTERVIEWER: 
+  REMEMBER, WE ARE ONLY ASKING ABOUT WORK AND CHORES. (SP interview version) 
+  SOFT EDIT:  &gt;4 HOURS.  SOFT EDIT WORDING:  INTERVIEWER, YOU HAVE RECORDED 
+  THAT THE SP SPENDS MORE THAN 4 HOURS DOING VIGOROUS-INTENSITY ACTIVITIES AT 
+  WORK ON A TYPICAL DAY.  PLEASE CONFIRM WITH SP THAT OVER 4 HOURS IS CORRECT. 
+  HARD EDIT:  &gt;24 HOURS. HARD EDIT:  &lt;10 MINUTES. ENTER NUMBER OF MINUTES 
+  OR HOURS (MEC interview version) SOFT EDIT:  &gt;4 hours.  ERROR MESSAGE:  
+  INTERVIEWER, YOU HAVE RECORDED THAT THE SP SPENDS MORE THAN 4 HOURS DOING 
+  VIGOROUS-INTENSITY ACTIVITIES AT WORK ON A TYPICAL DAY.  PLEASE CONFIRM WITH 
+  SP THAT OVER 4 HOURS IS CORRECT. HARD EDIT:  LESS THAN 10 MINUTES OR 24 HOURS 
+  OR MORE. ERROR MESSAGE: THE TIME SHOULD BE 10 MINUTES OR MORE, BUT LESS THAN 
+  24 HOURS. ENTER NUMBER (OF MINUTES OR HOURS)</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">10 to 1080</TD>
+    <TD class="values">Range of Values</TD>
+    <TD align="right" class="values">1166</TD>
+    <TD align="right" class="values">1166</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7777</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">1166</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9999</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">2</TD>
+    <TD align="right" class="values">1168</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8316</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ620">PAQ620 - Moderate work activity</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ620</DD>
+  <DT>SAS Label: </DT>
+  <DD>Moderate work activity</DD>
+  <DT>English Text: </DT>
+  <DD class="info">Does {your/SP's} work involve moderate-intensity activity 
+  that causes small increases in breathing or heart rate such as brisk walking 
+  or carrying light loads for at least 10 minutes continuously?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Yes</TD>
+    <TD align="right" class="values">2308</TD>
+    <TD align="right" class="values">2308</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">No</TD>
+    <TD align="right" class="values">4837</TD>
+    <TD align="right" class="values">7145</TD>
+    <TD class="values">PAQ635</TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">7146</TD>
+    <TD class="values">PAQ635</TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">2</TD>
+    <TD align="right" class="values">7148</TD>
+    <TD class="values">PAQ635</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">2336</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ625">PAQ625 - Number of days moderate work</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ625</DD>
+  <DT>SAS Label: </DT>
+  <DD>Number of days moderate work</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In a typical week, on how many days {do you/does SP} do 
+  moderate-intensity activities as part of {your/his/her} work?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">PROBE IF NEEDED: Moderate-intensity activity causes small 
+  increases in breathing or heart rate and is done for at least 10 minutes 
+  continuously. INTERVIEWER: REMEMBER, WE ARE ONLY ASKING ABOUT WORK AND CHORES. 
+  (SP interview version) HARD EDIT: 1-7. ENTER NUMBER OF DAYS (MEC interview 
+  version) HARD EDIT:  LESS THAN 1 DAY OR MORE THAN 7 DAYS. ERROR MESSAGE: THE 
+  NUMBER OF DAYS SHOULD BE BETWEEN 1 AND 7. ENTER NUMBER OF DAYS</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1 to 7</TD>
+    <TD class="values">Range of Values</TD>
+    <TD align="right" class="values">2303</TD>
+    <TD align="right" class="values">2303</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">2304</TD>
+    <TD class="values">PAQ635</TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">3</TD>
+    <TD align="right" class="values">2307</TD>
+    <TD class="values">PAQ635</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">7177</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAD630">PAD630 - Minutes moderate-intensity work</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAD630</DD>
+  <DT>SAS Label: </DT>
+  <DD>Minutes moderate-intensity work</DD>
+  <DT>English Text: </DT>
+  <DD class="info">How much time {do you/does SP} spend doing moderate-intensity 
+  activities at work on a typical day?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">PROBE IF NEEDED: Think about a typical day when {you do/he 
+  does/she does} moderate-intensity activities during your work. PROBE IF 
+  NEEDED: Moderate-intensity activity causes small increases in breathing or 
+  heart rate and is done for at least 10 minutes continuously. INTERVIEWER: 
+  REMEMBER, WE ARE ONLY ASKING ABOUT WORK AND CHORES. (SP interview version) 
+  SOFT EDIT:  &gt;4 HOURS.  SOFT EDIT WORDING:  INTERVIEWER, YOU HAVE RECORDED 
+  THAT THE SP SPENDS MORE THAN 4 HOURS DOING MODERATE-INTENSITY ACTIVITIES AT 
+  WORK ON A TYPICAL DAY.  PLEASE CONFIRM WITH SP THAT OVER 4 HOURS IS CORRECT. 
+  HARD EDIT:  &gt;24 HOURS. HARD EDIT:  &lt;10 MINUTES. ENTER NUMBER OF MINUTES 
+  OR HOURS (MEC interview version) SOFT EDIT:  &gt;4 hours. ERROR MESSAGE:  
+  INTERVIEWER, YOU HAVE RECORDED THAT THE SP SPENDS MORE THAN 4 HOURS DOING 
+  MODERATE-INTENSITY ACTIVITIES AT WORK ON A TYPICAL DAY.  PLEASE CONFIRM WITH 
+  SP THAT OVER 4 HOURS IS CORRECT. HARD EDIT:  LESS THAN 10 MINUTES OR 24 HOURS 
+  OR MORE. ERROR MESSAGE: THE TIME SHOULD BE 10 MINUTES OR MORE, BUT LESS THAN 
+  24 HOURS. ENTER NUMBER (OF MINUTES OR HOURS)</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">10 to 900</TD>
+    <TD class="values">Range of Values</TD>
+    <TD align="right" class="values">2296</TD>
+    <TD align="right" class="values">2296</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7777</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">2296</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9999</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">3</TD>
+    <TD align="right" class="values">2299</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">7185</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ635">PAQ635 - Walk or bicycle</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ635</DD>
+  <DT>SAS Label: </DT>
+  <DD>Walk or bicycle</DD>
+  <DT>English Text: </DT>
+  <DD class="info">The next questions exclude the physical activity at work that 
+  you have already mentioned.  Now I would like to ask you about the usual way 
+  {you travel/SP travels} to and from places.  For example to school, for 
+  shopping, to work.  In a typical week  {do you/does SP} walk or use a bicycle 
+  for at least 10 minutes continuously to get to and from places?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Yes</TD>
+    <TD align="right" class="values">2047</TD>
+    <TD align="right" class="values">2047</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">No</TD>
+    <TD align="right" class="values">5099</TD>
+    <TD align="right" class="values">7146</TD>
+    <TD class="values">PAQ650</TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">7146</TD>
+    <TD class="values">PAQ650</TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">7147</TD>
+    <TD class="values">PAQ650</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">2337</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ640">PAQ640 - Number of days walk or bicycle</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ640</DD>
+  <DT>SAS Label: </DT>
+  <DD>Number of days walk or bicycle</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In a typical week, on how many days {do you/does SP} walk or 
+  bicycle for at least 10 minutes continuously to get to and from places?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">(SP interview version) HARD EDIT:  1-7. ENTER NUMBER OF DAYS 
+  (MEC interview version) HARD EDIT: LESS THAN 1 DAY OR MORE THAN 7 DAYS. ERROR 
+  MESSAGE: THE NUMBER OF DAYS SHOULD BE BETWEEN 1 AND 7. ENTER NUMBER OF 
+  DAYS</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1 to 7</TD>
+    <TD class="values">Range of Values</TD>
+    <TD align="right" class="values">2047</TD>
+    <TD align="right" class="values">2047</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">2047</TD>
+    <TD class="values">PAQ650</TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">2047</TD>
+    <TD class="values">PAQ650</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">7437</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAD645">PAD645 - Minutes walk/bicycle for 
+transportation</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAD645</DD>
+  <DT>SAS Label: </DT>
+  <DD>Minutes walk/bicycle for transportation</DD>
+  <DT>English Text: </DT>
+  <DD class="info">How much time {do you/does SP} spend walking or bicycling for 
+  travel on a typical day?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">PROBE IF NEEDED:  Think about a typical day when {you walk or 
+  bicycle/SP walks or bicycles} walk or bicycle for travel. (SP interview 
+  version) SOFT EDIT:  &gt;4 HOURS.  SOFT EDIT WORDING:  INTERVIEWER, YOU HAVE 
+  RECORDED THAT THE SP SPENDS MORE THAN 4 HOURS WALKING OR BICYCLING TO GET TO 
+  AND FROM PLACES ON A TYPICAL DAY.  PLEASE CONFIRM WITH SP THAT OVER 4 HOURS IS 
+  CORRECT. HARD EDIT:  &gt;24 HOURS. HARD EDIT:  &lt;10 MINUTES. ENTER NUMBER OF 
+  MINUTES OR HOURS (MEC interview version) SOFT EDIT:  &gt;4 hours. ERROR 
+  MESSAGE:  INTERVIEWER, YOU HAVE RECORDED THAT THE SP SPENDS MORE THAN 4 HOURS 
+  WALKING OR BICYCLING TO GET TO AND FROM PLACES ON A TYPICAL DAY.  PLEASE 
+  CONFIRM WITH SP THAT OVER 4 HOURS IS CORRECT. HARD EDIT:  LESS THAN 10 MINUTES 
+  OR 24 HOURS OR MORE. ERROR MESSAGE: THE TIME SHOULD BE 10 MINUTES OR MORE, BUT 
+  LESS THAN 24 HOURS. ENTER NUMBER (OF MINUTES OR HOURS)</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">10 to 840</TD>
+    <TD class="values">Range of Values</TD>
+    <TD align="right" class="values">2040</TD>
+    <TD align="right" class="values">2040</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7777</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">2040</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9999</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">3</TD>
+    <TD align="right" class="values">2043</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">7441</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ650">PAQ650 - Vigorous recreational activities</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ650</DD>
+  <DT>SAS Label: </DT>
+  <DD>Vigorous recreational activities</DD>
+  <DT>English Text: </DT>
+  <DD class="info">The next questions exclude the work and transport activities 
+  that you have already mentioned.  Now I would like to ask you about sports, 
+  fitness and recreational activities.  In a typical week {do you/does SP} do 
+  any vigorous-intensity sports, fitness, or recreational activities that cause 
+  large increases in breathing or heart rate like running or basketball for at 
+  least 10 minutes continuously?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Yes</TD>
+    <TD align="right" class="values">2059</TD>
+    <TD align="right" class="values">2059</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">No</TD>
+    <TD align="right" class="values">5087</TD>
+    <TD align="right" class="values">7146</TD>
+    <TD class="values">PAQ665</TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">7146</TD>
+    <TD class="values">PAQ665</TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">7147</TD>
+    <TD class="values">PAQ665</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">2337</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ655">PAQ655 - Days vigorous recreational 
+activities</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ655</DD>
+  <DT>SAS Label: </DT>
+  <DD>Days vigorous recreational activities</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In a typical week, on how many days {do you/does SP} do 
+  vigorous-intensity sports, fitness or recreational activities?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">PROBE IF NEEDED:  Vigorous-intensity activity causes large 
+  increases in breathing or heart rate and is done for at least 10 minutes 
+  continuously. (SP interview version) HARD EDIT:  1-7. ENTER NUMBER OF DAYS 
+  (MEC interview version) HARD EDIT:  LESS THAN 1 DAY OR MORE THAN 7 DAYS. ERROR 
+  MESSAGE: THE NUMBER OF DAYS SHOULD BE BETWEEN 1 AND 7. ENTER NUMBER OF 
+  DAYS</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1 to 7</TD>
+    <TD class="values">Range of Values</TD>
+    <TD align="right" class="values">2056</TD>
+    <TD align="right" class="values">2056</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">2056</TD>
+    <TD class="values">PAQ665</TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">2</TD>
+    <TD align="right" class="values">2058</TD>
+    <TD class="values">PAQ665</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">7426</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAD660">PAD660 - Minutes vigorous recreational 
+activities</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAD660</DD>
+  <DT>SAS Label: </DT>
+  <DD>Minutes vigorous recreational activities</DD>
+  <DT>English Text: </DT>
+  <DD class="info">How much time {do you/does SP} spend doing vigorous-intensity 
+  sports, fitness or recreational activities on a typical day?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">PROBE IF NEEDED:  Think about a typical day when {you do/SP 
+  does} vigorous-intensity sports, fitness or recreational activities. (SP 
+  interview version) SOFT EDIT:  &gt;4 HOURS.  SOFT EDIT WORDING:  INTERVIEWER, 
+  YOU HAVE RECORDED THAT THE SP SPENDS MORE THAN 4 HOURS DOING 
+  VIGOROUS-INTENSITY RECREATIONAL ACTIVITIES ON A TYPICAL DAY.  PLEASE CONFIRM 
+  WITH SP THAT OVER 4 HOURS IS CORRECT. HARD EDIT:  &gt;24 HOURS. HARD EDIT:  
+  &lt;10 MINUTES. ENTER NUMBER OF MINUTES OR HOURS (MEC interview version) SOFT 
+  EDIT:  &gt;4 hours. ERROR MESSAGE:  INTERVIEWER, YOU HAVE RECORDED THAT THE SP 
+  SPENDS MORE THAN 4 HOURS DOING VIGOROUS-INTENSITY RECREATIONAL ACTIVITIES ON A 
+  TYPICAL DAY.  PLEASE CONFIRM WITH SP THAT OVER 4 HOURS IS CORRECT.HARD EDIT:  
+  LESS THAN 10 MINUTES OR 24 HOURS OR MORE. ERROR MESSAGE: THE TIME SHOULD BE 10 
+  MINUTES OR MORE, BUT LESS THAN 24 HOURS. ENTER NUMBER (OF MINUTES OR 
+  HOURS)</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">10 to 600</TD>
+    <TD class="values">Range of Values</TD>
+    <TD align="right" class="values">2052</TD>
+    <TD align="right" class="values">2052</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7777</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">2052</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9999</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">3</TD>
+    <TD align="right" class="values">2055</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">7429</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ665">PAQ665 - Moderate recreational activities</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ665</DD>
+  <DT>SAS Label: </DT>
+  <DD>Moderate recreational activities</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In a typical week {do you/does SP} do any moderate-intensity 
+  sports, fitness, or recreational activities that cause a small increase in 
+  breathing or heart rate such as brisk walking, bicycling, swimming, or 
+  volleyball for at least 10 minutes continuously?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Yes</TD>
+    <TD align="right" class="values">3059</TD>
+    <TD align="right" class="values">3059</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">No</TD>
+    <TD align="right" class="values">4084</TD>
+    <TD align="right" class="values">7143</TD>
+    <TD class="values">PAD680</TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">7143</TD>
+    <TD class="values">PAD680</TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">2</TD>
+    <TD align="right" class="values">7145</TD>
+    <TD class="values">PAD680</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">2339</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ670">PAQ670 - Days moderate recreational 
+activities</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ670</DD>
+  <DT>SAS Label: </DT>
+  <DD>Days moderate recreational activities</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In a typical week, on how many days {do you/does SP} do 
+  moderate-intensity sports, fitness or recreational activities?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">PROBE IF NEEDED:  Moderate-intensity sports, fitness or 
+  recreational activities cause small increases in breathing or heart rate and 
+  is done for at least 10 minutes continuously. (SP interview version) HARD 
+  EDIT:  1-7. ENTER NUMBER OF DAYS (MEC interview version) HARD EDIT: LESS THAN 
+  1 DAY OR MORE THAN 7 DAYS. ERROR MESSAGE: THE NUMBER OF DAYS SHOULD BE BETWEEN 
+  1 AND 7. ENTER NUMBER OF DAYS</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1 to 7</TD>
+    <TD class="values">Range of Values</TD>
+    <TD align="right" class="values">3056</TD>
+    <TD align="right" class="values">3056</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">3056</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">3</TD>
+    <TD align="right" class="values">3059</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">6425</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAD675">PAD675 - Minutes moderate recreational 
+activities</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAD675</DD>
+  <DT>SAS Label: </DT>
+  <DD>Minutes moderate recreational activities</DD>
+  <DT>English Text: </DT>
+  <DD class="info">How much time {do you/does SP} spend doing moderate-intensity 
+  sports, fitness or recreational activities on a typical day?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">PROBE IF NEEDED:  Think about a typical day when {you do/SP 
+  does} moderate-intensity sports, fitness or recreational activities. PROBE IF 
+  NEEDED:  Moderate-intensity sports, fitness or recreational activities cause 
+  small increases in breathing or heart rate and is done for at least 10 minutes 
+  continuously. (SP interview version) SOFT EDIT:  &gt;4 HOURS.  SOFT EDIT 
+  WORDING:  INTERVIEWER, YOU HAVE RECORDED THAT THE SP SPENDS MORE THAN 4 HOURS 
+  DOING MODERATE-INTENSITY RECREATIONAL ACTIVITIES ON A TYPICAL DAY.  PLEASE 
+  CONFIRM WITH SP THAT OVER 4 HOURS IS CORRECT. HARD EDIT:  &gt;24 HOURS. HARD 
+  EDIT:  &lt;10 MINUTES. ENTER NUMBER OF MINUTES OR HOURS (MEC interview 
+  version) SOFT EDIT:  &gt;4 hours. ERROR MESSAGE:  INTERVIEWER, YOU HAVE 
+  RECORDED THAT THE SP SPENDS MORE THAN 4 HOURS DOING MODERATE-INTENSITY 
+  RECREATIONAL ACTIVITIES ON A TYPICAL DAY.  PLEASE CONFIRM WITH SP THAT OVER 4 
+  HOURS IS CORRECT. HARD EDIT:  LESS THAN 10 MINUTES OR 24 HOURS OR MORE. ERROR 
+  MESSAGE: THE TIME SHOULD BE 10 MINUTES OR MORE, BUT LESS THAN 24 HOURS. ENTER 
+  NUMBER (OF MINUTES OR HOURS)</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">10 to 900</TD>
+    <TD class="values">Range of Values</TD>
+    <TD align="right" class="values">3056</TD>
+    <TD align="right" class="values">3056</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7777</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">3056</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9999</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">3056</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">6428</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAD680">PAD680 - Minutes sedentary activity</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAD680</DD>
+  <DT>SAS Label: </DT>
+  <DD>Minutes sedentary activity</DD>
+  <DT>English Text: </DT>
+  <DD class="info">The following question is about sitting at school, at home, 
+  getting to and from places, or with friends including time spent sitting at a 
+  desk, traveling in a car or bus, reading, playing cards, watching television, 
+  or using a computer. Do not include time spent sleeping. How much time {do 
+  you/does SP} usually spend sitting on a typical day?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">(SP interview version) SOFT EDIT: &gt;17 HOURS. HARD EDIT: 
+  &gt;24 HOURS. ENTER NUMBER OF MINUTES OR HOURS (MEC interview version) SOFT 
+  EDIT: 18 HOURS OR MORE AND LESS THAN 8 HOURS. ERROR MESSAGE: PLEASE VERIFY 
+  TIMES OF 18 HOURS OR MORE OR LESS THAN 8 HOURS. HARD EDIT: 24 HOURS OR MORE. 
+  ERROR MESSAGE: THE TIME SHOULD BE LESS THAN 24 HOURS. ENTER NUMBER (OF MINUTES 
+  OR HOURS)</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">0 to 1200</TD>
+    <TD class="values">Range of Values</TD>
+    <TD align="right" class="values">7109</TD>
+    <TD align="right" class="values">7109</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7777</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">7110</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9999</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">29</TD>
+    <TD align="right" class="values">7139</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">2345</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ706">PAQ706 - Days physically active at least 60 
+min.</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ706</DD>
+  <DT>SAS Label: </DT>
+  <DD>Days physically active at least 60 min.</DD>
+  <DT>English Text: </DT>
+  <DD class="info">I'd like to ask you some questions about {your/SP's} 
+  activities. During the past 7 days, on how many days {were you/was SP} 
+  physically active for a total of at least 60 minutes per day? Add up all the 
+  time {you/he/she} spent in any kind of physical activity that increased 
+  {your/his/her} heart rate and made {you/him/her} breathe hard some of the 
+  time.</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 2 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">0</TD>
+    <TD class="values">0 days</TD>
+    <TD align="right" class="values">131</TD>
+    <TD align="right" class="values">131</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">1 day</TD>
+    <TD align="right" class="values">90</TD>
+    <TD align="right" class="values">221</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">2 days</TD>
+    <TD align="right" class="values">159</TD>
+    <TD align="right" class="values">380</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">3 days</TD>
+    <TD align="right" class="values">194</TD>
+    <TD align="right" class="values">574</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">4 days</TD>
+    <TD align="right" class="values">183</TD>
+    <TD align="right" class="values">757</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">5</TD>
+    <TD class="values">5 days</TD>
+    <TD align="right" class="values">314</TD>
+    <TD align="right" class="values">1071</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">6</TD>
+    <TD class="values">6 days</TD>
+    <TD align="right" class="values">111</TD>
+    <TD align="right" class="values">1182</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">7 days</TD>
+    <TD align="right" class="values">1799</TD>
+    <TD align="right" class="values">2981</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">2981</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">8</TD>
+    <TD align="right" class="values">2989</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">6495</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ710">PAQ710 - Hours watch TV or videos past 30 
+days</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ710</DD>
+  <DT>SAS Label: </DT>
+  <DD>Hours watch TV or videos past 30 days</DD>
+  <DT>English Text: </DT>
+  <DD class="info">Now I will ask you first about TV watching and then about 
+  computer use.  Over the past 30 days, on average how many hours per day did 
+  {you/SP} sit and watch TV or videos?  Would you say . . .</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 2 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">0</TD>
+    <TD class="values">Less than 1 hour,</TD>
+    <TD align="right" class="values">1208</TD>
+    <TD align="right" class="values">1208</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">1 hour,</TD>
+    <TD align="right" class="values">1776</TD>
+    <TD align="right" class="values">2984</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">2 hours,</TD>
+    <TD align="right" class="values">2489</TD>
+    <TD align="right" class="values">5473</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">3 hours,</TD>
+    <TD align="right" class="values">1473</TD>
+    <TD align="right" class="values">6946</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">4 hours, or</TD>
+    <TD align="right" class="values">985</TD>
+    <TD align="right" class="values">7931</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">5</TD>
+    <TD class="values">5 hours or more, or</TD>
+    <TD align="right" class="values">1272</TD>
+    <TD align="right" class="values">9203</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">8</TD>
+    <TD class="values">{You don't/SP does not} watch TV or videos</TD>
+    <TD align="right" class="values">241</TD>
+    <TD align="right" class="values">9444</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">9445</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">3</TD>
+    <TD align="right" class="values">9448</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">36</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ715">PAQ715 - Hours use computer past 30 days</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ715</DD>
+  <DT>SAS Label: </DT>
+  <DD>Hours use computer past 30 days</DD>
+  <DT>English Text: </DT>
+  <DD class="info">Over the past 30 days, on average how many hours per day did 
+  {you/SP} use a computer or play computer games outside of school? Include 
+  Playstation, Nintendo DS, or other portable video games   Would you say . . 
+  .</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 2 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">0</TD>
+    <TD class="values">Less than 1 hour,</TD>
+    <TD align="right" class="values">2491</TD>
+    <TD align="right" class="values">2491</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">1 hour,</TD>
+    <TD align="right" class="values">1722</TD>
+    <TD align="right" class="values">4213</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">2 hours,</TD>
+    <TD align="right" class="values">1298</TD>
+    <TD align="right" class="values">5511</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">3 hours,</TD>
+    <TD align="right" class="values">595</TD>
+    <TD align="right" class="values">6106</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">4 hours, or</TD>
+    <TD align="right" class="values">333</TD>
+    <TD align="right" class="values">6439</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">5</TD>
+    <TD class="values">5 hours or more, or</TD>
+    <TD align="right" class="values">549</TD>
+    <TD align="right" class="values">6988</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">8</TD>
+    <TD class="values">{you do not/SP does not} use a computer outside of 
+      school</TD>
+    <TD align="right" class="values">2460</TD>
+    <TD align="right" class="values">9448</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">9448</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">9448</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">36</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ722">PAQ722 - Any physical activities past 7 
+days</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ722</DD>
+  <DT>SAS Label: </DT>
+  <DD>Any physical activities past 7 days</DD>
+  <DT>English Text: </DT>
+  <DD class="info">For the next questions, think about the sports, lessons, or 
+  physical activities {you/SP} may have done during the past 7 days? Please do 
+  not include things {you/he/she} did during the school day like PE or gym 
+  class. Did {you/SP} do any physical activities during the past 7 days?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Yes</TD>
+    <TD align="right" class="values">2186</TD>
+    <TD align="right" class="values">2186</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">No</TD>
+    <TD align="right" class="values">520</TD>
+    <TD align="right" class="values">2706</TD>
+    <TD class="values">PAQ731</TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">2706</TD>
+    <TD class="values">PAQ731</TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">2707</TD>
+    <TD class="values">PAQ731</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">6777</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724a">PAQ724a - Physical activity aerobics</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724a</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity aerobics</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">AEROBICS/WEIGHT TRAINING/GYM/EXERCISE</TD>
+    <TD align="right" class="values">126</TD>
+    <TD align="right" class="values">126</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">126</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">126</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9358</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724b">PAQ724b - Physical activity baseball</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724b</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity baseball</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">BASEBALL/SOFTBALL/CATCH/PITCHING</TD>
+    <TD align="right" class="values">220</TD>
+    <TD align="right" class="values">220</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9264</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724c">PAQ724c - Physical activity basketball</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724c</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity basketball</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">BASKETBALL</TD>
+    <TD align="right" class="values">443</TD>
+    <TD align="right" class="values">443</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9041</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724d">PAQ724d - Physical activity bike riding</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724d</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity bike riding</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">BIKE RIDING/DIRT BIKING/MOUNTAIN BIKING</TD>
+    <TD align="right" class="values">615</TD>
+    <TD align="right" class="values">615</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8869</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724e">PAQ724e - Physical activity cheerleading</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724e</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity cheerleading</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">5</TD>
+    <TD class="values">CHEERLEADING</TD>
+    <TD align="right" class="values">42</TD>
+    <TD align="right" class="values">42</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9442</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724f">PAQ724f - Physical activity dance</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724f</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity dance</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">6</TD>
+    <TD class="values">DANCE</TD>
+    <TD align="right" class="values">353</TD>
+    <TD align="right" class="values">353</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9131</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724g">PAQ724g - Physical activity field hockey</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724g</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity field hockey</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">FIELD HOCKEY/STREET HOCKEY/ROLLER HOCKEY</TD>
+    <TD align="right" class="values">10</TD>
+    <TD align="right" class="values">10</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9474</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724h">PAQ724h - Physical activity football</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724h</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity football</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">8</TD>
+    <TD class="values">FOOTBALL</TD>
+    <TD align="right" class="values">252</TD>
+    <TD align="right" class="values">252</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9232</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724i">PAQ724i - Physical activity golf</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724i</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity golf</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">GOLF</TD>
+    <TD align="right" class="values">15</TD>
+    <TD align="right" class="values">15</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9469</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724j">PAQ724j - Physical activity gymnastics</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724j</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity gymnastics</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">10</TD>
+    <TD class="values">GYMNASTICS/TUMBLING</TD>
+    <TD align="right" class="values">154</TD>
+    <TD align="right" class="values">154</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9330</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724k">PAQ724k - Physical activity hiking</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724k</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity hiking</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">11</TD>
+    <TD class="values">HIKING</TD>
+    <TD align="right" class="values">49</TD>
+    <TD align="right" class="values">49</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9435</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724l">PAQ724l - Physical activity ice hockey</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724l</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity ice hockey</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">12</TD>
+    <TD class="values">ICE HOCKEY</TD>
+    <TD align="right" class="values">3</TD>
+    <TD align="right" class="values">3</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9481</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724m">PAQ724m - Physical activity ice skating</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724m</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity ice skating</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">13</TD>
+    <TD class="values">ICE SKATING</TD>
+    <TD align="right" class="values">11</TD>
+    <TD align="right" class="values">11</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9473</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724n">PAQ724n - Physical activity jumping rope</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724n</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity jumping rope</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">14</TD>
+    <TD class="values">JUMPING ROPE</TD>
+    <TD align="right" class="values">141</TD>
+    <TD align="right" class="values">141</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9343</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724o">PAQ724o - Physical activity lacrosse</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724o</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity lacrosse</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">15</TD>
+    <TD class="values">LACROSSE</TD>
+    <TD align="right" class="values">7</TD>
+    <TD align="right" class="values">7</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9477</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724p">PAQ724p - Physical activity martial arts</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724p</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity martial arts</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">16</TD>
+    <TD class="values">MARTIAL ARTS (KARATE/TAE KWON DO/JUDO, ETC.)</TD>
+    <TD align="right" class="values">77</TD>
+    <TD align="right" class="values">77</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9407</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724q">PAQ724q - Physical activity playing games</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724q</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity playing games</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">17</TD>
+    <TD class="values">PLAYING GAMES (PROBE: WERE YOU PHYSICALLY ACTIVE? IF 
+      NO, DON'T COUNT)</TD>
+    <TD align="right" class="values">391</TD>
+    <TD align="right" class="values">391</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9093</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724r">PAQ724r - Physical activity roller 
+blading</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724r</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity roller blading</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">18</TD>
+    <TD class="values">ROLLER BLADING/ROLLER SKATING</TD>
+    <TD align="right" class="values">55</TD>
+    <TD align="right" class="values">55</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9429</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724s">PAQ724s - Physical activity running</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724s</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity running</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">19</TD>
+    <TD class="values">RUNNING/JOGGING</TD>
+    <TD align="right" class="values">926</TD>
+    <TD align="right" class="values">926</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8558</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724t">PAQ724t - Physical activity scooter 
+riding</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724t</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity scooter riding</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">20</TD>
+    <TD class="values">SCOOTER RIDING (PROBE: DOES IT HAVE A MOTOR? IF YES, 
+      DON'T COUNT)</TD>
+    <TD align="right" class="values">174</TD>
+    <TD align="right" class="values">174</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9310</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724u">PAQ724u - Physical activity skateboarding</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724u</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity skateboarding</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">21</TD>
+    <TD class="values">SKATEBOARDING</TD>
+    <TD align="right" class="values">79</TD>
+    <TD align="right" class="values">79</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9405</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724v">PAQ724v - Physical activity soccer</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724v</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity soccer</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">22</TD>
+    <TD class="values">SOCCER</TD>
+    <TD align="right" class="values">389</TD>
+    <TD align="right" class="values">389</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9095</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724w">PAQ724w - Physical activity swimming</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724w</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity swimming</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">23</TD>
+    <TD class="values">SWIMMING</TD>
+    <TD align="right" class="values">272</TD>
+    <TD align="right" class="values">272</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9212</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724x">PAQ724x - Physical activity tennis</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724x</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity tennis</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">24</TD>
+    <TD class="values">TENNIS</TD>
+    <TD align="right" class="values">36</TD>
+    <TD align="right" class="values">36</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9448</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724y">PAQ724y - Physical activity track &amp; 
+field</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724y</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity track &amp; field</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">25</TD>
+    <TD class="values">TRACK &amp; FIELD</TD>
+    <TD align="right" class="values">25</TD>
+    <TD align="right" class="values">25</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9459</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724z">PAQ724z - Physical activity volleyball</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724z</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity volleyball</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">26</TD>
+    <TD class="values">VOLLEYBALL</TD>
+    <TD align="right" class="values">46</TD>
+    <TD align="right" class="values">46</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9438</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724aa">PAQ724aa - Physical activity walking</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724aa</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity walking</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">27</TD>
+    <TD class="values">WALKING</TD>
+    <TD align="right" class="values">472</TD>
+    <TD align="right" class="values">472</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9012</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724ab">PAQ724ab - Physical activity wrestling</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724ab</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity wrestling</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">28</TD>
+    <TD class="values">WRESTLING</TD>
+    <TD align="right" class="values">107</TD>
+    <TD align="right" class="values">107</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9377</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724ac">PAQ724ac - Physical activity frisbee</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724ac</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity frisbee</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">29</TD>
+    <TD class="values">FRISBEE/ULTIMATE FRISBEE</TD>
+    <TD align="right" class="values">46</TD>
+    <TD align="right" class="values">46</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9438</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724ad">PAQ724ad - Physical activity backyard 
+games</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724ad</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity backyard games</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">30</TD>
+    <TD class="values">BACKYARD/PLAYGROUND GAMES AND ACTIVITIES</TD>
+    <TD align="right" class="values">881</TD>
+    <TD align="right" class="values">881</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8603</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724ae">PAQ724ae - Physical activity trampoline</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724ae</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity trampoline</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">31</TD>
+    <TD class="values">TRAMPOLINE</TD>
+    <TD align="right" class="values">165</TD>
+    <TD align="right" class="values">165</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9319</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724af">PAQ724af - Physical activity horseback 
+riding</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724af</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity horseback riding</DD>
+  <DT>English Text: </DT>
+  <DD class="info">Physical activity horseback riding</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">32</TD>
+    <TD class="values">HORSEBACK RIDING</TD>
+    <TD align="right" class="values">14</TD>
+    <TD align="right" class="values">14</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9470</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ724cm">PAQ724cm - Physical activity other</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ724cm</DD>
+  <DT>SAS Label: </DT>
+  <DD>Physical activity other</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What physical activities did {you/SP} do during the past 7 
+  days? {PROBE:  Did {you/he/she} do any other physical activities?}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 3 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">91</TD>
+    <TD class="values">OTHER (SPECIFY)</TD>
+    <TD align="right" class="values">23</TD>
+    <TD align="right" class="values">23</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9461</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ731">PAQ731 - Days played active video games</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ731</DD>
+  <DT>SAS Label: </DT>
+  <DD>Days played active video games</DD>
+  <DT>English Text: </DT>
+  <DD class="info">During the past 7 days, on how many days did {you/SP} play 
+  active video games such as Wii Sports, Wii Fit, Xbox 360, Xbox Kinect, 
+  Playstation 3, or Dance, Dance Revolution?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">0</TD>
+    <TD class="values">0 days</TD>
+    <TD align="right" class="values">1456</TD>
+    <TD align="right" class="values">1456</TD>
+    <TD class="values">PAQ677</TD></TR>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">1 day</TD>
+    <TD align="right" class="values">241</TD>
+    <TD align="right" class="values">1697</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">2 days</TD>
+    <TD align="right" class="values">204</TD>
+    <TD align="right" class="values">1901</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">3 days</TD>
+    <TD align="right" class="values">137</TD>
+    <TD align="right" class="values">2038</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">4 days</TD>
+    <TD align="right" class="values">54</TD>
+    <TD align="right" class="values">2092</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">5</TD>
+    <TD class="values">5 days</TD>
+    <TD align="right" class="values">44</TD>
+    <TD align="right" class="values">2136</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">6</TD>
+    <TD class="values">6 days</TD>
+    <TD align="right" class="values">11</TD>
+    <TD align="right" class="values">2147</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">7 days</TD>
+    <TD align="right" class="values">109</TD>
+    <TD align="right" class="values">2256</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">2256</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">2257</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">7227</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAD733">PAD733 - Minutes play active video games</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAD733</DD>
+  <DT>SAS Label: </DT>
+  <DD>Minutes play active video games</DD>
+  <DT>English Text: </DT>
+  <DD class="info">On average, for how long did {you/SP} play these active video 
+  games?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">SOFT EDIT:  IF THE HOURS EXCEED 4 SAY UNUSUAL, SOFT EDIT:  IF 
+  THE MINUTES ARE LESS THAN 10 CONFIRM THAT IT IS MINUTES NOT HOURS. ENTER 
+  NUMBER (OF MINUTES OR HOURS)</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">5 to 600</TD>
+    <TD class="values">Range of Values</TD>
+    <TD align="right" class="values">796</TD>
+    <TD align="right" class="values">796</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7777</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">796</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9999</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">2</TD>
+    <TD align="right" class="values">798</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8686</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ677">PAQ677 - Past wk # days cardiovascular 
+exercise</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ677</DD>
+  <DT>SAS Label: </DT>
+  <DD>Past wk # days cardiovascular exercise</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In this question you can include activities done in school. 
+  On how many of the past 7 days did {you/SP} exercise or participate in 
+  physical activity for at least 20 minutes that made {you/him/her} sweat and 
+  breathe hard, such as basketball, soccer, running, swimming laps, fast 
+  bicycling, fast dancing, or similar activities?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">0</TD>
+    <TD class="values">0 days</TD>
+    <TD align="right" class="values">111</TD>
+    <TD align="right" class="values">111</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">1 day</TD>
+    <TD align="right" class="values">62</TD>
+    <TD align="right" class="values">173</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">2 days</TD>
+    <TD align="right" class="values">81</TD>
+    <TD align="right" class="values">254</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">3 days</TD>
+    <TD align="right" class="values">110</TD>
+    <TD align="right" class="values">364</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">4 days</TD>
+    <TD align="right" class="values">65</TD>
+    <TD align="right" class="values">429</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">5</TD>
+    <TD class="values">5 days</TD>
+    <TD align="right" class="values">154</TD>
+    <TD align="right" class="values">583</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">6</TD>
+    <TD class="values">6 days</TD>
+    <TD align="right" class="values">43</TD>
+    <TD align="right" class="values">626</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">7 days</TD>
+    <TD align="right" class="values">52</TD>
+    <TD align="right" class="values">678</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">678</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">679</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8805</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ678">PAQ678 - Past wk # days strengthened 
+muscles</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ678</DD>
+  <DT>SAS Label: </DT>
+  <DD>Past wk # days strengthened muscles</DD>
+  <DT>English Text: </DT>
+  <DD class="info">On how many of the past 7 days did {you/SP} do exercises to 
+  strengthen or tone {your/his/her} muscles, such as push-ups, sit-ups, or 
+  weight lifting?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">0</TD>
+    <TD class="values">0 days</TD>
+    <TD align="right" class="values">207</TD>
+    <TD align="right" class="values">207</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">1 day</TD>
+    <TD align="right" class="values">96</TD>
+    <TD align="right" class="values">303</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">2 days</TD>
+    <TD align="right" class="values">109</TD>
+    <TD align="right" class="values">412</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">3 days</TD>
+    <TD align="right" class="values">106</TD>
+    <TD align="right" class="values">518</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">4 days</TD>
+    <TD align="right" class="values">39</TD>
+    <TD align="right" class="values">557</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">5</TD>
+    <TD class="values">5 days</TD>
+    <TD align="right" class="values">77</TD>
+    <TD align="right" class="values">634</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">6</TD>
+    <TD class="values">6 days</TD>
+    <TD align="right" class="values">13</TD>
+    <TD align="right" class="values">647</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">7 days</TD>
+    <TD align="right" class="values">32</TD>
+    <TD align="right" class="values">679</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">679</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">679</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8805</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ740">PAQ740 - Use school facilities at lunch</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ740</DD>
+  <DT>SAS Label: </DT>
+  <DD>Use school facilities at lunch</DD>
+  <DT>English Text: </DT>
+  <DD class="info">The next questions ask about activities during the school 
+  year. If {you are/SP is} not currently in school, think about {your/his/her} 
+  activities when {you were/he was/she was} last in school. Are students at 
+  {your/his/her} school allowed to use school facilities during lunch or during 
+  a free or elective period, such as the gymnasium, tennis courts, weight room, 
+  or track, during school time?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Yes</TD>
+    <TD align="right" class="values">320</TD>
+    <TD align="right" class="values">320</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">No</TD>
+    <TD align="right" class="values">353</TD>
+    <TD align="right" class="values">673</TD>
+    <TD class="values">PAQ744</TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">673</TD>
+    <TD class="values">PAQ744</TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">6</TD>
+    <TD align="right" class="values">679</TD>
+    <TD class="values">PAQ744</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8805</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ742">PAQ742 - Use school facilities for physical 
+activ</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ742</DD>
+  <DT>SAS Label: </DT>
+  <DD>Use school facilities for physical activ</DD>
+  <DT>English Text: </DT>
+  <DD class="info">{Do you/Does SP} use school facilities for physical activity 
+  during school time?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Yes</TD>
+    <TD align="right" class="values">203</TD>
+    <TD align="right" class="values">203</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">No</TD>
+    <TD align="right" class="values">117</TD>
+    <TD align="right" class="values">320</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">320</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">320</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9164</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ744">PAQ744 - Have PE during school days?</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ744</DD>
+  <DT>SAS Label: </DT>
+  <DD>Have PE during school days?</DD>
+  <DT>English Text: </DT>
+  <DD class="info">{Do you/does SP} have PE or gym during school days?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Yes</TD>
+    <TD align="right" class="values">556</TD>
+    <TD align="right" class="values">556</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">No</TD>
+    <TD align="right" class="values">123</TD>
+    <TD align="right" class="values">679</TD>
+    <TD class="values">PAQ755</TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">679</TD>
+    <TD class="values">PAQ755</TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">679</TD>
+    <TD class="values">PAQ755</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8805</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ746">PAQ746 - How often do you have PE or gym?</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ746</DD>
+  <DT>SAS Label: </DT>
+  <DD>How often do you have PE or gym?</DD>
+  <DT>English Text: </DT>
+  <DD class="info">How often {do you/does SP} have PE or gym?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">1 day a week</TD>
+    <TD align="right" class="values">36</TD>
+    <TD align="right" class="values">36</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">2 days a week</TD>
+    <TD align="right" class="values">65</TD>
+    <TD align="right" class="values">101</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">3 days a week</TD>
+    <TD align="right" class="values">129</TD>
+    <TD align="right" class="values">230</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">4 days a week, or</TD>
+    <TD align="right" class="values">24</TD>
+    <TD align="right" class="values">254</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">5</TD>
+    <TD class="values">Every day</TD>
+    <TD align="right" class="values">302</TD>
+    <TD align="right" class="values">556</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">556</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">556</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8928</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ748">PAQ748 - How long is the PE or gym class?</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ748</DD>
+  <DT>SAS Label: </DT>
+  <DD>How long is the PE or gym class?</DD>
+  <DT>English Text: </DT>
+  <DD class="info">On average, how long is the PE or gym class?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Less than 30 minutes</TD>
+    <TD align="right" class="values">14</TD>
+    <TD align="right" class="values">14</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">30-45 minutes</TD>
+    <TD align="right" class="values">205</TD>
+    <TD align="right" class="values">219</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">More than 45 minutes</TD>
+    <TD align="right" class="values">334</TD>
+    <TD align="right" class="values">553</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">553</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">3</TD>
+    <TD align="right" class="values">556</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8928</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ755">PAQ755 - Participate in school sports?</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ755</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in school sports?</DD>
+  <DT>English Text: </DT>
+  <DD class="info">The following are activities that may be done before, during, 
+  or after school other than during PE or gym class. If {you are/SP is} not 
+  currently in school, think about {your/his/her} activities when {you were/he 
+  was/she was} last in school.} {Do you/Does SP} participate in school sports or 
+  physical activity clubs?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Yes</TD>
+    <TD align="right" class="values">810</TD>
+    <TD align="right" class="values">810</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">No</TD>
+    <TD align="right" class="values">1447</TD>
+    <TD align="right" class="values">2257</TD>
+    <TD class="values">PAQ762</TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">2257</TD>
+    <TD class="values">PAQ762</TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">2257</TD>
+    <TD class="values">PAQ762</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">7227</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759a">PAQ759a - Participate in baseball</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759a</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in baseball</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">BASEBALL/SOFTBALL</TD>
+    <TD align="right" class="values">118</TD>
+    <TD align="right" class="values">118</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">77</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">118</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">99</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">2</TD>
+    <TD align="right" class="values">120</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9364</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759b">PAQ759b - Participate in basketball</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759b</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in basketball</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">BASKETBALL</TD>
+    <TD align="right" class="values">253</TD>
+    <TD align="right" class="values">253</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9231</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759c">PAQ759c - Participate in bocce ball</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759c</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in bocce ball</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">BOCCE BALL</TD>
+    <TD align="right" class="values">4</TD>
+    <TD align="right" class="values">4</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9480</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759d">PAQ759d - Participate in cheerleading</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759d</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in cheerleading</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">CHEERLEADING</TD>
+    <TD align="right" class="values">52</TD>
+    <TD align="right" class="values">52</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9432</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759e">PAQ759e - Participate in football</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759e</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in football</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">5</TD>
+    <TD class="values">FOOTBALL</TD>
+    <TD align="right" class="values">134</TD>
+    <TD align="right" class="values">134</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9350</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759f">PAQ759f - Participate in golf</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759f</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in golf</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">6</TD>
+    <TD class="values">GOLF</TD>
+    <TD align="right" class="values">5</TD>
+    <TD align="right" class="values">5</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9479</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759g">PAQ759g - Participate in gymnastics</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759g</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in gymnastics</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">GYMNASTICS</TD>
+    <TD align="right" class="values">40</TD>
+    <TD align="right" class="values">40</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9444</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759h">PAQ759h - Participate in hockey</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759h</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in hockey</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">8</TD>
+    <TD class="values">HOCKEY</TD>
+    <TD align="right" class="values">11</TD>
+    <TD align="right" class="values">11</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9473</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759i">PAQ759i - Participate in lacrosse</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759i</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in lacrosse</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">LACROSSE</TD>
+    <TD align="right" class="values">9</TD>
+    <TD align="right" class="values">9</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9475</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759j">PAQ759j - Participate in soccer</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759j</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in soccer</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">10</TD>
+    <TD class="values">SOCCER</TD>
+    <TD align="right" class="values">219</TD>
+    <TD align="right" class="values">219</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9265</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759k">PAQ759k - Participate in swimming/diving</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759k</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in swimming/diving</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">11</TD>
+    <TD class="values">SWIMMING/DIVING</TD>
+    <TD align="right" class="values">42</TD>
+    <TD align="right" class="values">42</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9442</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759l">PAQ759l - Participate in tennis</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759l</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in tennis</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">12</TD>
+    <TD class="values">TENNIS</TD>
+    <TD align="right" class="values">25</TD>
+    <TD align="right" class="values">25</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9459</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759m">PAQ759m - Participate in track and field</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759m</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in track and field</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">13</TD>
+    <TD class="values">TRACK AND FIELD</TD>
+    <TD align="right" class="values">77</TD>
+    <TD align="right" class="values">77</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9407</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759n">PAQ759n - Participate in volleyball</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759n</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in volleyball</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">14</TD>
+    <TD class="values">VOLLEYBALL</TD>
+    <TD align="right" class="values">49</TD>
+    <TD align="right" class="values">49</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9435</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759o">PAQ759o - Participate in wrestling</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759o</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in wrestling</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">15</TD>
+    <TD class="values">WRESTLING</TD>
+    <TD align="right" class="values">28</TD>
+    <TD align="right" class="values">28</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9456</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759p">PAQ759p - Participate in other specify</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759p</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in other specify</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">16</TD>
+    <TD class="values">OTHER (SPECIFY)</TD>
+    <TD align="right" class="values">56</TD>
+    <TD align="right" class="values">56</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9428</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759q">PAQ759q - Participate in dance</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759q</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in dance</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">17</TD>
+    <TD class="values">DANCE</TD>
+    <TD align="right" class="values">87</TD>
+    <TD align="right" class="values">87</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9397</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759r">PAQ759r - Participate in frisbee</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759r</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in frisbee</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">18</TD>
+    <TD class="values">FRISBEE/ULTIMATE FRISBEE</TD>
+    <TD align="right" class="values">4</TD>
+    <TD align="right" class="values">4</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9480</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759s">PAQ759s - Participate in running</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759s</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in running</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">19</TD>
+    <TD class="values">RUNNING</TD>
+    <TD align="right" class="values">115</TD>
+    <TD align="right" class="values">115</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9369</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759t">PAQ759t - Participate in trampoline</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759t</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in trampoline</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In what school sports or physical activity clubs {do you/does 
+  SP} participate?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">CODE ALL THAT APPLY HAND CARD PAQ1</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">20</TD>
+    <TD class="values">TRAMPOLINE</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">1</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9483</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759u">PAQ759u - Participate in martial arts</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759u</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in martial arts</DD>
+  <DT>English Text: </DT>
+  <DD class="info">Participate in martial arts</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">21</TD>
+    <TD class="values">MARTIAL ARTS</TD>
+    <TD align="right" class="values">15</TD>
+    <TD align="right" class="values">15</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9469</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ759v">PAQ759v - Participate in walking</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ759v</DD>
+  <DT>SAS Label: </DT>
+  <DD>Participate in walking</DD>
+  <DT>English Text: </DT>
+  <DD class="info">Participate in walking</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">22</TD>
+    <TD class="values">WALKING</TD>
+    <TD align="right" class="values">3</TD>
+    <TD align="right" class="values">3</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9481</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ762">PAQ762 - Do you have recess during school?</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ762</DD>
+  <DT>SAS Label: </DT>
+  <DD>Do you have recess during school?</DD>
+  <DT>English Text: </DT>
+  <DD class="info">{Do you/Does SP} have recess during school days?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			11 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Yes</TD>
+    <TD align="right" class="values">1467</TD>
+    <TD align="right" class="values">1467</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">No</TD>
+    <TD align="right" class="values">107</TD>
+    <TD align="right" class="values">1574</TD>
+    <TD class="values">PAQ750</TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">1574</TD>
+    <TD class="values">PAQ750</TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">4</TD>
+    <TD align="right" class="values">1578</TD>
+    <TD class="values">PAQ750</TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">7906</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ764">PAQ764 - How often do you have recess?</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ764</DD>
+  <DT>SAS Label: </DT>
+  <DD>How often do you have recess?</DD>
+  <DT>English Text: </DT>
+  <DD class="info">How often {do you/does SP} have recess?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			11 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">1 day a week</TD>
+    <TD align="right" class="values">22</TD>
+    <TD align="right" class="values">22</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">2 days a week</TD>
+    <TD align="right" class="values">32</TD>
+    <TD align="right" class="values">54</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">3 days a week</TD>
+    <TD align="right" class="values">32</TD>
+    <TD align="right" class="values">86</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">4 days a week, or</TD>
+    <TD align="right" class="values">28</TD>
+    <TD align="right" class="values">114</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">5</TD>
+    <TD class="values">Every day</TD>
+    <TD align="right" class="values">1338</TD>
+    <TD align="right" class="values">1452</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">1452</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">15</TD>
+    <TD align="right" class="values">1467</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8017</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ766">PAQ766 - How long is the recess period?</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ766</DD>
+  <DT>SAS Label: </DT>
+  <DD>How long is the recess period?</DD>
+  <DT>English Text: </DT>
+  <DD class="info">On average, how long is the recess period?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			11 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Less than 10 minutes</TD>
+    <TD align="right" class="values">7</TD>
+    <TD align="right" class="values">7</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">10-15 minutes</TD>
+    <TD align="right" class="values">302</TD>
+    <TD align="right" class="values">309</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">16-30 minutes</TD>
+    <TD align="right" class="values">785</TD>
+    <TD align="right" class="values">1094</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">More than 30 minutes</TD>
+    <TD align="right" class="values">327</TD>
+    <TD align="right" class="values">1421</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">1421</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">31</TD>
+    <TD align="right" class="values">1452</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8032</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ679">PAQ679 - How much exercise for good health</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ679</DD>
+  <DT>SAS Label: </DT>
+  <DD>How much exercise for good health</DD>
+  <DT>English Text: </DT>
+  <DD class="info">About how many minutes {do you/does SP} think you should 
+  exercise or be physically active each day for good health?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">INTERVIEWER: THIS INCLUDES ALL ACTIVITIES LIKE BICYCLING, 
+  DANCING, AND PLAYING BASKETBALL THAT {SP DOES} AT SCHOOL, AT HOME, AND 
+  ANYWHERE ELSE {SP GETS} EXERCISE.</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 12 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">less than 10 minutes,</TD>
+    <TD align="right" class="values">10</TD>
+    <TD align="right" class="values">10</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">10-15 minutes,</TD>
+    <TD align="right" class="values">25</TD>
+    <TD align="right" class="values">35</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">16-30 minutes,</TD>
+    <TD align="right" class="values">141</TD>
+    <TD align="right" class="values">176</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">31-45 minutes,</TD>
+    <TD align="right" class="values">44</TD>
+    <TD align="right" class="values">220</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">5</TD>
+    <TD class="values">46-60 minutes, or</TD>
+    <TD align="right" class="values">313</TD>
+    <TD align="right" class="values">533</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">6</TD>
+    <TD class="values">More than 60 minutes</TD>
+    <TD align="right" class="values">138</TD>
+    <TD align="right" class="values">671</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">671</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">1</TD>
+    <TD align="right" class="values">672</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">8812</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ750">PAQ750 - Enjoy participating in PE or 
+recess</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ750</DD>
+  <DT>SAS Label: </DT>
+  <DD>Enjoy participating in PE or recess</DD>
+  <DT>English Text: </DT>
+  <DD class="info">I am going to read a statement and I want you to let me know 
+  if you strongly agree, agree, neither agree nor disagree, disagree or strongly 
+  disagree with the statement. {I enjoy participating in PE or gym class.}</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">HAND CARD PAQ2</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Strongly agree</TD>
+    <TD align="right" class="values">1596</TD>
+    <TD align="right" class="values">1596</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">Agree</TD>
+    <TD align="right" class="values">490</TD>
+    <TD align="right" class="values">2086</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">Neither agree nor disagree</TD>
+    <TD align="right" class="values">81</TD>
+    <TD align="right" class="values">2167</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">4</TD>
+    <TD class="values">Disagree</TD>
+    <TD align="right" class="values">54</TD>
+    <TD align="right" class="values">2221</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">5</TD>
+    <TD class="values">Strongly disagree</TD>
+    <TD align="right" class="values">13</TD>
+    <TD align="right" class="values">2234</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">2</TD>
+    <TD align="right" class="values">2236</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">14</TD>
+    <TD align="right" class="values">2250</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">7234</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ770">PAQ770 - Receive physical fitness award past 
+yr</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ770</DD>
+  <DT>SAS Label: </DT>
+  <DD>Receive physical fitness award past yr</DD>
+  <DT>English Text: </DT>
+  <DD class="info">In the past year, did {you/SP} receive a Physical Fitness 
+  Test award, such as a President's Challenge or Fitnessgram award?</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Yes</TD>
+    <TD align="right" class="values">166</TD>
+    <TD align="right" class="values">166</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">No</TD>
+    <TD align="right" class="values">2084</TD>
+    <TD align="right" class="values">2250</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">2250</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">7</TD>
+    <TD align="right" class="values">2257</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">7227</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ772a">PAQ772a - Fitness award Fitnessgram</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ772a</DD>
+  <DT>SAS Label: </DT>
+  <DD>Fitness award Fitnessgram</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What Physical Fitness Test award did {you/SP} receive?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">PROBE IF NEEDED: Examples of physical fitness test awards are 
+  the FITNESSGRAM and the PRESIDENT'S CHALLENGE. CODE ALL THAT APPLY.</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Fitnessgram</TD>
+    <TD align="right" class="values">40</TD>
+    <TD align="right" class="values">40</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">7</TD>
+    <TD class="values">Refused</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">40</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">9</TD>
+    <TD class="values">Don't know</TD>
+    <TD align="right" class="values">9</TD>
+    <TD align="right" class="values">49</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9435</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ772b">PAQ772b - Fitness award President's 
+Challenge</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ772b</DD>
+  <DT>SAS Label: </DT>
+  <DD>Fitness award President's Challenge</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What Physical Fitness Test award did {you/SP} receive?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">PROBE IF NEEDED: Examples of physical fitness test awards are 
+  the FITNESSGRAM and the PRESIDENT'S CHALLENGE. CODE ALL THAT APPLY.</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">President's Challenge</TD>
+    <TD align="right" class="values">45</TD>
+    <TD align="right" class="values">45</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9439</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAQ772c">PAQ772c - Fitness award other specify</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAQ772c</DD>
+  <DT>SAS Label: </DT>
+  <DD>Fitness award other specify</DD>
+  <DT>English Text: </DT>
+  <DD class="info">What Physical Fitness Test award did {you/SP} receive?</DD>
+  <DT class="info">English Instructions: </DT>
+  <DD class="info">PROBE IF NEEDED: Examples of physical fitness test awards are 
+  the FITNESSGRAM and the PRESIDENT'S CHALLENGE. CODE ALL THAT APPLY.</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 5 YEARS -			15 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">3</TD>
+    <TD class="values">Other (specify)</TD>
+    <TD align="right" class="values">75</TD>
+    <TD align="right" class="values">75</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">9409</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV>
+<DIV class="pagebreak">
+<H3 class="vartitle" id="PAAQUEX">PAAQUEX - Questionnaire source flag for 
+weighting</H3>
+<DL>
+  <DT>Variable Name: </DT>
+  <DD class="info">PAAQUEX</DD>
+  <DT>SAS Label: </DT>
+  <DD>Questionnaire source flag for weighting</DD>
+  <DT>English Text: </DT>
+  <DD class="info">Questionnaire source flag for weighting</DD>
+  <DT>Target: </DT>
+  <DD> Both males and females 2 YEARS -			150 YEARS</DD></DL>
+<TABLE class="values">
+  <THEAD>
+  <TR>
+    <TH class="values" scope="column">Code or Value</TH>
+    <TH class="values" scope="column">Value Description</TH>
+    <TH class="values" scope="column">Count</TH>
+    <TH class="values" scope="column">Cumulative</TH>
+    <TH class="values" scope="column">Skip to Item</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD class="values" scope="row">1</TD>
+    <TD class="values">Sample Person Interview Questionnaire Targets (B(2-11) 
+      and B(16-150))</TD>
+    <TD align="right" class="values">8771</TD>
+    <TD align="right" class="values">8771</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">2</TD>
+    <TD class="values">MEC CAPI Questionnaire Targets (B(12-15))</TD>
+    <TD align="right" class="values">713</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR>
+  <TR>
+    <TD class="values" scope="row">.</TD>
+    <TD class="values">Missing</TD>
+    <TD align="right" class="values">0</TD>
+    <TD align="right" class="values">9484</TD>
+    <TD class="values"></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV id="Appendices">
+<DIV id="Appendix">
+<H2 id="Appendix_1.__Suggested_MET_Scores">Appendix 1.  Suggested MET 
+Scores</H2>
+<TABLE>
+  <THEAD>
+  <TR>
+    <TH>Variable</TH>
+    <TH>Label</TH>
+    <TH>Score</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD>PAD615</TD>
+    <TD>Vigorous work-related activity</TD>
+    <TD style="text-align: right; vertical-align: middle;">8.0</TD></TR>
+  <TR>
+    <TD>PAD630</TD>
+    <TD>Moderate work-related activity</TD>
+    <TD style="text-align: right; vertical-align: middle;">4.0</TD></TR>
+  <TR>
+    <TD>PAD645</TD>
+    <TD>Walking or bicycling for transportation</TD>
+    <TD style="text-align: right; vertical-align: middle;">4.0</TD></TR>
+  <TR>
+    <TD>PAD660</TD>
+    <TD>Vigorous leisure-time physical activity</TD>
+    <TD style="text-align: right; vertical-align: middle;">8.0</TD></TR>
+  <TR>
+    <TD>PAD675</TD>
+    <TD>Moderate leisure-time physical activity</TD>
+    <TD 
+style="text-align: right; vertical-align: middle;">4.0</TD></TR></TBODY></TABLE></DIV></DIV></DIV></BODY></HTML>

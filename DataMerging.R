@@ -2,17 +2,20 @@ BMMerge <- DFMerge(BMRaw)
 DemMerge <- DFMerge(Dem)
 D1Merge <- DFMerge(Day1Raw)
 D2Merge <- DFMerge(Day2Raw)
+PhysMerge <- DFMerge(PhysRaw)
 IncomeMerge <- DFMerge(IncomeRaw[1:4], StartYear = 2018)
 lab= lapply(IncomeMerge, attr, "label")
 IncomeRaw[[5]]$Year <- 2020
 IncomeMerge <- bind_rows(IncomeMerge, IncomeRaw[[5]], )
+print("Test 1")
 for (i in 1:ncol(IncomeMerge)) {
   attr(IncomeMerge[,i], "label") <- lab[[i]]
 }
-DFList <- list(IncomeMerge, DemMerge, data_cleanComFMerge)
+DFList <- list(IncomeMerge, DemMerge, data_cleanComFMerge, PhysMerge)
 AllMerge <- BMMerge[1:(length(BMMerge)-1)]
 AllLab <- lapply(BMMerge[1:(length(BMMerge)-1)], attr, "label")
 for (i in 1:length(DFList)){
+  print("Test 2")
   DemCount <- lengths(DFList[i]) - 1
   AllLab <- c(AllLab, lapply(DFList[[i]][,2:DemCount], attr, "label"))
   AllMerge <- merge(AllMerge, DFList[[i]][,1:DemCount], by = "SEQN", sort = F)

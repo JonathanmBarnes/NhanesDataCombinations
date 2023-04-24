@@ -1,0 +1,1402 @@
+<!DOCTYPE html><html xml:lang="en" lang="en" xmlns="http://www.w3c.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>P_BMX</title>
+    <meta name="title" content="NHANES 2017-March 2020: Body Measures  Data Documentation, Codebook, and Frequencies" />
+    <style type="text/css">
+					.nhanes-doc { font: 75% Verdana, Arial, Helvetica, sans-serif; }
+
+					.nhanes-doc h1 {
+					color: #0c5205;
+					font-family: "Trebuchet MS", Arial, sans-serif;
+					font-size: 2em;
+					font-weight: normal;
+					margin-bottom: 10px;
+					margin-top: 0;
+					}
+
+					.nhanes-doc h2 {
+					color: #0c5205;
+					font-family: "Trebuchet MS", Arial, sans-serif;
+					font-size: 1.6em;
+					font-weight: normal;
+					}
+
+					.nhanes-doc h3 {
+					color: #000;
+					font-family: "Trebuchet MS", Arial, sans-serif;
+					font-size: 1.5em;
+					font-weight: normal;
+					}
+
+					.nhanes-doc h3.vartitle {
+					background-color: #c1d5b0;
+					padding: 6px 12px;
+					}
+
+					.nhanes-doc h4 {
+					color: #000;
+					font-family: "Trebuchet MS", Arial, sans-serif;
+					font-size: 1.3em;
+					font-weight: bold;
+					}
+
+					.nhanes-doc h5 {
+					color: #000;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					font-size: 1em;
+					font-weight: bold;
+					}
+
+					.nhanes-doc h5.specialnote {
+					color: #000;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					font-size: 1.2em;
+					font-style: italic;
+					font-weight: bold;
+					}
+
+					.nhanes-doc a {
+					color: #039;
+					text-decoration: none;
+					}
+
+					.nhanes-doc p {
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					font-size: 1em;
+					line-height: 1.33em;
+					margin: 0 3em 1em;
+					padding: 0;
+					text-align: left;
+					}
+
+					.nhanes-doc ul {
+					list-style-type: disc;
+					margin: 0 3em 1em;
+					padding: 0;
+					}
+
+					.nhanes-doc ol {
+					list-style-type: decimal;
+					margin: 0;
+					overflow: hidden;
+					padding: 0;
+					padding-left: 2em;
+					}
+
+					.nhanes-doc li {
+					margin-left: 1.5em;
+					margin-top: 0.7em;
+					}
+
+					.nhanes-doc table {
+					border: #000 1px solid;
+					border-collapse: collapse;
+					margin: 0 auto 1em;
+					max-width: 600px;
+					padding: 2px;
+					page-break-inside: avoid;
+					table-layout: auto;
+					}
+
+					.nhanes-doc th {
+					background: #f4f4e1;
+					border: #000 1px solid;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					padding: 5px;
+					text-align: center;
+					vertical-align: top;
+					}
+
+					.nhanes-doc th.rowheader {
+					background: #f4f4e1;
+					border: #000 1px solid;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					padding: 5px;
+					text-align: center;
+					vertical-align: top;
+					}
+
+					.nhanes-doc td {
+					border: #000 1px solid;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					padding: 5px;
+					text-align: left;
+					vertical-align: top;
+					}
+
+					.nhanes-doc td p {
+					margin: inherit;
+					}
+
+					.nhanes-doc td.values2 {
+					text-align: RIGHT;
+					vertical-align: top;
+					}
+
+					.nhanes-doc table caption {
+					font-weight: bold;
+					padding-bottom: 0.5em;
+					}
+
+					.nhanes-doc div#wrapper { width: 650px; }
+
+					.nhanes-doc div#toc {
+					border: solid 1px #CCC;
+					float: left;
+					height: 95%;
+					left: 750px;
+					overflow: hidden;
+					position: fixed;
+					top: 10px;
+					width: 400px;
+					z-index: 10;
+					}
+
+					.nhanes-doc div#toc h3 {
+					background-color: #f4f4e1;
+					border-bottom: solid 1px #ccc;
+					letter-spacing: 8px;
+					margin: 0;
+					padding: 8px;
+					text-align: center;
+					text-transform: uppercase;
+					}
+
+					.nhanes-doc div#toc-scroll {
+					height: calc(100% - 1.5em);
+					overflow: scroll;
+					width: 100%;
+					}
+
+					.nhanes-doc div#toc li {
+					margin-left: -0.5em;
+					margin-right: -0.5em;
+					}
+
+					.nhanes-doc div#PageHeader {
+					border-bottom: thin solid #999;
+					margin-bottom: 12px;
+					width: 650px;
+					}
+
+					.nhanes-doc div#Sections { width: 650px; }
+
+					.nhanes-doc div#Codebook { width: 650px; }
+
+					.nhanes-doc div#Codebook dl {
+					margin: 2em 0 10px 40px;
+					padding: 0;
+					width: 600px;
+					display: table;
+					}
+
+					.nhanes-doc div#Codebook dt {
+					float: left;
+					font-weight: bold;
+					margin: 0;
+					padding: 0.5em;
+					width: 150px;
+					display: table-cell;
+					}
+
+					.nhanes-doc div#Codebook dd {
+					float: left;
+					margin: 0;
+					padding: 0.5em;
+					width: 420px;
+					display: table-cell;
+					}
+
+					.nhanes-doc div#References {
+					page-break-after: always;
+					width: 650px;
+					}
+
+					.nhanes-doc div#References li {
+					word-wrap: break-word;
+					}
+
+					.nhanes-doc div#Appendix {
+					page-break-after: always;
+					width: 650px;
+					}
+
+					.nhanes-doc table.values {
+					border: 2px;
+					left: 20px;
+					margin-bottom: 20px;
+					page-break-inside: avoid;
+					position: relative;
+					width: 600px;
+					}
+
+					.nhanes-doc span.file-size { color: gray; }
+
+					.nhanes-doc .pagebreak {
+					background-color: transparent;
+					display: block;
+					page-break-after: always;
+					page-break-inside: avoid;
+					}
+				</style>
+    <style type="text/css" media="print">
+					.nhanes-doc div#toc { display: none; }
+				</style>
+  </head>
+  <body class="nhanes-doc">
+    <div id="toc">
+      <h3>Table of Contents</h3>
+      <div id="toc-scroll">
+        <ul>
+          <li>
+            <a href="#Component_Description">Component Description</a>
+          </li>
+          <li>
+            <a href="#Eligible_Sample">Eligible Sample</a>
+          </li>
+          <li>
+            <a href="#Protocol_and_Procedure">Protocol and Procedure</a>
+          </li>
+          <li>
+            <a href="#Quality_Assurance_&amp;_Quality_Control">Quality Assurance &amp; Quality Control</a>
+          </li>
+          <li>
+            <a href="#Data_Processing_and_Editing">Data Processing and Editing</a>
+          </li>
+          <li>
+            <a href="#Analytic_Notes">Analytic Notes</a>
+          </li>
+          <li>
+            <a href="#Codebook">Codebook</a>
+            <ul id="CodebookLinks">
+              <li>
+                <a href="#SEQN">SEQN - Respondent sequence number</a>
+              </li>
+              <li>
+                <a href="#BMDSTATS">BMDSTATS - Body Measures Component Status Code</a>
+              </li>
+              <li>
+                <a href="#BMXWT">BMXWT - Weight (kg)</a>
+              </li>
+              <li>
+                <a href="#BMIWT">BMIWT - Weight Comment</a>
+              </li>
+              <li>
+                <a href="#BMXRECUM">BMXRECUM - Recumbent Length (cm) </a>
+              </li>
+              <li>
+                <a href="#BMIRECUM">BMIRECUM - Recumbent Length Comment</a>
+              </li>
+              <li>
+                <a href="#BMXHEAD">BMXHEAD - Head Circumference (cm) </a>
+              </li>
+              <li>
+                <a href="#BMIHEAD">BMIHEAD - Head Circumference Comment</a>
+              </li>
+              <li>
+                <a href="#BMXHT">BMXHT - Standing Height (cm)</a>
+              </li>
+              <li>
+                <a href="#BMIHT">BMIHT - Standing Height Comment</a>
+              </li>
+              <li>
+                <a href="#BMXBMI">BMXBMI - Body Mass Index (kg/m**2)</a>
+              </li>
+              <li>
+                <a href="#BMDBMIC">BMDBMIC - BMI Category - Children/Youth</a>
+              </li>
+              <li>
+                <a href="#BMXLEG">BMXLEG - Upper Leg Length (cm)</a>
+              </li>
+              <li>
+                <a href="#BMILEG">BMILEG - Upper Leg Length Comment</a>
+              </li>
+              <li>
+                <a href="#BMXARML">BMXARML - Upper Arm Length (cm)</a>
+              </li>
+              <li>
+                <a href="#BMIARML">BMIARML - Upper Arm Length Comment</a>
+              </li>
+              <li>
+                <a href="#BMXARMC">BMXARMC - Arm Circumference (cm)</a>
+              </li>
+              <li>
+                <a href="#BMIARMC">BMIARMC - Arm Circumference Comment</a>
+              </li>
+              <li>
+                <a href="#BMXWAIST">BMXWAIST - Waist Circumference (cm)</a>
+              </li>
+              <li>
+                <a href="#BMIWAIST">BMIWAIST - Waist Circumference Comment</a>
+              </li>
+              <li>
+                <a href="#BMXHIP">BMXHIP - Hip Circumference (cm)</a>
+              </li>
+              <li>
+                <a href="#BMIHIP">BMIHIP - Hip Circumference Comment</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="PageHeader">
+        <h1>National Health and Nutrition Examination Survey</h1>
+        <h2>2017-March 2020 Data Documentation, Codebook, and Frequencies</h2>
+        <h3>Body Measures  (P_BMX)</h3>
+        <h4> Data File: P_BMX.xpt</h4>
+        <h5 class="left">First Published: May 2021</h5>
+        <h5 class="right">Last Revised: NA</h5>
+      </div>
+      <div id="Sections">
+        <h2 id="Component_Description">Component Description</h2><p>The NHANES program suspended field operations in March 2020 due to the coronavirus disease 2019 (COVID-19) pandemic. As a result, data collection for the NHANES 2019-2020 cycle was not completed and the collected data are not nationally representative. Therefore, data collected from 2019 to March 2020 were combined with data from the NHANES 2017-2018 cycle to form a nationally representative sample of NHANES 2017-March 2020 pre-pandemic data. These data are available to the public. Please refer to the Analytic Notes section for more details on the use of the data.</p>
+<p>NHANES body measures data are used to monitor trends in infant and child growth, to estimate the prevalence of overweight and obesity in U.S. children, adolescents, and adults, and to examine the associations between body weight and the health and nutritional status of the U.S. population. </p>
+<p>The measurements and target age groups for the NHANES 2017-March 2020 pre-pandemic body measures data file (P_BMX) are as follows: </p>
+<ul>
+    <li>Weight: All ages </li>
+    <li>Head circumference: birth through 6 months of age </li>
+    <li>Recumbent length: birth through 47 months of age </li>
+    <li>Standing height: 2 years and older </li>
+    <li>Upper leg length: 8 years and older </li>
+    <li>Upper arm length: 2 months of age and older </li>
+    <li>Mid-upper arm circumference: 2 months of age and older </li>
+    <li>Waist circumference: 2 years of age and older </li>
+    <li>Hip circumference: 12 years of age and older </li>
+</ul><h2 id="Eligible_Sample">Eligible Sample</h2><p>All examined survey participants in the NHANES 2017-March 2020 pre-pandemic sample are included in this dataset. There were no medical, safety, or other exclusions for the body measures protocol. The health technicians used their discretion to obtain as many measures as practical for persons who used a wheelchair.</p><h2 id="Protocol_and_Procedure">Protocol and Procedure</h2><p> The body measures data were collected, in the Mobile Examination Center (MEC), by trained health technicians. The health technician was assisted by a recorder during the body measures examination. The participant&rsquo;s age at the time of the screening interview determined the body measures examination protocol. In some instances, the age at the screening interview and age at the time of the health examination differed by several weeks. The Demographics data file includes variables age in years at screening (RIDAGEYR) for all participants and age in months at screening (RIDAGEMN) for participants 0 to 24 months. Data on age at examination are available through the Research Data Center (RDC). </p>
+<p>Arm and leg measurements were made on the right side of the body. If a participant had an amputation, medical condition, or medical appliance, such as a cast, that prevented measurements from being taken on the right side of the body, the health technician took measurements on the left side. The body measures file does not identify participants who had amputations because that information may be considered identifiable and pose a disclosure concern. The body weight data for participants who had limb amputations were set to &ldquo;missing.&rdquo; </p>
+<p>This data file includes body measures for women who were pregnant at the time of their health examination. Pregnancy status at the time of the health examination is indicated by the variable, RIDEXPRG, in the Demographic data file. RIDEXPRG values are reported for women 20&ndash;44 years of age. RIDEXPRG for several pregnant women who were outside of this age range are not reported due to disclosure concerns. The body measures data for these participants are also not reported.
+The NHANES 2017-2018 and 2019-2020 Anthropometry Procedures Manual are available on the NHANES website.
+</p><h2 id="Quality_Assurance_&amp;_Quality_Control">Quality Assurance &amp; Quality Control</h2><p> The NHANES health technicians completed a 2-day training program with survey staff and an expert anthropometrist. The training included an overview of the component, general guidelines and technical skills for each measurement, and demonstrations conducted by the expert examiner with volunteer subjects. The expert examiner reviewed and demonstrated the proper technique to use for each measure. Supervised practice exercises followed, conducted with several volunteer subjects, including infants, children, and adults. The chief health technician, at each of the MECs, monitored staff performance in the field. Health technician performance was also monitored using direct observation, data reviews, and periodic expert examiner (gold standard comparison) evaluations. </p>
+<p> The body measures examination rooms in each of the MECs were identical with respect to layout and equipment. Scheduled equipment calibration was performed by the health technicians and verified by supervisory staff. The Anthropometry Procedures Manual includes detailed descriptions of the quality assurance and quality control measures that are used in the NHANES anthropometry/body measures component.
+</p><h2 id="Data_Processing_and_Editing">Data Processing and Editing</h2><p>The P_BMX data were reviewed for unusual and erroneous values. Review criteria were based on the NHANES 1999&ndash;2016 body measurement data. During the data review, values that were above the 99th percentile or below the 1st percentile, for a specific age or age-gender group, were flagged for review. When records were flagged, the entire body measures record was reviewed for reasonableness. Subject characteristics, such as height, weight, age, and gender were taken into consideration. Values that were determined to be unrealistic were deleted from the file. None of the original body measures data were changed and there are no imputed values in this file.</p>
+<p><span style="text-decoration: underline;">Component status code (BMXSTATS)</span>:<br />
+This variable was created to indicate body measures component status. There are four categories:<br />
+</p>
+<ol>
+    <li> Complete data for age group </li>
+    <li>Partial: only height and weight obtained </li>
+    <li>Other partial exam </li>
+    <li>No body measures exam data</li>
+</ol>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline;"> Body Mass Index (BMXBMI)</span>:<br />
+Body Mass Index (BMI) was calculated as weight in kilograms divided by height in meters squared, and then rounded to one decimal place.</p>
+<p> <span style="text-decoration: underline;">BMI Category &ndash; Children/Adolescents (BMDBMIC)</span>:
+This variable was created for children and adolescents aged 2 to 19 years at examination. Cutoff criteria are based on the Centers for Disease Control (CDC) growth chart &ldquo;<a href="https://www.cdc.gov/growthcharts/percentile_data_files.htm">BMI-for-age charts, 2 to 20 years, by sex and age</a>&rdquo;. Age in months at examination was used to match age in months from BMI growth chart data, separately for males and females. There are four categories:
+</p>
+<ol>
+    <li>  Underweight (BMI &lt; 5th percentile) </li>
+    <li>  Normal weight (BMI 5th to &lt; 85th percentiles)  </li>
+    <li> Overweight (BMI 85th to &lt; 95th percentiles) </li>
+    <li>  Obese (BMI &ge; 95th percentile)  </li>
+</ol><h2 id="Analytic_Notes">Analytic Notes</h2><p>The COVID-19 pandemic required suspension of NHANES 2019-2020 field operations in March 2020 after data were collected in 18 of the 30 survey locations in the 2019-2020 sample. Because the collected data from 18 locations were not nationally representative, these data were combined with data from the previous cycle (2017-2018) to create a 2017-March 2020 pre-pandemic data file. The resulting sample weights in the demographic file should be used to calculate estimates from the combined cycles. The sample weights are not appropriate to independent analyses of the 2019-2020 data and will not yield nationally representative results for either the 2017-2018 data alone or the 2019-March 2020 data alone. Please refer to the NHANES website for additional information for the NHANES 2017-March 2020 pre-pandemic data, and for the previous 2017-2018 public use data file with specific weights for that 2-year cycle. </p>
+<p><span style="text-decoration: underline;">Component status code</span>: A final body measures component status code provides analysis with a quick method of identifying survey participants with complete or partial body measure measurement data.</p>
+<p><span style="text-decoration: underline;">Unusual values</span>: Unusual body measures values were noted during the review of the data. Typically, unusual values occurred when a subject was extremely short, tall, overweight, or underweight. In addition, the upper arm length (BMXARML) and upper leg length (BMXLEG) values may be affected by extreme amounts of adipose tissue. Analysts should examine the distributions of the body measurements carefully and consider whether it is appropriate to include or exclude extreme values in each analysis. </p>
+<p><span style="text-decoration: underline;">Comment codes</span>: Comment codes were added by the health technicians, during data collection, to document problems or situations that arose during the body measures examination. For example, the variable BMIWT is a comment code for the body weight measurement. If a participant did not change into the NHANES exam gown, a code of BMIWT of &ldquo;3&rdquo; denoting &ldquo;clothing worn&rdquo; was made in the record. Analysts should review the comment code information for each of the body measures prior to data analysis.</p>
+<p><span style="text-decoration: underline;">Weight status classification</span>: BMI, expressed as weight in kilograms divided by height in meters squared (Kg/m2), is commonly used to classify weight status. The definitions of underweight, normal weight, overweight, and obesity in children and adolescents are not directly comparable with the definitions in adults. The age-and sex-specific 5th, 85th, and 95th percentiles of the growth charts are usually used as cutoff criteria for children and adolescents. The variable BMDBMIC provides weight status categorical for children and adolescents aged 2 to 19 years at examination. Consequently, BMDBMIC was not calculated for a few participants who were 19 years at the screening interview but became 20 years at the health examination. Information about age in years at screening for all participants is available in the Demographic data file. Data on age at examination are available through the NCHS RDC. </p>
+<p><span style="text-decoration: underline;">Sample weights</span>: The NHANES examination sample weights should be used to analyze the body measures data. Please refer to the <a href="https://wwwn.cdc.gov/nchs/nhanes/analyticguidelines.aspx">NHANES Analytic Guidelines</a> and the online <a href="http://www.cdc.gov/nchs/tutorials/">NHANES Tutorial </a>for further details on the use of sample weights and other analytic issues.  </p></div>
+      <div id="Codebook">
+        <h2>Codebook and Frequencies</h2>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="SEQN">SEQN - Respondent sequence number</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">SEQN</dd>
+            <dt>SAS Label: </dt>
+            <dd>Respondent sequence number</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Respondent sequence number.</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMDSTATS">BMDSTATS - Body Measures Component Status Code</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMDSTATS</dd>
+            <dt>SAS Label: </dt>
+            <dd>Body Measures Component Status Code</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Body Measures Component status Code</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Complete data for age group</td>
+                <td class="values" align="right">13220</td>
+                <td class="values" align="right">13220</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">Partial:  Only height and weight obtained</td>
+                <td class="values" align="right">424</td>
+                <td class="values" align="right">13644</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">3</td>
+                <td class="values">Other partial exam</td>
+                <td class="values" align="right">463</td>
+                <td class="values" align="right">14107</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">4</td>
+                <td class="values">No body measures exam data</td>
+                <td class="values" align="right">193</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">0</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMXWT">BMXWT - Weight (kg)</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMXWT</dd>
+            <dt>SAS Label: </dt>
+            <dd>Weight (kg)</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Weight (kg)</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">3.2 to 254.3</td>
+                <td class="values">Range of Values</td>
+                <td class="values" align="right">14075</td>
+                <td class="values" align="right">14075</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">225</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMIWT">BMIWT - Weight Comment</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMIWT</dd>
+            <dt>SAS Label: </dt>
+            <dd>Weight Comment</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Weight Comment</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Could not obtain</td>
+                <td class="values" align="right">23</td>
+                <td class="values" align="right">23</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">3</td>
+                <td class="values">Clothing</td>
+                <td class="values" align="right">523</td>
+                <td class="values" align="right">546</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">4</td>
+                <td class="values">Medical appliance</td>
+                <td class="values" align="right">42</td>
+                <td class="values" align="right">588</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">13712</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMXRECUM">BMXRECUM - Recumbent Length (cm) </h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMXRECUM</dd>
+            <dt>SAS Label: </dt>
+            <dd>Recumbent Length (cm) </dd>
+            <dt>English Text: </dt>
+            <dd class="info">Recumbent Length (cm)</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			47 MONTHS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">49.1 to 113.9</td>
+                <td class="values">Range of Values</td>
+                <td class="values" align="right">1470</td>
+                <td class="values" align="right">1470</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">12830</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMIRECUM">BMIRECUM - Recumbent Length Comment</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMIRECUM</dd>
+            <dt>SAS Label: </dt>
+            <dd>Recumbent Length Comment</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Recumbent Length Comment</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 MONTHS -
+			47 MONTHS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Could not obtain</td>
+                <td class="values" align="right">43</td>
+                <td class="values" align="right">43</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">3</td>
+                <td class="values">Not straight</td>
+                <td class="values" align="right">0</td>
+                <td class="values" align="right">43</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">14257</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMXHEAD">BMXHEAD - Head Circumference (cm) </h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMXHEAD</dd>
+            <dt>SAS Label: </dt>
+            <dd>Head Circumference (cm) </dd>
+            <dt>English Text: </dt>
+            <dd class="info">Head Circumference (cm)</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			6 MONTHS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">32.4 to 48.3</td>
+                <td class="values">Range of Values</td>
+                <td class="values" align="right">310</td>
+                <td class="values" align="right">310</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">13990</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMIHEAD">BMIHEAD - Head Circumference Comment</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMIHEAD</dd>
+            <dt>SAS Label: </dt>
+            <dd>Head Circumference Comment</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Head Circumference Comment</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 MONTHS -
+			6 MONTHS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Could not obtain</td>
+                <td class="values" align="right">0</td>
+                <td class="values" align="right">0</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">14300</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMXHT">BMXHT - Standing Height (cm)</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMXHT</dd>
+            <dt>SAS Label: </dt>
+            <dd>Standing Height (cm)</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Standing Height (cm)</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 2 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">78.3 to 199.6</td>
+                <td class="values">Range of Values</td>
+                <td class="values" align="right">13157</td>
+                <td class="values" align="right">13157</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">1143</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMIHT">BMIHT - Standing Height Comment</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMIHT</dd>
+            <dt>SAS Label: </dt>
+            <dd>Standing Height Comment</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Standing Height Comment</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 2 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Could not obtain</td>
+                <td class="values" align="right">70</td>
+                <td class="values" align="right">70</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">3</td>
+                <td class="values">Not straight</td>
+                <td class="values" align="right">101</td>
+                <td class="values" align="right">171</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">14129</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMXBMI">BMXBMI - Body Mass Index (kg/m**2)</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMXBMI</dd>
+            <dt>SAS Label: </dt>
+            <dd>Body Mass Index (kg/m**2)</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Body Mass Index (kg/m**2)</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 2 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">11.9 to 92.3</td>
+                <td class="values">Range of Values</td>
+                <td class="values" align="right">13137</td>
+                <td class="values" align="right">13137</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">1163</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMDBMIC">BMDBMIC - BMI Category - Children/Youth</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMDBMIC</dd>
+            <dt>SAS Label: </dt>
+            <dd>BMI Category - Children/Youth</dd>
+            <dt>English Text: </dt>
+            <dd class="info">BMI Category - Children/Youth</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 2 YEARS -
+			19 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Underweight</td>
+                <td class="values" align="right">163</td>
+                <td class="values" align="right">163</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">Normal weight</td>
+                <td class="values" align="right">2814</td>
+                <td class="values" align="right">2977</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">3</td>
+                <td class="values">Overweight</td>
+                <td class="values" align="right">767</td>
+                <td class="values" align="right">3744</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">4</td>
+                <td class="values">Obese</td>
+                <td class="values" align="right">1005</td>
+                <td class="values" align="right">4749</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">9551</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMXLEG">BMXLEG - Upper Leg Length (cm)</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMXLEG</dd>
+            <dt>SAS Label: </dt>
+            <dd>Upper Leg Length (cm)</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Upper Leg Length (cm)</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 8 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">24.8 to 55</td>
+                <td class="values">Range of Values</td>
+                <td class="values" align="right">10984</td>
+                <td class="values" align="right">10984</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">3316</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMILEG">BMILEG - Upper Leg Length Comment</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMILEG</dd>
+            <dt>SAS Label: </dt>
+            <dd>Upper Leg Length Comment</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Upper Leg Length Comment</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 8 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Could not obtain</td>
+                <td class="values" align="right">488</td>
+                <td class="values" align="right">488</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">13812</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMXARML">BMXARML - Upper Arm Length (cm)</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMXARML</dd>
+            <dt>SAS Label: </dt>
+            <dd>Upper Arm Length (cm)</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Upper Arm Length (cm)</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 2 MONTHS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">9.4 to 49.9</td>
+                <td class="values">Range of Values</td>
+                <td class="values" align="right">13490</td>
+                <td class="values" align="right">13490</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">810</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMIARML">BMIARML - Upper Arm Length Comment</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMIARML</dd>
+            <dt>SAS Label: </dt>
+            <dd>Upper Arm Length Comment</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Upper Arm Length Comment</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 2 MONTHS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Could not obtain</td>
+                <td class="values" align="right">487</td>
+                <td class="values" align="right">487</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">13813</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMXARMC">BMXARMC - Arm Circumference (cm)</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMXARMC</dd>
+            <dt>SAS Label: </dt>
+            <dd>Arm Circumference (cm)</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Arm Circumference (cm)</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 2 MONTHS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">11.2 to 64.5</td>
+                <td class="values">Range of Values</td>
+                <td class="values" align="right">13484</td>
+                <td class="values" align="right">13484</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">816</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMIARMC">BMIARMC - Arm Circumference Comment</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMIARMC</dd>
+            <dt>SAS Label: </dt>
+            <dd>Arm Circumference Comment</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Arm Circumference Comment</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 2 MONTHS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Could not obtain</td>
+                <td class="values" align="right">493</td>
+                <td class="values" align="right">493</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">13807</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMXWAIST">BMXWAIST - Waist Circumference (cm)</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMXWAIST</dd>
+            <dt>SAS Label: </dt>
+            <dd>Waist Circumference (cm)</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Waist Circumference (cm)</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 2 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">40 to 187.5</td>
+                <td class="values">Range of Values</td>
+                <td class="values" align="right">12574</td>
+                <td class="values" align="right">12574</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">1726</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMIWAIST">BMIWAIST - Waist Circumference Comment</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMIWAIST</dd>
+            <dt>SAS Label: </dt>
+            <dd>Waist Circumference Comment</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Waist Circumference Comment</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 2 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Could not obtain</td>
+                <td class="values" align="right">617</td>
+                <td class="values" align="right">617</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">13683</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMXHIP">BMXHIP - Hip Circumference (cm)</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMXHIP</dd>
+            <dt>SAS Label: </dt>
+            <dd>Hip Circumference (cm)</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Hip Circumference (cm)</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 12 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">62.5 to 187.5</td>
+                <td class="values">Range of Values</td>
+                <td class="values" align="right">9862</td>
+                <td class="values" align="right">9862</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">4438</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="BMIHIP">BMIHIP - Hip Circumference Comment</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">BMIHIP</dd>
+            <dt>SAS Label: </dt>
+            <dd>Hip Circumference Comment</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Hip Circumference Comment</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 12 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Could not obtain</td>
+                <td class="values" align="right">376</td>
+                <td class="values" align="right">376</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">13924</td>
+                <td class="values" align="right">14300</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

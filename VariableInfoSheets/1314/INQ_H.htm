@@ -1,0 +1,1434 @@
+<!DOCTYPE html><html xml:lang="en" lang="en" xmlns="http://www.w3c.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>INQ_H</title>
+    <meta name="title" content="NHANES 2013-2014: Income Data Documentation, Codebook, and Frequencies" />
+    <style type="text/css">
+					.nhanes-doc { font: 75% Verdana, Arial, Helvetica, sans-serif; }
+
+					.nhanes-doc h1 {
+					color: #0c5205;
+					font-family: "Trebuchet MS", Arial, sans-serif;
+					font-size: 2em;
+					font-weight: normal;
+					margin-bottom: 10px;
+					margin-top: 0;
+					}
+
+					.nhanes-doc h2 {
+					color: #0c5205;
+					font-family: "Trebuchet MS", Arial, sans-serif;
+					font-size: 1.6em;
+					font-weight: normal;
+					}
+
+					.nhanes-doc h3 {
+					color: #000;
+					font-family: "Trebuchet MS", Arial, sans-serif;
+					font-size: 1.5em;
+					font-weight: normal;
+					}
+
+					.nhanes-doc h3.vartitle {
+					background-color: #c1d5b0;
+					padding: 6px 12px;
+					}
+
+					.nhanes-doc h4 {
+					color: #000;
+					font-family: "Trebuchet MS", Arial, sans-serif;
+					font-size: 1.3em;
+					font-weight: bold;
+					}
+
+					.nhanes-doc h5 {
+					color: #000;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					font-size: 1em;
+					font-weight: bold;
+					}
+
+					.nhanes-doc h5.specialnote {
+					color: #000;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					font-size: 1.2em;
+					font-style: italic;
+					font-weight: bold;
+					}
+
+					.nhanes-doc a {
+					color: #039;
+					text-decoration: none;
+					}
+
+					.nhanes-doc p {
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					font-size: 1em;
+					line-height: 1.33em;
+					margin: 0 3em 1em;
+					padding: 0;
+					text-align: left;
+					}
+
+					.nhanes-doc ul {
+					list-style-type: disc;
+					margin: 0 3em 1em;
+					padding: 0;
+					}
+
+					.nhanes-doc ol {
+					list-style-type: decimal;
+					margin: 0;
+					overflow: hidden;
+					padding: 0;
+					padding-left: 2em;
+					}
+
+					.nhanes-doc li {
+					margin-left: 1.5em;
+					margin-top: 0.7em;
+					}
+
+					.nhanes-doc table {
+					border: #000 1px solid;
+					border-collapse: collapse;
+					margin: 0 auto 1em;
+					max-width: 600px;
+					padding: 2px;
+					page-break-inside: avoid;
+					table-layout: auto;
+					}
+
+					.nhanes-doc th {
+					background: #f4f4e1;
+					border: #000 1px solid;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					padding: 5px;
+					text-align: center;
+					vertical-align: top;
+					}
+
+					.nhanes-doc th.rowheader {
+					background: #f4f4e1;
+					border: #000 1px solid;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					padding: 5px;
+					text-align: center;
+					vertical-align: top;
+					}
+
+					.nhanes-doc td {
+					border: #000 1px solid;
+					font-family: Verdana, Arial, Helvetica, sans-serif;
+					padding: 5px;
+					text-align: left;
+					vertical-align: top;
+					}
+
+					.nhanes-doc td.values2 {
+					text-align: RIGHT;
+					vertical-align: top;
+					}
+
+					.nhanes-doc table caption {
+					font-weight: bold;
+					padding-bottom: 0.5em;
+					}
+
+					.nhanes-doc div#wrapper { width: 650px; }
+
+					.nhanes-doc div#toc {
+					border: solid 1px #CCC;
+					float: left;
+					height: 95%;
+					left: 750px;
+					overflow: hidden;
+					position: fixed;
+					top: 10px;
+					width: 400px;
+					z-index: 10;
+					}
+
+					.nhanes-doc div#toc h3 {
+					background-color: #f4f4e1;
+					border-bottom: solid 1px #ccc;
+					letter-spacing: 8px;
+					margin: 0;
+					padding: 8px;
+					text-align: center;
+					text-transform: uppercase;
+					}
+
+					.nhanes-doc div#toc-scroll {
+					height: calc(100% - 1.5em);
+					overflow: scroll;
+					width: 100%;
+					}
+
+					.nhanes-doc div#toc li {
+					margin-left: -0.5em;
+					margin-right: -0.5em;
+					}
+
+					.nhanes-doc div#PageHeader {
+					border-bottom: thin solid #999;
+					margin-bottom: 12px;
+					width: 650px;
+					}
+
+					.nhanes-doc div#Sections { width: 650px; }
+
+					.nhanes-doc div#Codebook { width: 650px; }
+
+					.nhanes-doc div#Codebook dl {
+					margin: 2em 0 10px 40px;
+					padding: 0;
+					width: 600px;
+					display: table;
+					}
+
+					.nhanes-doc div#Codebook dt {
+					float: left;
+					font-weight: bold;
+					margin: 0;
+					padding: 0.5em;
+					width: 150px;
+					display: table-cell;
+					}
+
+					.nhanes-doc div#Codebook dd {
+					float: left;
+					margin: 0;
+					padding: 0.5em;
+					width: 420px;
+					display: table-cell;
+					}
+
+					.nhanes-doc div#References {
+					page-break-after: always;
+					width: 650px;
+					}
+
+					.nhanes-doc div#Appendix {
+					page-break-after: always;
+					width: 650px;
+					}
+
+					.nhanes-doc table.values {
+					border: 2px;
+					left: 20px;
+					margin-bottom: 20px;
+					page-break-inside: avoid;
+					position: relative;
+					width: 600px;
+					}
+
+					.nhanes-doc span.file-size { color: gray; }
+
+					.nhanes-doc .pagebreak {
+					background-color: transparent;
+					display: block;
+					page-break-after: always;
+					page-break-inside: avoid;
+					}
+				</style>
+    <style type="text/css" media="print">
+					.nhanes-doc div#toc { display: none; }
+				</style>
+  </head>
+  <body class="nhanes-doc">
+    <div id="toc">
+      <h3>Table of Contents</h3>
+      <div id="toc-scroll">
+        <ul>
+          <li>
+            <a href="#Component_Description">Component Description</a>
+          </li>
+          <li>
+            <a href="#Eligible_Sample">Eligible Sample</a>
+          </li>
+          <li>
+            <a href="#Interview_Setting_and_Mode_of_Administration">Interview Setting and Mode of Administration</a>
+          </li>
+          <li>
+            <a href="#Quality_Assurance_&amp;_Quality_Control">Quality Assurance &amp; Quality Control</a>
+          </li>
+          <li>
+            <a href="#Data_Processing_and_Editing">Data Processing and Editing</a>
+          </li>
+          <li>
+            <a href="#Analytic_Notes">Analytic Notes</a>
+          </li>
+          <li>
+            <a href="#References">References</a>
+          </li>
+          <li>
+            <a href="#Codebook">Codebook</a>
+            <ul id="CodebookLinks">
+              <li>
+                <a href="#SEQN">SEQN - Respondent sequence number</a>
+              </li>
+              <li>
+                <a href="#INQ020">INQ020 - Income from wages/salaries</a>
+              </li>
+              <li>
+                <a href="#INQ012">INQ012 - Income from self employment</a>
+              </li>
+              <li>
+                <a href="#INQ030">INQ030 - Income from Social Security or RR</a>
+              </li>
+              <li>
+                <a href="#INQ060">INQ060 - Income from other disability pension</a>
+              </li>
+              <li>
+                <a href="#INQ080">INQ080 - Income from retirement/survivor pension</a>
+              </li>
+              <li>
+                <a href="#INQ090">INQ090 - Income from Supplemental Security Income</a>
+              </li>
+              <li>
+                <a href="#INQ132">INQ132 - Income from state/county cash assistance</a>
+              </li>
+              <li>
+                <a href="#INQ140">INQ140 - Income from interest/dividends or rental</a>
+              </li>
+              <li>
+                <a href="#INQ150">INQ150 - Income from other sources</a>
+              </li>
+              <li>
+                <a href="#IND235">IND235 - Monthly family income</a>
+              </li>
+              <li>
+                <a href="#INDFMMPI">INDFMMPI - Family monthly poverty level index</a>
+              </li>
+              <li>
+                <a href="#INDFMMPC">INDFMMPC - Family monthly poverty level category</a>
+              </li>
+              <li>
+                <a href="#INQBOX1">INQBOX1 - CHECK ITEM</a>
+              </li>
+              <li>
+                <a href="#INQ244">INQ244 - Family has savings more than $5000</a>
+              </li>
+              <li>
+                <a href="#IND247">IND247 - Total savings/cash assets for the family</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="PageHeader">
+        <h1>National Health and Nutrition Examination Survey</h1>
+        <h2>2013-2014 Data Documentation, Codebook, and Frequencies</h2>
+        <h3>Income (INQ_H)</h3>
+        <h4> Data File: INQ_H.xpt</h4>
+        <h5 class="left">First Published: October 2015</h5>
+        <h5 class="right">Last Revised: NA</h5>
+      </div>
+      <div id="Sections">
+        <h2 id="Component_Description">Component Description</h2><p>The income section (variable name prefix INQ) provides family level information on income sources, monthly income, and family cash assets. Information on family's annual income was also collected in this section and has been released as part of the <a href="https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm" target="_blank">Demographics file (DEMO_H)</a>.</p><h2 id="Eligible_Sample">Eligible Sample</h2><p>All participants are eligible.</p><h2 id="Interview_Setting_and_Mode_of_Administration">Interview Setting and Mode of Administration</h2><p>These questions were asked as part of the NHANES Family Questionnaire, in the home, using the Computer-Assisted Personal interview (CAPI) system. Hand cards showing response categories were also used for some questions. One respondent in each family answered these questions.</p><h2 id="Quality_Assurance_&amp;_Quality_Control">Quality Assurance &amp; Quality Control</h2><p>The CAPI system is programmed with built-in consistency checks to reduce data entry errors. CAPI also uses online help screens to assist interviewers in defining key terms used in the questionnaire. All of the data was reviewed by the NHANES field office staff for accuracy and completeness.</p><h2 id="Data_Processing_and_Editing">Data Processing and Editing</h2><p>Frequency counts were checked, &ldquo;skip&rdquo; patterns were verified, and the reasonableness of question responses was reviewed. Edits were made to some variables to ensure the completeness, consistency, and analytic usefulness of the data.&nbsp; Edits were also made, when necessary, to address data disclosure concerns.&nbsp; When a variable was modified globally, as part of the editing process, the third letter in the variable name was changed from a Q (i.e., INQ) to a D (i.e., IND).&nbsp; For example, some data were collected using two variables (a number variable and a unit of measure variable), but combined into a single variable for data release purposes. </p>
+<p>
+<strong>IND235 (Family monthly income)
+</strong></p>
+<p>The respondent was asked to report total family income, received last month in dollars, for themselves and the other members of their family. Family monthly income is released as a range of values, in dollars, to minimize disclosure risks. The response categories are: $0 - $399, $400 - $799, $800 - $1249, $1250 - $1649, $1650 - $2099, $2100 - $2899, $2900 - $3749, $3750 - $4599, $4600 - $5399, $5400 - $6249, $6250 - $8399, $8400 and over. These response categories were chosen to mirror the categories used for reporting annual income. </p>
+<p><strong>INDFMMPI (Family monthly poverty level index)</strong>
+</p>
+<p>
+This variable is an index for the ratio of monthly income to poverty. The 2013 and 2014 Department of Health and Human Services&rsquo; (HHS) poverty guidelines were used as the poverty measure to calculate this index. These guidelines are issued each year, in the Federal Register, for determining financial eligibility for certain federal programs such as Head Start, Supplemental Nutrition Assistance Program (SNAP) (formerly Food Stamp Program), Special Supplemental Nutrition Program for Women, Infants, and Children (WIC), and the National School Lunch Program. The variable INDFMMPI was calculated by dividing family income by the poverty guidelines, specific to family size, as well as the appropriate year and state. Values at or above 5.00 were coded as 5.00 or more because of disclosure concerns. The values were not computed if the family income data was missing.</p>
+<p><strong>INDFMMPC (Family monthly poverty level index category)</strong>
+</p>
+<p>
+For respondents who reported their family monthly income in dollar amounts, we calculated their family monthly poverty level index (INDFMMPI) as described above. The index was then grouped into three categories (i.e., INDFMMPI &le;1.30, 1.30 &lt; INDFMMPI &le; 1.85, INDFMMPI &gt;1.85) and reported in this variable. These categories were chosen because they represented commonly used percentages of the poverty guidelines (i.e., 130 percent and 185 percent of the guidelines), by federal programs, in determining eligibility.</p>
+<p>When the respondent refused to answer the family monthly income question or did not know the total combined family income, a monthly income screener question was asked (question INQ238) to query whether the monthly family income was below 185% of the HHS poverty guidelines. If the response was positive, a follow-up question (INQ241) was asked to see whether the family&rsquo;s monthly income was more or less than 130% of the HHS poverty guidelines. For these respondents, answers to INQ238 and INQ241 were used to derive variable INDFMMPC.</p>
+<p><strong>INQ244, IND247 (Total savings/cash assets)</strong>
+</p>
+<p>Total savings/cash assets questions for the family were only asked if the family&rsquo;s annual income was equal or less than 200 percent of the 2012 HHS poverty guidelines. The respondent was first asked whether the family has savings or cash assets more than $5,000 (INQ244).&nbsp; If the family did not have savings or cash assets more than $5,000, the respondent would then be asked a follow-up question (IND247) to select a dollar range from a list printed on a hand card for the family&rsquo;s total savings and cash assets amount.</p><h2 id="Analytic_Notes">Analytic Notes</h2><p>The income questions were asked as part of household interview, the interview sample weights may be used in the analysis for data in this section. However, if the data is joined with other data from the Mobile Examination Center (MEC), the MEC&nbsp;exam weights should be used.</p>
+<p>Please refer to the&nbsp;<a href="https://wwwn.cdc.gov/nchs/nhanes/analyticguidelines.aspx" target="_blank">NHANES Analytic Guidelines</a> and the on-line <a href="https://www.cdc.gov/nchs/tutorials/nhanes/" target="_blank">NHANES Tutorial</a> for further details on the use of sample weights and other analytic issues. Both of these are available on the NHANES website. </p></div>
+      <div id="References">
+        <h2>References</h2>
+        <ul>
+          <li>U.S. Department of Health &amp; Human Services. Poverty Guidelines, Research, and Measurement. Washington, DC: U.S. Department of Health &amp; Human Services <a href="http://aspe.hhs.gov/POVERTY/index.shtml">http://aspe.hhs.gov/POVERTY/index.shtml</a>
+          </li>
+        </ul>
+      </div>
+      <div id="Codebook">
+        <h2>Codebook and Frequencies</h2>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="SEQN">SEQN - Respondent sequence number</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">SEQN</dd>
+            <dt>SAS Label: </dt>
+            <dd>Respondent sequence number</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Respondent sequence number.</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INQ020">INQ020 - Income from wages/salaries</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INQ020</dd>
+            <dt>SAS Label: </dt>
+            <dd>Income from wages/salaries</dd>
+            <dt>English Text: </dt>
+            <dd class="info">The next questions are about {your/your combined family} income.  When answering these questions, please remember that by {"income/combined family income"}, I mean {your income/your income plus the income of {NAMES OF OTHER NHANES FAMILY MEMBERS} for {LAST CALENDAR YEAR}.  Did {you/you and OTHER NHANES FAMILY MEMBERS 16+} receive income in {LAST CALENDAR YEAR} from wages and salaries? [Did {you/you or OTHER FAMILY MEMBERS 16+} get paid for work in {LAST CALENDAR YEAR}.]</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Yes</td>
+                <td class="values" align="right">8142</td>
+                <td class="values" align="right">8142</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">No</td>
+                <td class="values" align="right">1856</td>
+                <td class="values" align="right">9998</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">7</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">48</td>
+                <td class="values" align="right">10046</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">9</td>
+                <td class="values">Don't know</td>
+                <td class="values" align="right">6</td>
+                <td class="values" align="right">10052</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">123</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INQ012">INQ012 - Income from self employment</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INQ012</dd>
+            <dt>SAS Label: </dt>
+            <dd>Income from self employment</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Did {you/you or any family members 16 and older} receive income in {LAST CALENDAR YEAR} from self-employment including business and farm income? [Self-employment means you worked for yourself.]</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Yes</td>
+                <td class="values" align="right">1530</td>
+                <td class="values" align="right">1530</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">No</td>
+                <td class="values" align="right">8497</td>
+                <td class="values" align="right">10027</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">7</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">24</td>
+                <td class="values" align="right">10051</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">9</td>
+                <td class="values">Don't know</td>
+                <td class="values" align="right">1</td>
+                <td class="values" align="right">10052</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">123</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INQ030">INQ030 - Income from Social Security or RR</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INQ030</dd>
+            <dt>SAS Label: </dt>
+            <dd>Income from Social Security or RR</dd>
+            <dt>English Text: </dt>
+            <dd class="info">When answering the next questions about different kinds of income members of your family might have received in {LAST CALENDAR YEAR}, please consider that we also want to know about family members less than 16 years old.  Did {you/you or any family members living here, that is: you or NAME(S) OF OTHER NHANES FAMILY MEMBERS} receive income in {LAST CALENDAR YEAR} from Social Security or Railroad Retirement?</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Yes</td>
+                <td class="values" align="right">2218</td>
+                <td class="values" align="right">2218</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">No</td>
+                <td class="values" align="right">7804</td>
+                <td class="values" align="right">10022</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">7</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">21</td>
+                <td class="values" align="right">10043</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">9</td>
+                <td class="values">Don't know</td>
+                <td class="values" align="right">9</td>
+                <td class="values" align="right">10052</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">123</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INQ060">INQ060 - Income from other disability pension</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INQ060</dd>
+            <dt>SAS Label: </dt>
+            <dd>Income from other disability pension</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Did {you/you or any family members living here} receive any disability pension [other than Social Security or Railroad Retirement] in {LAST CALENDAR YEAR}?</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Yes</td>
+                <td class="values" align="right">754</td>
+                <td class="values" align="right">754</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">No</td>
+                <td class="values" align="right">9269</td>
+                <td class="values" align="right">10023</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">7</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">24</td>
+                <td class="values" align="right">10047</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">9</td>
+                <td class="values">Don't know</td>
+                <td class="values" align="right">5</td>
+                <td class="values" align="right">10052</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">123</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INQ080">INQ080 - Income from retirement/survivor pension</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INQ080</dd>
+            <dt>SAS Label: </dt>
+            <dd>Income from retirement/survivor pension</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Did {you/you or any family members living here} receive retirement or survivor pension [other than Social Security or Railroad Retirement or disability pension] in {LAST CALENDAR YEAR}?</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Yes</td>
+                <td class="values" align="right">1019</td>
+                <td class="values" align="right">1019</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">No</td>
+                <td class="values" align="right">9011</td>
+                <td class="values" align="right">10030</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">7</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">20</td>
+                <td class="values" align="right">10050</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">9</td>
+                <td class="values">Don't know</td>
+                <td class="values" align="right">2</td>
+                <td class="values" align="right">10052</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">123</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INQ090">INQ090 - Income from Supplemental Security Income</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INQ090</dd>
+            <dt>SAS Label: </dt>
+            <dd>Income from Supplemental Security Income</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Did {you/you or any family members living here} receive Supplemental Security Income [SSI] in {LAST CALENDAR YEAR}?</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Yes</td>
+                <td class="values" align="right">710</td>
+                <td class="values" align="right">710</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">No</td>
+                <td class="values" align="right">9314</td>
+                <td class="values" align="right">10024</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">7</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">20</td>
+                <td class="values" align="right">10044</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">9</td>
+                <td class="values">Don't know</td>
+                <td class="values" align="right">8</td>
+                <td class="values" align="right">10052</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">123</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INQ132">INQ132 - Income from state/county cash assistance</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INQ132</dd>
+            <dt>SAS Label: </dt>
+            <dd>Income from state/county cash assistance</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Did {you/you or any family members living here} receive any cash assistance from a state or county welfare program such as welfare, public assistance, AFDC, or some other program in {LAST CALENDAR YEAR}?</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Yes</td>
+                <td class="values" align="right">623</td>
+                <td class="values" align="right">623</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">No</td>
+                <td class="values" align="right">9398</td>
+                <td class="values" align="right">10021</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">7</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">26</td>
+                <td class="values" align="right">10047</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">9</td>
+                <td class="values">Don't know</td>
+                <td class="values" align="right">5</td>
+                <td class="values" align="right">10052</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">123</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INQ140">INQ140 - Income from interest/dividends or rental</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INQ140</dd>
+            <dt>SAS Label: </dt>
+            <dd>Income from interest/dividends or rental</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Did {you/you or any family members living here} receive interest from savings or other bank accounts or income from dividends received from stocks or mutual funds or net rental income from property, royalties, estates, or trusts in {LAST CALENDAR YEAR}?</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Yes</td>
+                <td class="values" align="right">2022</td>
+                <td class="values" align="right">2022</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">No</td>
+                <td class="values" align="right">7990</td>
+                <td class="values" align="right">10012</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">7</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">29</td>
+                <td class="values" align="right">10041</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">9</td>
+                <td class="values">Don't know</td>
+                <td class="values" align="right">11</td>
+                <td class="values" align="right">10052</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">123</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INQ150">INQ150 - Income from other sources</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INQ150</dd>
+            <dt>SAS Label: </dt>
+            <dd>Income from other sources</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Did {you/you or any family members living here} receive income in {LAST CALENDAR YEAR} from child support, alimony, contributions from family or others, VA payments, worker's compensation, or unemployment compensation?</dd>
+            <dt class="info">English Instructions: </dt>
+            <dd class="info">INTERVIEWER INSTRUCTION:  CONTRIBUTIONS INCLUDE GIFTS.
+INTERVIEWER INSTRUCTION:  IF RESPONDENT IS A COLLEGE STUDENT LIVING AWAY FROM THEIR FAMILY PLEASE ADD "INCLUDING MONEY RECIEVED FROM FAMILY FOR COLLEGE TUITION, BOOKS AND LIVING EXPENSES"</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Yes</td>
+                <td class="values" align="right">1487</td>
+                <td class="values" align="right">1487</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">No</td>
+                <td class="values" align="right">8546</td>
+                <td class="values" align="right">10033</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">7</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">16</td>
+                <td class="values" align="right">10049</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">9</td>
+                <td class="values">Don't know</td>
+                <td class="values" align="right">3</td>
+                <td class="values" align="right">10052</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">123</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="IND235">IND235 - Monthly family income</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">IND235</dd>
+            <dt>SAS Label: </dt>
+            <dd>Monthly family income</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Monthly family income (reported as a range value in dollars).</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">$0 - $399</td>
+                <td class="values" align="right">317</td>
+                <td class="values" align="right">317</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">$400 - $799</td>
+                <td class="values" align="right">488</td>
+                <td class="values" align="right">805</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">3</td>
+                <td class="values">$800 - $1249</td>
+                <td class="values" align="right">1012</td>
+                <td class="values" align="right">1817</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">4</td>
+                <td class="values">$1250 - $1649</td>
+                <td class="values" align="right">789</td>
+                <td class="values" align="right">2606</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">5</td>
+                <td class="values">$1650 - $2099</td>
+                <td class="values" align="right">863</td>
+                <td class="values" align="right">3469</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">6</td>
+                <td class="values">$2100 - $2899</td>
+                <td class="values" align="right">981</td>
+                <td class="values" align="right">4450</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">7</td>
+                <td class="values">$2900 - $3749</td>
+                <td class="values" align="right">1010</td>
+                <td class="values" align="right">5460</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">8</td>
+                <td class="values">$3750 - $4599</td>
+                <td class="values" align="right">769</td>
+                <td class="values" align="right">6229</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">9</td>
+                <td class="values">$4600 - $5399</td>
+                <td class="values" align="right">539</td>
+                <td class="values" align="right">6768</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">10</td>
+                <td class="values">$5400 - $6249</td>
+                <td class="values" align="right">401</td>
+                <td class="values" align="right">7169</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">11</td>
+                <td class="values">$6250 - $8399</td>
+                <td class="values" align="right">717</td>
+                <td class="values" align="right">7886</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">12</td>
+                <td class="values">$8400 and over</td>
+                <td class="values" align="right">1223</td>
+                <td class="values" align="right">9109</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">77</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">235</td>
+                <td class="values" align="right">9344</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">99</td>
+                <td class="values">Don't know</td>
+                <td class="values" align="right">462</td>
+                <td class="values" align="right">9806</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">369</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INDFMMPI">INDFMMPI - Family monthly poverty level index</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INDFMMPI</dd>
+            <dt>SAS Label: </dt>
+            <dd>Family monthly poverty level index</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Family monthly poverty level index, a ratio of monthly family income to the HHS poverty guidelines specific to family size.</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+            <dt>Hard Edits: </dt>
+            <dd class="info">0 to 4.99</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">0 to 4.97</td>
+                <td class="values">Range of Values</td>
+                <td class="values" align="right">8002</td>
+                <td class="values" align="right">8002</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">5</td>
+                <td class="values">Value greater than or equal to 5.00</td>
+                <td class="values" align="right">1107</td>
+                <td class="values" align="right">9109</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">1066</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INDFMMPC">INDFMMPC - Family monthly poverty level category</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INDFMMPC</dd>
+            <dt>SAS Label: </dt>
+            <dd>Family monthly poverty level category</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Family monthly poverty level index categories.</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Monthly poverty level index &lt;= 1.30</td>
+                <td class="values" align="right">4107</td>
+                <td class="values" align="right">4107</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">1.30 &lt; Monthly poverty level index &lt;= 1.85</td>
+                <td class="values" align="right">1329</td>
+                <td class="values" align="right">5436</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">3</td>
+                <td class="values">Monthly poverty level index &gt; 1.85</td>
+                <td class="values" align="right">4189</td>
+                <td class="values" align="right">9625</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">7</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">63</td>
+                <td class="values" align="right">9688</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">9</td>
+                <td class="values">Don't Know</td>
+                <td class="values" align="right">118</td>
+                <td class="values" align="right">9806</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">369</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INQBOX1">INQBOX1 - CHECK ITEM</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INQBOX1</dd>
+            <dt class="info">English Instructions: </dt>
+            <dd class="info">BOX 1. CHECK ITEM: IF FAMILY ANNUAL INCOME EQUAL OR LESS THAN {200% POVERTY LEVEL}, CONTINUE; OTHERWISE, GO TO THE END OF SECTION. 
+CALCULATE 200% OF THE ANNUAL POVERTY LEVEL BASED ON FAMILY SIZE: $22,430 FOR FAMILY SIZE OF 1, THEREAFTER, ADDING $7,920 FOR EACH ADDITIONAL PERSON. </dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="INQ244">INQ244 - Family has savings more than $5000</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">INQ244</dd>
+            <dt>SAS Label: </dt>
+            <dd>Family has savings more than $5000</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Do {you/NAMES OF OTHER FAMILY/you and NAMES OF FAMILY MEMBERS} have more than $5,000 in savings at this time?  Please include money in your checking accounts.</dd>
+            <dt class="info">English Instructions: </dt>
+            <dd class="info">INTERVIEWER INSTRUCTION:  INCLUDE CASH, SAVINGS OR CHECKING ACCOUNTS, STOCKS, BONDS, MUTUAL FUNDS, RETIREMENT FUNDS (SUCH AS PENSIONS, IRAS, 401KS, ETC), AND CERTIFICATES OF DEPOSIT.  CAPI INSTRUCTION: DISPLAY "you" for single-person family; DISPLAY "the members of your family" for multi-persons family.</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Yes</td>
+                <td class="values" align="right">486</td>
+                <td class="values" align="right">486</td>
+                <td class="values">End of Section</td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">No</td>
+                <td class="values" align="right">4809</td>
+                <td class="values" align="right">5295</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">7</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">137</td>
+                <td class="values" align="right">5432</td>
+                <td class="values">End of Section</td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">9</td>
+                <td class="values">Don't know</td>
+                <td class="values" align="right">82</td>
+                <td class="values" align="right">5514</td>
+                <td class="values">End of Section</td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">4661</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagebreak">
+          <h3 class="vartitle" id="IND247">IND247 - Total savings/cash assets for the family</h3>
+          <dl>
+            <dt>Variable Name: </dt>
+            <dd class="info">IND247</dd>
+            <dt>SAS Label: </dt>
+            <dd>Total savings/cash assets for the family</dd>
+            <dt>English Text: </dt>
+            <dd class="info">Total savings or cash assets at this time for {you/NAMES OF OTHER FAMILY/your family}.</dd>
+            <dt>Target: </dt>
+            <dd> Both males and females 0 YEARS -
+			150 YEARS</dd>
+          </dl>
+          <table class="values">
+            <thead>
+              <tr>
+                <th scope="column" class="values">Code or Value</th>
+                <th scope="column" class="values">Value Description</th>
+                <th scope="column" class="values">Count</th>
+                <th scope="column" class="values">Cumulative</th>
+                <th scope="column" class="values">Skip to Item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" class="values">1</td>
+                <td class="values">Less than $500</td>
+                <td class="values" align="right">4157</td>
+                <td class="values" align="right">4157</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">2</td>
+                <td class="values">$501- $1000</td>
+                <td class="values" align="right">269</td>
+                <td class="values" align="right">4426</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">3</td>
+                <td class="values">$1001-$2000</td>
+                <td class="values" align="right">141</td>
+                <td class="values" align="right">4567</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">4</td>
+                <td class="values">$2001-$3000</td>
+                <td class="values" align="right">96</td>
+                <td class="values" align="right">4663</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">5</td>
+                <td class="values">$3001-$4000</td>
+                <td class="values" align="right">43</td>
+                <td class="values" align="right">4706</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">6</td>
+                <td class="values">$4001-$5000</td>
+                <td class="values" align="right">27</td>
+                <td class="values" align="right">4733</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">77</td>
+                <td class="values">Refused</td>
+                <td class="values" align="right">52</td>
+                <td class="values" align="right">4785</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">99</td>
+                <td class="values">Don't know</td>
+                <td class="values" align="right">24</td>
+                <td class="values" align="right">4809</td>
+                <td class="values">
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" class="values">.</td>
+                <td class="values">Missing</td>
+                <td class="values" align="right">5366</td>
+                <td class="values" align="right">10175</td>
+                <td class="values">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
