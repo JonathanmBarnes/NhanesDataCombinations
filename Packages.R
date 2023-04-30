@@ -9,8 +9,8 @@ library(labelled)
 #library(rayshader)
 #library(plotly)
 #library(reshape2)
-#library(scales)
-#library(ggthemes)
+library(scales)
+library(ggthemes)
 DFMerge <- function(df_list, StartYear = 2020){
   df_combined <- df_list[[length(df_list)]]
   df_combined$Year <- StartYear

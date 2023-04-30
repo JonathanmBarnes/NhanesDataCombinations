@@ -1,4 +1,5 @@
 AllMergeLabelCol <- AllMerge
+AllLabFull <- lapply(AllMerge, attr, "label")
 colnames(AllMergeLabelCol) <- AllLabFull
 NonNumeric <- which(!sapply(AllMergeLabelCol, is.numeric))
 FullMergeCorr <- cor(AllMergeLabelCol[,-NonNumeric], use = "pairwise.complete.obs")

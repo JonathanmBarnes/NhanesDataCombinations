@@ -8,6 +8,7 @@ AllMerge <- AllMerge %>%
   mutate(SFatCalories = (AllMerge$DR1TSFAT* 9)) %>%
   mutate(RFM = (64 - (20 * AllMerge$BMXHT/AllMerge$BMXWAIST) + (12 * (AllMerge$RIAGENDR-1)))) %>%
   mutate(RFMObese = ifelse(AllMerge$RIAGENDR == 2, ifelse(RFM >= 33.9, 1,0), ifelse(RFM >= 22.8, 1, 0))) %>%
+  mutate(WTtoWaist = AllMerge$BMXWT/AllMerge$BMXWAIST) %>%
   mutate(BMR = ((10 * AllMerge$BMXWT) + (6.25 * AllMerge$BMXHT) - (5 * AllMerge$RIDAGEYR) + (ifelse(AllMerge$RIAGENDR == 1,5,-161)))) %>%
   mutate(ExcessEat = (BMR - AllMerge$DR1TKCAL)) %>%
   mutate(HWR = AllMerge$BMXWAIST/AllMerge$BMXHT) %>%
@@ -17,13 +18,15 @@ AllMerge <- AllMerge %>%
   mutate(age_groupNum = cut(AllMerge$RIDAGEYR, breaks = 18, labels = seq(1:18))) %>%
   mutate(age_group = cut(AllMerge$RIDAGEYR, breaks = 18))
 
+AllMerge[, 127:139] <- lapply(AllMerge[,127:139], function(x) {ifelse(is.na(x), 0, x)}) 
+
 CreatedLabels <- list("Percent of calories that are fat", "Total fat calories",
                       "Percent of calories that are protein", "Percent of calories that are carbohydrates",
                       "Percent of calories that are saturated fats", "Total saturated fat calories",
-                      "RFM Metric","RFM Obese", "BMR", "BMR - Kcal","Height to Waist Ratio", "BMI Obese metric",
+                      "RFM Metric","RFM Obese","Weight to Waist Size" ,"BMR", "BMR - Kcal","Height to Waist Ratio", "BMI Obese metric",
                       "Under 18", "Under 15", "Age Group Numeric")
 
-AllMerge <- AllMerge[rowSums(is.na(AllMerge)) < ncol(AllMerge) * 0.8, ]
+AllMerge <- AllMerge[rowSums(is.na(AllMerge)) < ncol(AllMerge) * 0.75, ]
 #AllMerge <- apply(AllMerge, 2, function(x) {ifelse(is.na(x), mean(x, na.rm = TRUE), x)})
 AllMerge <- as.data.frame(AllMerge)
 
@@ -33,4 +36,8 @@ for (i in 1:length(AllLabFull)) {
   attr(AllMerge[,i], "label") <- AllLabFull[[i]]
 }
 
+ColToExclude <- c(2,4, 6,8,10,13,15,17,19,32,33,39,43:54,103:121)
+
+AllMerge <- AllMerge[, -ColToExclude]
+AllLab <- lapply(AllMerge, attr, "label")
 rm(CreatedLabels)

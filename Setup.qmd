@@ -27,12 +27,12 @@ source('Corrplot.R')
 ```
 
 ```{r}
-corrplot((FullCorr[c(1:19),c(2:105)]), method = "color", tl.cex = .6, addrect = 4, rect.lwd = 1.5, is.corr = FALSE, tl.srt = 35)
-```
+#Color by P-val, need to correct for P-val due to so many T-tests
+#Stepwise regression, AIC, second order
+#Run PCA on predictors
 
-```{r}
-NotNeeded <- c(128:139, 19:28, 43:54, 126)
-corrplot(FullMergeCorr[-NotNeeded,-NotNeeded],method = "color", tl.cex = .55)
+CorrCols <- c(2, 6, 10,  119, 120, 125)
+corrplot(FullMergeCorr[CorrCols,-CorrCols],method = "color", tl.cex = .45, is.corr = FALSE, tl.srt = 45, col = colorRampPalette(c("forestgreen", "white", "red"))(150))
 ```
 
 ```{r}
@@ -52,7 +52,7 @@ plot(AllMerge$DR1TKCAL ~ AllMerge$DR1TNUMF)
 ```
 
 ```{r}
-ggplot(data = AllMerge, aes(BMXHT, RFM)) + geom_point(aes(color = as.factor(Un15YN)))
+ggplot(data = AllMergeYear, aes(Year)) + geom_point(aes(y))
 ```
 
 ```{r}
