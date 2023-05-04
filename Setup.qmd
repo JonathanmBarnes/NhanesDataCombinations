@@ -36,6 +36,17 @@ corrplot(FullMergeCorr[CorrCols,-CorrCols],method = "color", tl.cex = .45, is.co
 ```
 
 ```{r}
+AllMerge[is.na(AllMerge)] <- 0
+NonNumeric <- which(!sapply(AllMerge, is.numeric))
+Hold <- prcomp(AllMerge[,-NonNumeric])
+#prcomp(FullMergeCorr)
+```
+
+```{r}
+step(AllMerge)
+```
+
+```{r}
 plot(AllMerge$BMXBMI ~ AllMerge$BMXWAIST)
 ```
 
