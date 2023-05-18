@@ -34,7 +34,7 @@ source('Corrplot.R')
 
 CorrCols <- c(2, 6, 10, 119, 120, 125)
 
-PMat <- cor.mtest(FullMergeCorr, conf.level = .95)
+PMat <- cor.mtest(FullMergeCorr, conf.level = .98)
 
 #corrplot::corrplot(FullMergeCorr[CorrCols,-CorrCols], type = "upper")
 
