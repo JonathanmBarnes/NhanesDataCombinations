@@ -88,3 +88,4 @@ histogram(AllMerge$BMIObeseNum)
 ```{r}
 histogram(AllMerge$RFMObese)
 ```
+
