@@ -62,7 +62,7 @@ element representing a different survey year/release.
 source('DataImport.R')
 ```
 
-    Current Elapsed Time: 6.301813 Seconds 
+    Current Elapsed Time: 6.41282 Seconds 
     Data Read From Folders
 
 ## Data Set Creation and Methods
@@ -89,11 +89,11 @@ Measurements, and Physical Activity.
 source('NutritionCleaning.R')
 ```
 
-    Current Elapsed Time: 0.219583 Seconds 
-    Finished Step 1: Data Pulled From Files, Years assigned by release yearCurrent Elapsed Time: 1.154056 Seconds 
-    Finished Step 2: Data Frames CreatedCurrent Elapsed Time: 1.154146 Seconds 
-    Finished Step 3: Assigning Labels as Column NamesCurrent Elapsed Time: 1.175096 Seconds 
-    Finished Step 4: Created extra variablesCurrent Elapsed Time: 1.175099 Seconds 
+    Current Elapsed Time: 0.2153718 Seconds 
+    Finished Step 1: Data Pulled From Files, Years assigned by release yearCurrent Elapsed Time: 1.132847 Seconds 
+    Finished Step 2: Data Frames CreatedCurrent Elapsed Time: 1.132902 Seconds 
+    Finished Step 3: Assigning Labels as Column NamesCurrent Elapsed Time: 1.153673 Seconds 
+    Finished Step 4: Created extra variablesCurrent Elapsed Time: 1.153676 Seconds 
     Finished Step 5/5: Finished Cleaning
 
 ``` r
@@ -333,16 +333,19 @@ tidy(Stepwise)
     10 DR1TMAGN    -0.0000872 0.00000755     -11.5  9.22e-31
     11 CarbPercent  0.000442  0.0000475        9.30 1.54e-20
 
+Overall the base linear model only explained 13.3% and the stepwise
+model which only contained 10 variables explained 12.1%. I will need to
+go and access model fit and assumptions which don’t look optimal. I also
+will need to separate children from adults in the data frames when
+running the models due to their points being noticeably different and
+impactful.
+
 ``` r
 par(mfrow = c(2, 2))
 plot(Stepwise)
 ```
 
-![](Readme_files/figure-commonmark/unnamed-chunk-9-1.png)
-
-Overall the base linear model only explained 13.3% and the stepwise
-model which only contained 10 variables explained 12.1%. I will need to
-go and access model fit and its parameters using a QQplot
+![](Readme_files/figure-commonmark/unnamed-chunk-10-1.png)
 
 The variables below were included in the model based on the output from
 the stepwise regression. Because of the 40,000 different data points it
@@ -386,7 +389,8 @@ or not.
 
 I’ve spoken a bit on some of what I would like to explore above. Other
 aspects I would like to try are different clustering methods, splines,
-and possibly exploring more computationally intensive methods in python.
+and possibly exploring more computationally intensive methods in python
+as I better learn analytics packages.
 
 I also want to start focusing on more literature surrounding the topic,
 I will likely have more access to free material at the university of

@@ -147,11 +147,14 @@ Stepwise <- step(intercept, trace=0, steps = 10, direction = "both", scope = for
 glance(glm)
 glance(Stepwise)
 tidy(Stepwise)
+```
+
+Overall the base linear model only explained 13.3% and the stepwise model which only contained 10 variables explained 12.1%. I will need to go and access model fit and assumptions which don't look optimal. I also will need to separate children from adults in the data frames when running the models due to their points being noticeably different and impactful.
+
+```{r}
 par(mfrow = c(2, 2))
 plot(Stepwise)
 ```
-
-Overall the base linear model only explained 13.3% and the stepwise model which only contained 10 variables explained 12.1%. I will need to go and access model fit and its parameters using a QQplot
 
 The variables below were included in the model based on the output from the stepwise regression. Because of the 40,000 different data points it makes plotting them individually difficult and I still haven't determined the best way to visualize all these variables without taking up a ton of space.
 
@@ -181,6 +184,6 @@ As for the other variables I want to look closer at ethnicity but also Vigorous 
 
 ## Current Future Ideas
 
-I've spoken a bit on some of what I would like to explore above. Other aspects I would like to try are different clustering methods, splines, and possibly exploring more computationally intensive methods in python.
+I've spoken a bit on some of what I would like to explore above. Other aspects I would like to try are different clustering methods, splines, and possibly exploring more computationally intensive methods in python as I better learn analytics packages.
 
 I also want to start focusing on more literature surrounding the topic, I will likely have more access to free material at the university of Minnesota.
