@@ -10,21 +10,23 @@ editor: visual
 
 This idea began as a curiosity for me as to which micronutrients are most important in the human body and its functions biochemically. Because of my background in statistics, computer sciences, and what is now my degree in data analytics I chose to look for data sets that could offer analytically insight into my questions outside of just literature. It gave me an opportunity to apply skills I've learned to a topic I enjoy, in addition to honing my ability to use R. Almost immediately came across the NHANES survey out of the CDC and the data sets they publish bi-yearly from it, I then took up the task of combining them into a single data frame I could analyze.
 
-After my initial exploration of the data I discovered some interesting trends I didn't expect and wanted to look closer. Namely that while obesity is increasing, we are appearing to consume the same amount of calories. With that said this project transitioned into what factors influence obesity and now more specifically waist sizes increasing over time.
+After my initial exploration of the data I discovered some interesting trends I didn't expect and wanted to look closer. Namely that while obesity is increasing we appear to consume the same amount of calories. With that said this project transitioned into what factors influence obesity and now more specifically waist sizes increasing over time. It very much is a find the needle idea but it was not only entertaining but informational.
 
-Over this semester I aimed get more data into the file and properly clean it, in addition to completing a PCA of the data as well as other possible regressions.
+Over this semester I aimed get more data into the file and properly clean it, in addition to completing a PCA of the data as well as other possible regressions. I was helped and advised by Dr. Okamoto during the semester and greatly appreciate his insight.
 
-The project is far from over as I aim to be able to spend more time on it this summer and during my masters. I want to look at preforming different clustering or dimension reduction techniques in hopes it might discover something fun. Currently I worked to just determine what actually plays a role or if there is correlation between obesity or waist size and recorded metrics in the survey. Specific visualizations are not completed however will be added in the future.
+The project is not complete and I aim to be able to spend more time on it during my masters. I want to look at preforming different clustering methods, dimension reduction techniques, and more ways to deal with multivariate data in hopes it might discover something fun. Currently I worked to just determine what actually plays a role and if there is correlation between obesity or waist size, and recorded metrics in the survey. Some visualizations are present but not all however they will be added in the future.
 
 ## Files and Layout
 
-Currently I have mostly separated files for each of the stages in the project, they individually do something although they could made more efficient. I do aim to improve. The R script below loads any packages I've used or tried to use, individual functions I wrote for this project.
+Currently I have separated files for each of the stage in the project, they individually do something although they could made more efficient. I do aim to improve that. All of them can be found in the repository for more specific detail on what they do or what is included.
+
+The R script below loads any packages I've used or tried to use, and then individual functions I wrote for this project.
 
 ```{r, message=FALSE, warning=FALSE}
 source('Packages.R') 
 ```
 
-The next, arguably most important file is contains the R coding for the import and reading of all of the individual data sets I chose to use from the NHANES survey. The output of this is several large lists with 5 elements. They are labeled by which NHANES survey is contained inside, with each element representing a different survey year/release.
+The next, arguably most important file is contains the R coding for the import and reading of all of the individual data sets from the main data folder. The output of this is several large lists with 5 elements. They are labeled by which NHANES survey is contained inside, with each element representing a different survey year/release.
 
 ```{r,warning = FALSE}
 source('DataImport.R')
@@ -32,20 +34,20 @@ source('DataImport.R')
 
 ## Data Set Creation and Methods
 
-The phrase saying most of the time preforming an analysis is spent in cleaning unfortunately holds true. I've lost track at the total time spent on cleaning, merging, and creating.
+The phrase most of the time preforming an analysis is spent in cleaning unfortunately holds true. I've lost track at the total time spent on cleaning, merging, and creating but am happy the difficult parts are done for now.
 
-One of the many annoyances with the NHANES data is that most things are separate requiring the merging into a single frame. what made it worse was that I was exploring over the last 10 years, so I had five times as many files as opposed to a single year. The native NHANES files all contain a variable name, typically 6-7 letters and numbers, as well as description of each variable. Throughout the process of combining and merging the data I worked to keep both to aid in readability.
+One of the many annoyances with the NHANES data is that most things are separate files requiring the merging into a single data frame. what made it worse was that I was exploring over the last 10 years, so I had five times as many files as opposed to a single year. The native NHANES files all contain a variable name, typically 6-7 letters or numbers, as well as a written description of each variable as a label attribute. Throughout the process of combining and merging the data I worked to keep both to aid in readability.
 
-By the end I had 5 files from the following categories or sections from the CDC: Nutrition Day 1 and 2, Income, Demographics, Body Measurements, and Physical Activity.
+By the end I had 5 merged files from the following categories or sections from the CDC: Nutrition Day 1 and 2, Income, Demographics, Body Measurements, and Physical Activity.
 
 ```{r,warning = FALSE}
 source('NutritionCleaning.R')
 source('DataMerging.R')
 ```
 
-The two files above handle this task. The nutrition cleaning file was my original file that only combined the nutritional data since that was at the time all I was concerned about.
+The two files above handle this task. The nutrition cleaning file was my original file that only combined the nutritional data since that was at the time all I was concerned about. It is extremely inefficient and at some point I hope to remove it entirely.
 
-The Data merging script takes a simpler function (written in the Packages.R script) and combines all of the other files together to create an AllMerge file. It also removes many of the old created files, the main whole file was taking up over 150 MB of data itself.
+The Data merging script takes a simpler function (written in the Packages.R script) and combines all of the other files together to create an AllMerge file. The primary merge function in R didn't work leading to me writing my own. Since the variable names remain the same over the years I was to determine which exist in each data frame and merge them, and then matching respondent id. The file also removes many of the old created files to help with an issue of RStudio crashing.
 
 The remaining file before any creation or removal contains 155 dimensions and a total of 41297 individual records.
 
@@ -56,9 +58,11 @@ source('CreatingVariables.R')
 source('CreatingGroupedDFs.R')
 ```
 
-From that created data frame I then chose to create a number of extra variables from previously exist variables. Previous research and experience loosing weight had led me to look at diet consumption and macronutreient consumption so I created metrics using dplyr that labeled what percent of the diet was fats, proteins, and carbohydrates. I also looked at saturated fats.
+Using the created data frame I then chose to create additional extra variables from previously existing variables. Previous research and experience loosing weight had led me to look at diet consumption and macronutreient consumption, I created metrics using dplyr that calculated what percent of the diet was fats, proteins, and carbohydrates. I also looked at saturated fats.
 
-Following exploration of those variables and additional from NHANES, I created variables for the following:
+Following exploration of those variables and additional files from NHANES, I created variables for the following:
+
+##### New Variables
 
 -   RFM Metric - Newer alternative calculation for predicting body fat percentage. Works better then BMI
 
@@ -86,17 +90,17 @@ I also implemented quick NA handling where if a specific row is missing more the
 
 ## Findings
 
-So far in my explorations I've been able to come to the single conclusion that things just don't make sense. At the beginning I was assuming that I would see a trend of more calories being eaten overtime and there was not particularly a significant change which was odd considering that we were still increasing in obesity rates. A partial explanation here would be we are on average eating more then we need so we will end up storing more, but it led me to questions as what else is missing or included in our diet that is leading to an increase in adoposity at least in America. Genetics and so many other factors ultimately play into this.
+So far in my explorations I've been able to come to the single conclusion that data just doesn't make sense. At the beginning I was assuming that I would see a trend of more calories being eaten overtime and there was not particularly a significant change which was odd considering that we were still increasing in obesity rates. A partial explanation here would be we are on average eating more then we need so we will end up storing more, but it led me to questions as what else is missing or included in our diet or lifestyle that is leading to an increase in adoposity. Genetics and so many other factors ultimately play into this.
 
-In a general sense we seem to be lacking in vitamin consumption across the board, which biochemically could be acting as a catalyst for the obesity we're seeing. There is little specific dietary trends which also could point to why things are getting worse. We know sugar consumption can lead to storage of fat, we also know that metabolism tends to slow as we age. In the data it was showing that children consume significantly more sugar, in excess of 10 grams more then an adult. This could contribute to their obesity, but also if they are setting a foundation where they hold more weight earlier it makes it harder to loose later in life.
+In a general sense, we seem to be lacking in vitamin consumption across the board. Biochemically this could be acting as a catalyst for the obesity we're seeing. There was specific dietary trends which also could point to why things are getting worse. We know sugar consumption can lead to storage of fat, we also know that metabolism tends to slow as we age. In the data it was showing that children consume significantly more sugar, in excess of 10 grams more then an adult. This could contribute to their obesity, but also if they are setting a foundation where they hold more weight earlier in their lives it makes it harder to loose later in life.
 
 ##### Other Things to note:
 
-Waist size has increased about four centimeters over the 10 year span, with the height to waist ratio raising from .577 to .602. We also on average are four kilo's heavier. Finding this more confirmed that we in fact still seeing this increase in obesity in the US, interestingly those who were considered to have a healthy obesity level appeared to eat more. Well then I thought, maybe they're exercising more and they didn't appear to be by that much on average.
+Waist size has increased about four centimeters over the 10 year span, with the height to waist ratio raising from .577 to .602. We also on average are four kilo's heavier. Finding this more confirmed that we in fact still seeing this increase in obesity in the US, interestingly those who were considered to have a healthy obesity level appeared to consume more calories. Well then I thought, maybe they're exercising more and they didn't appear to be by that much on average. It added to the list of things not particularly adding up.
 
-##### PCA 
+##### PCA
 
-In line with my goals I preformed a PCA using the prcomp function.
+In line with my goals I preformed a PCA using the prcomp function in R.
 
 ```{r, warning=FALSE}
 AllMerge[is.na(AllMerge)] <- 0
@@ -125,11 +129,15 @@ fviz_pca_var(PCA, axes = c(3,4),
              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),repel = TRUE)
 ```
 
-The function pops out 126 PC's for each dimension however the top tweleve will explain 99% of the variability, with the first 5 containing over 96%.
+The function pops out 125 PC's for each dimension however the top tweleve will explain 99% of the variability, with the first 5 containing over 96%.
 
 As shown in the charts (which I'm not sure I fully understand) Lycopene is way out to the left. I'm planning at going back and scaling the variables to see how things are changed, however for now because it gives an error message I will not.
 
+I didn't find this are beneficial as I maybe though it would be.
+
 ##### Stepwise Regression
+
+I next ran a stepwise regression and simple linear model on the data. Height to Waist ratio (HTW) was set as the response variable; additional columns were removed due to their direct explanation or contribution to the ratio (Ex: Height or the weight of someone)
 
 ```{r}
 intercept <- lm(HWR~1, data = AllMerge[,-c(1:9, 118:122,124:128, 83)])
@@ -139,12 +147,11 @@ Stepwise <- step(intercept, trace=0, steps = 10, direction = "both", scope = for
 glance(glm)
 glance(Stepwise)
 tidy(Stepwise)
-
+par(mfrow = c(2, 2))
+plot(Stepwise)
 ```
 
-I next ran a stepwise regression and base linear model on the data. Height to Waist ratio (HTW) was set as the response variable; additional columns were removed due to their direct explanation or contribution to the ratio (Ex: Height or the weight of someone)
-
-Overall the base linear model only explained 13.3% and the stepwise model which only contained 10 variables explained 12.1%.
+Overall the base linear model only explained 13.3% and the stepwise model which only contained 10 variables explained 12.1%. I will need to go and access model fit and its parameters using a QQplot
 
 The variables below were included in the model based on the output from the stepwise regression. Because of the 40,000 different data points it makes plotting them individually difficult and I still haven't determined the best way to visualize all these variables without taking up a ton of space.
 
@@ -173,3 +180,7 @@ Most of this makes sense in terms of how they may affect ones HTW. I found it pa
 As for the other variables I want to look closer at ethnicity but also Vigorous Rec activities. Ethnicity makes sense to me due to dietary differences and even possible genetic differences within groups of people. As for Vigorous rec, in the model it actually has a positive coefficient so I will want to look and see if that is completely correct or not.
 
 ## Current Future Ideas
+
+I've spoken a bit on some of what I would like to explore above. Other aspects I would like to try are different clustering methods, splines, and possibly exploring more computationally intensive methods in python.
+
+I also want to start focusing on more literature surrounding the topic, I will likely have more access to free material at the university of Minnesota.
