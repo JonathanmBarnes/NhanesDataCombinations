@@ -51,7 +51,7 @@ PCA <- prcomp(AllMerge[,-NonNumeric])
 PCA <- summary(PCA)
 PCAVariance <- PCA$importance[,1:6]
 
-#lm <- lm(AllMerge$HWR~PCA$x[,1:126])
+lm <- lm(AllMerge$HWR~PCA$x[,1:12])
 #model <- pcr(BMXWAIST~.,ncomp = 6 ,data = AllMerge[,-NonNumeric], scale = T, validation = "CV")
 ```
 

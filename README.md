@@ -7,22 +7,25 @@ NHANES Data Combinations and Exploration
 
 This idea began as a curiosity for me as to which micronutrients are
 most important in the human body and its functions biochemically.
-Because of my background and what is now my degree in data analytics I
-chose to look for data sets that could offer analytically insight into
-my questions outside of just literature. It gave me an opportunity to
-apply skills I’ve learned to a topic I enjoy, in addition to honing my
-ability to use R. Almost immediately came across the NHANES survey out
-of the CDC and the data sets they publish bi-yearly from it, I then took
-up the task of combining them into a single data frame I could analyze.
+Because of my background in statistics, computer sciences, and what is
+now my degree in data analytics I chose to look for data sets that could
+offer analytically insight into my questions outside of just literature.
+It gave me an opportunity to apply skills I’ve learned to a topic I
+enjoy, in addition to honing my ability to use R. Almost immediately
+came across the NHANES survey out of the CDC and the data sets they
+publish bi-yearly from it, I then took up the task of combining them
+into a single data frame I could analyze.
 
 After my initial exploration of the data I discovered some interesting
-trends I didn’t expect and want to look closer. Namely that while
+trends I didn’t expect and wanted to look closer. Namely that while
 obesity is increasing, we are appearing to consume the same amount of
 calories. With that said this project transitioned into what factors
 influence obesity and now more specifically waist sizes increasing over
-time. Over this semester I aimed get more data into the file and
-properly clean it, in addition to completing a PCA of the data as well
-as other possible regressions.
+time.
+
+Over this semester I aimed get more data into the file and properly
+clean it, in addition to completing a PCA of the data as well as other
+possible regressions.
 
 The project is far from over as I aim to be able to spend more time on
 it this summer and during my masters. I want to look at preforming
@@ -54,7 +57,7 @@ with each element representing a different survey year/release.
 source('DataImport.R')
 ```
 
-    Current Elapsed Time: 6.125922 Seconds 
+    Current Elapsed Time: 6.334016 Seconds 
     Data Read From Folders
 
 ## Data Set Creation and Methods
@@ -79,11 +82,11 @@ and Physical Activity.
 source('NutritionCleaning.R')
 ```
 
-    Current Elapsed Time: 0.3438408 Seconds 
-    Finished Step 1: Data Pulled From Files, Years assigned by release yearCurrent Elapsed Time: 1.096871 Seconds 
-    Finished Step 2: Data Frames CreatedCurrent Elapsed Time: 1.096987 Seconds 
-    Finished Step 3: Assigning Labels as Column NamesCurrent Elapsed Time: 1.117783 Seconds 
-    Finished Step 4: Created extra variablesCurrent Elapsed Time: 1.117788 Seconds 
+    Current Elapsed Time: 0.2301471 Seconds 
+    Finished Step 1: Data Pulled From Files, Years assigned by release yearCurrent Elapsed Time: 1.136653 Seconds 
+    Finished Step 2: Data Frames CreatedCurrent Elapsed Time: 1.136747 Seconds 
+    Finished Step 3: Assigning Labels as Column NamesCurrent Elapsed Time: 1.15847 Seconds 
+    Finished Step 4: Created extra variablesCurrent Elapsed Time: 1.158473 Seconds 
     Finished Step 5/5: Finished Cleaning
 
 ``` r
@@ -178,44 +181,119 @@ explanation here would be we are on average eating more then we need so
 we will end up storing more, but it led me to questions as what else is
 missing or included in our diet that is leading to an increase in
 adoposity at least in America. Genetics and so many other factors
-ultimately play into this
+ultimately play into this.
 
 In a general sense we seem to be lacking in vitamin consumption across
-the board which biochemically could be acting as a catalyst for the
+the board, which biochemically could be acting as a catalyst for the
 obesity we’re seeing. There is little specific dietary trends which also
 could point to why things are getting worse. We know sugar consumption
 can lead to storage of fat, we also know that metabolism tends to slow
 as we age. In the data it was showing that children consume
-significantly more sugar then an adult could contribute to their
-obesity, but also if they are setting a foundation where they hold more
-weight it makes it harder to loose.
+significantly more sugar, in excess of 10 grams more then an adult. This
+could contribute to their obesity, but also if they are setting a
+foundation where they hold more weight earlier it makes it harder to
+loose later in life.
+
+##### Other Things to note:
+
+Waist size has increased about four centimeters over the 10 year span,
+with the height to waist ratio raising from .577 to .602. We also on
+average are four kilo’s heavier. Finding this more confirmed that we in
+fact still seeing this increase in obesity in the US, interestingly
+those who were considered to have a healthy obesity level appeared to
+eat more. Well then I thought, maybe they’re exercising more and they
+didn’t appear to be by that much on average.
+
+##### PCA
 
 In line with my goals I preformed a PCA using the prcomp function.
 
 ``` r
 AllMerge[is.na(AllMerge)] <- 0
+AllMerge <- AllMerge[,-1]
 NonNumeric <- which(!sapply(AllMerge, is.numeric))
 PCA <- prcomp(AllMerge[,-NonNumeric])
-PCA <- summary(PCA)
-tidy(t(PCA$importance[,1:6]))
+PCASum <- summary(PCA)
+tidy(t(PCASum$importance[,1:12]))
 ```
 
-    # A tibble: 6 × 1
-      x[,"Standard deviation"] [,"Proportion of Variance"] [,"Cumulative Proportio…¹
-                         <dbl>                       <dbl>                     <dbl>
-    1                   17877.                     0.757                       0.757
-    2                    7886.                     0.147                       0.904
-    3                    4687.                     0.052                       0.956
-    4                    2702.                     0.0173                      0.973
-    5                    2310.                     0.0126                      0.986
-    6                    1392.                     0.00459                     0.990
+    # A tibble: 12 × 1
+       x[,"Standard deviation"] [,"Proportion of Variance"] [,"Cumulative Proporti…¹
+                          <dbl>                       <dbl>                    <dbl>
+     1                    7889.                     0.605                      0.605
+     2                    4688.                     0.214                      0.819
+     3                    2702.                     0.0710                     0.890
+     4                    2310.                     0.0519                     0.941
+     5                    1399.                     0.0190                     0.960
+     6                     822.                     0.00657                    0.967
+     7                     772.                     0.0058                     0.973
+     8                     706.                     0.00484                    0.978
+     9                     687.                     0.00459                    0.982
+    10                     637.                     0.00394                    0.986
+    11                     565.                     0.0031                     0.989
+    12                     440.                     0.00188                    0.991
     # ℹ abbreviated name: ¹​[,"Cumulative Proportion"]
 
 ``` r
-intercept <- lm(HWR~1, data = AllMerge[,-c(1:10, 119:123,125:129, 84)])
+fviz_pca_var(PCA,
+             col.var = "contrib", select.var = list(contrib = 7),geom = c("point", "text"),
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),repel = TRUE)
+```
 
-glm <- lm(HWR~., data = AllMerge[,-c(1:10, 119:123,125:129, 84)])
+![](Readme_files/figure-commonmark/unnamed-chunk-6-1.png)
+
+``` r
+fviz_pca_var(PCA, axes = c(2,3),
+             col.var = "contrib", select.var = list(contrib = 15),geom = c("point", "text"),
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),repel = TRUE)
+```
+
+![](Readme_files/figure-commonmark/unnamed-chunk-7-1.png)
+
+``` r
+fviz_pca_var(PCA, axes = c(3,4),
+             col.var = "contrib", select.var = list(contrib = 10),geom = c("point", "text"),
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),repel = TRUE)
+```
+
+![](Readme_files/figure-commonmark/unnamed-chunk-8-1.png)
+
+The function pops out 126 PC’s for each dimension however the top
+tweleve will explain 99% of the variability, with the first 5 containing
+over 96%.
+
+As shown in the charts (which I’m not sure I fully understand) Lycopene
+is way out to the left. I’m planning at going back and scaling the
+variables to see how things are changed, however for now because it
+gives an error message I will not.
+
+##### Stepwise Regression
+
+``` r
+intercept <- lm(HWR~1, data = AllMerge[,-c(1:9, 118:122,124:128, 83)])
+
+glm <- lm(HWR~., data = AllMerge[,-c(1:9, 118:122,124:128, 83)])
 Stepwise <- step(intercept, trace=0, steps = 10, direction = "both", scope = formula(glm))
+glance(glm)
+```
+
+    # A tibble: 1 × 12
+      r.squared adj.r.squared sigma statistic p.value    df logLik     AIC     BIC
+          <dbl>         <dbl> <dbl>     <dbl>   <dbl> <dbl>  <dbl>   <dbl>   <dbl>
+    1     0.133         0.131 0.160      60.9       0   104 17146. -34081. -33166.
+    # ℹ 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>
+
+``` r
+glance(Stepwise)
+```
+
+    # A tibble: 1 × 12
+      r.squared adj.r.squared sigma statistic p.value    df logLik     AIC     BIC
+          <dbl>         <dbl> <dbl>     <dbl>   <dbl> <dbl>  <dbl>   <dbl>   <dbl>
+    1     0.121         0.120 0.161      566.       0    10 16846. -33668. -33564.
+    # ℹ 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>
+
+``` r
 tidy(Stepwise)
 ```
 
@@ -234,15 +312,19 @@ tidy(Stepwise)
     10 DR1TMAGN    -0.0000872 0.00000755     -11.5  9.22e-31
     11 CarbPercent  0.000442  0.0000475        9.30 1.54e-20
 
-``` r
-glance(Stepwise)
-```
+I next ran a stepwise regression and base linear model on the data.
+Height to Waist ratio (HTW) was set as the response variable; additional
+columns were removed due to their direct explanation or contribution to
+the ratio (Ex: Height or the weight of someone)
 
-    # A tibble: 1 × 12
-      r.squared adj.r.squared sigma statistic p.value    df logLik     AIC     BIC
-          <dbl>         <dbl> <dbl>     <dbl>   <dbl> <dbl>  <dbl>   <dbl>   <dbl>
-    1     0.121         0.120 0.161      566.       0    10 16846. -33668. -33564.
-    # ℹ 3 more variables: deviance <dbl>, df.residual <int>, nobs <int>
+Overall the base linear model only explained 13.3% and the stepwise
+model which only contained 10 variables explained 12.1%.
+
+The variables below were included in the model based on the output from
+the stepwise regression. Because of the 40,000 different data points it
+makes plotting them individually difficult and I still haven’t
+determined the best way to visualize all these variables without taking
+up a ton of space.
 
 - Vigorous Rec activities
 
@@ -263,5 +345,17 @@ glance(Stepwise)
 - Magnesium
 
 - Carbohydrate Percent
+
+Most of this makes sense in terms of how they may affect ones HTW. I
+found it particularly interesting that magnesium was the specific
+micronutrient included since it was not significant when running the
+model all at once.
+
+As for the other variables I want to look closer at ethnicity but also
+Vigorous Rec activities. Ethnicity makes sense to me due to dietary
+differences and even possible genetic differences within groups of
+people. As for Vigorous rec, in the model it actually has a positive
+coefficient so I will want to look and see if that is completely correct
+or not.
 
 ## Current Future Ideas
