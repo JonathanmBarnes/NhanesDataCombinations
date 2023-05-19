@@ -48,17 +48,31 @@ method = "color", tl.cex = .45, is.corr = FALSE, tl.srt = 45, col = colorRampPal
 AllMerge[is.na(AllMerge)] <- 0
 NonNumeric <- which(!sapply(AllMerge, is.numeric))
 PCA <- prcomp(AllMerge[,-NonNumeric])
-lm <- lm(AllMerge$HWR~PCA$x[,1:126])
+PCA <- summary(PCA)
+PCAVariance <- PCA$importance[,1:6]
+
+#lm <- lm(AllMerge$HWR~PCA$x[,1:126])
 #model <- pcr(BMXWAIST~.,ncomp = 6 ,data = AllMerge[,-NonNumeric], scale = T, validation = "CV")
 ```
 
 ```{r}
 #AllMerge <- AllMerge[,c(1:118,124)]
-intercept <- lm(HWR~1, data = AllMerge[,-c(2,6,10)])
+intercept <- lm(HWR~1, data = AllMerge[,-c(1:10, 119:123,125:129, 84)])
 
-glm <- lm(HWR~., data = AllMerge[,-c(2,6,10)])
-Stepwise <- step(intercept, trace=1, steps = 5, direction = "forward", scope = formula(glm))
+glm <- lm(HWR~., data = AllMerge[,-c(1:10, 119:123,125:129, 84)])
+Stepwise <- step(intercept, trace=0, steps = 10, direction = "both", scope = formula(glm))
 summary(Stepwise)
+# Top 10 - Both
+# Vigorous Rec activities
+# FatPercent
+# On weight loss or low cal diet
+# Race/Hispanic Origin
+# Education level (over 20)
+# Age in Years
+# Moderate work activity
+# Moisture
+# Magnesium
+# Carb Percent
 ```
 
 ```{r}
