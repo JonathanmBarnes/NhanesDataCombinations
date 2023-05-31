@@ -62,7 +62,7 @@ element representing a different survey year/release.
 source('DataImport.R')
 ```
 
-    Current Elapsed Time: 6.41282 Seconds 
+    Current Elapsed Time: 5.151193 Seconds 
     Data Read From Folders
 
 ## Data Set Creation and Methods
@@ -89,11 +89,11 @@ Measurements, and Physical Activity.
 source('NutritionCleaning.R')
 ```
 
-    Current Elapsed Time: 0.2153718 Seconds 
-    Finished Step 1: Data Pulled From Files, Years assigned by release yearCurrent Elapsed Time: 1.132847 Seconds 
-    Finished Step 2: Data Frames CreatedCurrent Elapsed Time: 1.132902 Seconds 
-    Finished Step 3: Assigning Labels as Column NamesCurrent Elapsed Time: 1.153673 Seconds 
-    Finished Step 4: Created extra variablesCurrent Elapsed Time: 1.153676 Seconds 
+    Current Elapsed Time: 0.1759861 Seconds 
+    Finished Step 1: Data Pulled From Files, Years assigned by release yearCurrent Elapsed Time: 53.32734 Seconds 
+    Finished Step 2: Data Frames CreatedCurrent Elapsed Time: 53.33024 Seconds 
+    Finished Step 3: Assigning Labels as Column NamesCurrent Elapsed Time: 54.28219 Seconds 
+    Finished Step 4: Created extra variablesCurrent Elapsed Time: 54.28241 Seconds 
     Finished Step 5/5: Finished Cleaning
 
 ``` r
